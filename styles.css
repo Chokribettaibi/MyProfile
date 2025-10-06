@@ -21,6 +21,36 @@ body{
 .hero{max-width:var(--max-width); margin:0 auto}
 .card{display:grid; grid-template-columns: 320px 1fr; gap:28px; align-items:center; background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.15)); padding:28px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.03)}
 .profile{display:flex; justify-content:center}
+.profile{position:relative}
+.profile > *{position:relative; z-index:1}
+
+/* subtle halo / pulse around profile */
+.profile::before{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  width:calc(100% + 48px);
+  height:calc(100% + 48px);
+  transform:translate(-50%,-50%) scale(1);
+  border-radius:18px;
+  background: radial-gradient(circle at center, rgba(217,168,91,0.06) 0%, rgba(217,168,91,0.03) 30%, transparent 55%);
+  pointer-events:none;
+  z-index:0;
+  transition:opacity .28s ease, transform .36s ease;
+  animation: pulseRing 4s ease-in-out infinite;
+}
+.profile:hover::before{ animation-duration:2.2s; opacity:1; transform:translate(-50%,-50%) scale(1.02)}
+
+@keyframes pulseRing{
+  0%{ transform:translate(-50%,-50%) scale(0.98); opacity:0.6 ; -webkit-transform:translate(-50%,-50%) scale(0.98); -moz-transform:translate(-50%,-50%) scale(0.98); -ms-transform:translate(-50%,-50%) scale(0.98); -o-transform:translate(-50%,-50%) scale(0.98); }
+  50%{ transform:translate(-50%,-50%) scale(1.03); opacity:0.28 ; -webkit-transform:translate(-50%,-50%) scale(1.03); -moz-transform:translate(-50%,-50%) scale(1.03); -ms-transform:translate(-50%,-50%) scale(1.03); -o-transform:translate(-50%,-50%) scale(1.03); }
+  100%{ transform:translate(-50%,-50%) scale(0.98); opacity:0.6 }
+}
+
+/* reduce effect on very small screens for performance */
+@media(max-width:420px){
+  .profile::before{ display:none }
+}
 .photo{width:280px; height:420px; object-fit:cover; border-radius:10px; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.04)}
 .info{padding:8px 4px}
 .thumbs{display:flex; gap:8px; justify-content:center; margin-top:12px}

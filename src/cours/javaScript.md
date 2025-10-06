@@ -1,4 +1,4 @@
-# Learn JavaScript
+# Learn JavaScript 
 
 ## 023 - Number
 
@@ -116,7 +116,7 @@ a.indexOf("Web", 8) // -1
 >> pop() Remove Last Element From Array
 >>
 
-## 066 - Arrow Function Syntax 
+## 066 - Arrow Function Syntax
 
 Arrow Function
 
@@ -251,7 +251,7 @@ DOM [Events]
   };
   ```
 
- ```javascript
+```javascript
  let userInput = document.querySelector("[name='username']");
  let ageInput = document.querySelector("[name='age']");
  
@@ -270,7 +270,7 @@ DOM [Events]
         e.preventDefault();
     }
  }
- ```
+```
 
 ## 094 - Event Simulation Click Focus Blur
 
@@ -301,13 +301,14 @@ one.onblur = function (){
 ## 095 - Class List Object And Methods
 
 DOM [Class List]
->classList
--length
--contains
--item(index)
--add
--remove
--toggle
+
+> classList
+> -length
+> -contains
+> -item(index)
+> -add
+> -remove
+> -toggle
 
 HTML
 
@@ -606,6 +607,7 @@ strTwo.constructor === String // true
 ## 152 - Class Static Properties And Methods
 
 Class
+
 > static Properties And Methods
 
 ```javascript
@@ -632,7 +634,8 @@ class User {
 ## 153 - Class Inheritance
 
 Class
->Inheritance
+
+> Inheritance
 
 ```javascript
 class  User {
