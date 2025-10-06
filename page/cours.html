@@ -70,11 +70,11 @@
 
   files.forEach((f, idx)=>{
           // create TOC link
-          // const a = document.createElement('a');
-          // a.href = '#section-' + idx;
-          // a.textContent = f.title;
-          // a.className = 'btn ghost mb-2';
-          // toc.appendChild(a);
+           const a = document.createElement('a');
+           a.href = '#section-' + idx;
+           a.textContent = f.title;
+           a.className = 'btn ghost mb-2';
+           toc.appendChild(a);
 
           // create section placeholder
           const section = document.createElement('section');
