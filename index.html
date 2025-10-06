@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Professeur — Mathématiques & Programmation</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!-- Navbar (Bootstrap) -->
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav">
+    <div class="container">
+      <a class="navbar-brand" href="#">Bettaibi Chokri</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Basculer la navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">Cours</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="hero">
+    <div class="card">
+      <div class="profile">
+  <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Galerie de photos">
+          <div class="slides">
+            <div class="slide" data-index="0">
+              <img src="./img/1759430992709.jpg" alt="Portrait du professeur - photo 1" class="photo">
+            </div>
+            <div class="slide" data-index="1">
+              <img src="./img/1759611046285.png" alt="Portrait du professeur - photo 2" class="photo">
+            </div>
+            <div class="slide" data-index="2">
+              <img src="./img/1759611345339.jpg" alt="Portrait du professeur - photo 3" class="photo">
+            </div>
+            <div class="slide" data-index="3">
+              <img src="./img/IMG_20251005_224139.png" alt="Portrait du professeur - photo 4" class="photo">
+            </div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Photo précédente">‹</button>
+          <button class="carousel-btn next" aria-label="Photo suivante">›</button>
+          <div class="dots" role="tablist"></div>
+        </div>
+      </div>
+      <div class="info">
+  <h1 class="name">Développeur et Mathématicien</h1>
+        <p class="role">Enseignant · Mentor · Développeur</p>
+        <p class="tagline">J'aide les étudiants à comprendre les concepts mathématiques profonds et à construire des applications modernes en code propre et testé.</p>
+
+        <ul class="skills">
+          <li>Mathématiques appliquées & théoriques</li>
+          <li>JavaScript, C++, MySQL</li>
+          <li>Algorithmique & structures de données</li>
+          <li>Architecture logicielle & bonnes pratiques</li>
+        </ul>
+
+        <div class="actions">
+          <a href="#contact" class="btn primary" id="contactBtn">Contacter</a>
+          <a href="page/cours.html" class="btn ghost">Voir les cours</a>
+        </div>
+
+        <div id="contact" class="contact-card ">
+          <h3>Contact</h3>
+          <p>Email: <span id="email">Bettaibichokrino001@gmail.com</span> <button id="copyBtn" title="Copier l'email">Copier</button></p>
+          <p>Téléphone: +216 98 104 699</p>
+          <div class="socials">
+            <a class="social-btn fb" href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook">
+              <!-- Facebook SVG -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.99H7.898v-2.888h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.444 2.888h-2.329v6.99C18.343 21.128 22 16.991 22 12z" fill="currentColor"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a class="social-btn wa" href="https://wa.me/33612345678" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <!-- WhatsApp SVG -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 .5C6  .5 1.1 5.4 1.1 11.4c0 2.02.53 3.94 1.54 5.66L.5 23.5l6.8-1.77A11.86 11.86 0 0 0 12 22.3c6 0 10.9-4.9 10.9-10.9 0-2.92-1.14-5.64-3.38-7.92zM12 20c-1.6 0-3.16-.42-4.5-1.2l-.32-.19-4.04 1.05 1.08-3.93-.21-.34A8.02 8.02 0 0 1 4 11.4c0-4.42 3.58-8 8-8s8 3.58 8 8-3.6 8-8 8z" fill="currentColor"/></svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="courses" class="courses">
+      <h2>Cours & Ateliers</h2>
+      <div class="course-list">
+        <article class="course">
+          <h3>Algèbre linéaire pour l'IA</h3>
+          <p>Fondamentaux, matrices, espaces vectoriels et applications aux modèles.</p>
+        </article>
+        <article class="course">
+          <h3>Algorithmique & Structures de données</h3>
+          <p>Complexité, tri, graphes et résolution de problèmes.</p>
+        </article>
+        <article class="course">
+          <h3>Programmation</h3>
+          <p>Design de logiciels, tests, refactorisation et bonnes pratiques.</p>
+          <a href="page/cours.html" class="btn ghost small">Voir cours</a>
+        </article>
+      </div>
+    </section>
+    <div class="bottom-ia-wrap">
+      <button id="openIaBtn" class="bottom-ia-btn" type="button">My photos IA</button>
+    </div>
+
+  </main>
+
+  <!-- IA photos modal (hidden until used) -->
+  <div id="iaModal" class="ia-modal" aria-hidden="true">
+    <div class="ia-modal-backdrop" id="iaBackdrop"></div>
+    <div class="ia-modal-panel" role="dialog" aria-modal="true" aria-label="Carousel IA">
+      <button class="ia-close" id="iaClose" aria-label="Fermer">✕</button>
+      <div class="ia-carousel">
+        <button class="ia-prev">‹</button>
+        <div class="ia-slides" id="iaSlides"></div>
+        <button class="ia-next">›</button>
+      </div>
+      <div class="ia-dots" id="iaDots"></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
