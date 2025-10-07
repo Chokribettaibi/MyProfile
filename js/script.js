@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
   let iaCurrent = 0;
   // list of images in img/IA (hardcoded from directory scan)
   const iaImages = [
-    'img/IA/1758926329517.jpg','img/IA/1758927872794.jpg','img/IA/1759083687387.jpg','img/IA/1759282248598.jpg','img/IA/1759286283343.jpg','img/IA/1759354605519.jpg','img/IA/1759356713338.jpg','img/IA/1759366258850.jpg','img/IA/1759440524386.jpg','img/IA/1759611641883.jpg','img/IA/1759612169330.jpg','img/IA/1759621013036.jpg','img/IA/IMG_20250926_232258.png','img/IA/file_0000000008806246a4516ad01916fc61.png','img/IA/file_000000000990620ab3ad95e282e9206a.png','img/IA/file_000000001274622f959587b762ab41d5.png','img/IA/file_000000007f9461fa9adb3182255bfa86.png','img/IA/file_00000000a1906246b272d813a9ba2984.png','img/IA/file_00000000c65c61f4ba5e7fc2640237d0.png','img/IA/file_00000000d2e06243b320d413da14b884.png','img/IA/file_00000000db646243b8de2897aac91b8b.png'
+    'img/IA/1759760683922.jpg','img/IA/1759755498453.jpg', 'img/IA/1758926329517.jpg','img/IA/1758927872794.jpg','img/IA/1759083687387.jpg','img/IA/1759282248598.jpg','img/IA/1759286283343.jpg','img/IA/1759354605519.jpg','img/IA/1759356713338.jpg','img/IA/1759366258850.jpg','img/IA/1759440524386.jpg','img/IA/1759611641883.jpg','img/IA/1759612169330.jpg','img/IA/1759621013036.jpg','img/IA/IMG_20250926_232258.png','img/IA/file_0000000008806246a4516ad01916fc61.png','img/IA/file_000000000990620ab3ad95e282e9206a.png','img/IA/file_000000001274622f959587b762ab41d5.png','img/IA/file_000000007f9461fa9adb3182255bfa86.png','img/IA/file_00000000a1906246b272d813a9ba2984.png','img/IA/file_00000000c65c61f4ba5e7fc2640237d0.png','img/IA/file_00000000d2e06243b320d413da14b884.png','img/IA/file_00000000db646243b8de2897aac91b8b.png'
   ];
 
   function buildIaCarousel(){
@@ -132,5 +132,17 @@ document.addEventListener('DOMContentLoaded', function(){
     slidesEl.addEventListener('touchend', ()=>{ if(Math.abs(deltaX) > 50){ if(deltaX < 0) show(current+1); else show(current-1); } });
     // initialize
     show(0);
+
+    // Auto-advance the carousel every 1000 seconds (1,000,000 ms)
+    const AUTO_ADVANCE_MS = 1000 * 1000; // 1000 seconds
+    let autoAdvanceId = setInterval(()=> show(current+1), AUTO_ADVANCE_MS);
+
+    // Pause auto-advance while the user hovers the carousel, resume on leave
+    carousel.addEventListener('mouseenter', ()=>{
+      if(autoAdvanceId){ clearInterval(autoAdvanceId); autoAdvanceId = null; }
+    });
+    carousel.addEventListener('mouseleave', ()=>{
+      if(!autoAdvanceId){ autoAdvanceId = setInterval(()=> show(current+1), AUTO_ADVANCE_MS); }
+    });
   }
 });
