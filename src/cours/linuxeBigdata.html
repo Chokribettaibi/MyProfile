@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesrc.css">
+</head>
+<body>
+    <h1 id="00-00-introduction">00:00 Introduction</h1>
+<h1 id="01-20-history-of-unix-linux">01:20 History of Unix/Linux</h1>
+<h1 id="29-55-linux-distributions">29:55 Linux Distributions</h1>
+<h1 id="48-45-installation">48:45 Installation</h1>
+<h1 id="56-17-basic-commands">56:17 Basic Commands</h1>
+<h1 id="01-29-07-text-files">01:29:07 Text Files</h1>
+<h1 id="01-42-55-unix-philosophy">01:42:55 Unix Philosophy</h1>
+<h1 id="02-06-53-more-on-text-files">02:06:53 More on Text Files</h1>
+<h1 id="02-09-45-terminal-vs-shell">02:09:45 Terminal vs Shell</h1>
+<h1 id="02-37-36-shell-expansion">02:37:36 Shell Expansion</h1>
+<h1 id="02-34-12-shell-variables">02:34:12 Shell Variables</h1>
+<blockquote>
+<p>Declaration d&#39;un variable sur le terminal</p>
+</blockquote>
+<pre><code class="lang-bash">var1=10
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$var1</span>
+10
+
+var3=$[1 + 2]
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$var3</span>
+3
+
+var4=$(date)
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$var4</span>
+Wed Mar 13 11:30:41 PM CDT 2024
+
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$USER</span>
+chokri-nasser
+
+<span class="hljs-built_in">echo</span> $?
+0
+
+popo commande errer
+<span class="hljs-built_in">echo</span> $?
+127
+</code></pre>
+<p>chane de commande
+exemple:</p>
+<pre><code class="lang-bash">echo <span class="hljs-symbol">$</span>var1; echo <span class="hljs-symbol">$</span>?
+<span class="hljs-number">10</span>
+<span class="hljs-number">0</span>
+
+<span class="hljs-keyword">set</span> 
+tout <span class="hljs-comment">les variabel</span>
+
+<span class="hljs-keyword">set</span> |<span class="hljs-comment"> grep var*</span>
+
+ps
+
+PID <span class="hljs-comment">TTY          TIME CMD</span>
+    9265 pts/<span class="hljs-number">0</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> bash
+   <span class="hljs-number">11310</span> pts/0    00:00:00 ps
+
+bash
+
+ps
+
+PID <span class="hljs-comment">TTY          TIME CMD</span>
+   9265 pts/<span class="hljs-number">0</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> bash
+  <span class="hljs-number">11479</span> pts/0    00:00:00 bash
+  11621 pts/<span class="hljs-number">0</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> ps
+</code></pre>
+<p>variable de <code>bash1</code> defirant <code>bash2</code></p>
+<p><code>export var1</code> var1 global variabl</p>
+<pre><code class="lang-bash">var1=4
+var2=5
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$var1</span> + <span class="hljs-variable">$var2</span>
+4 + 5
+
+<span class="hljs-built_in">echo</span> $((<span class="hljs-variable">$var1</span> + <span class="hljs-variable">$var2</span>))
+9
+
+<span class="hljs-built_in">declare</span> -i num1
+<span class="hljs-built_in">declare</span> -i num2
+num1=4
+num2=<span class="hljs-variable">$num1</span>*5
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$num2</span>
+20
+</code></pre>
+<p>expr</p>
+<pre><code class="lang-bash">expr <span class="hljs-number">1</span> + <span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+expr <span class="hljs-number">3</span> / <span class="hljs-number">4</span>
+<span class="hljs-number">0</span>
+expr <span class="hljs-number">3</span> \* <span class="hljs-number">4</span>
+<span class="hljs-number">12</span>
+expr <span class="hljs-number">3</span> \&gt; <span class="hljs-number">2</span>
+<span class="hljs-number">1</span>
+
+bc
+<span class="hljs-number">4</span> * <span class="hljs-number">5</span>
+<span class="hljs-number">20</span>
+quit
+</code></pre>
+<p>login ssh
+password</p>
+<pre><code class="lang-bas"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$0</span>
+-bash
+</code></pre>
+<p>nn login ssh</p>
+<pre><code class="lang-bas"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$0</span>
+bash
+</code></pre>
+<h1 id="03-07-32-pipes-filters-and-redirection">03:07:32 Pipes, Filters and Redirection</h1>
+<p>token</p>
+<h1 id="03-24-55-grep-command">03:24:55 grep command</h1>
+<p><code>grep ff00 /etc/hosts</code> :input: line content &quot;ff00&quot;,
+<code>grep ff00 -l /etc/hosts</code> :input: plasse folder,
+<code>grep ff00 -n /etc/hosts</code> :input: number of line content &quot;ff00&quot;</p>
+<blockquote>
+<p>filter file
+exemple file plus grande</p>
+</blockquote>
+<p><code>cat /var/log/syslog</code> =&gt; system log file.</p>
+<blockquote>
+<p>donc problem de rite
+alor on etulise le  commande <code>head</code></p>
+</blockquote>
+<p><code>head /var/log/syslog</code> =&gt; 10 prime line
+<code>head -n 5 /var/log/syslog</code> =&gt; 5 prime line
+<code>tail /var/log/syslog</code>
+existe autre comend <code>wc</code> worde conter.</p>
+<pre><code class="lang-bash">wc /etc/hosts
+<span class="hljs-number">9</span> <span class="hljs-number">25</span> <span class="hljs-number">219</span> /etc/hosts
+</code></pre>
+<p>explication
+exlication
+9p: line,
+25: word,
+219: character</p>
+<pre><code class="lang-bash">wc -l <span class="hljs-regexp">/etc/</span>hosts
+<span class="hljs-number">9</span> <span class="hljs-regexp">/etc/</span>hosts
+</code></pre>
+<pre><code class="lang-bash">wc -w <span class="hljs-regexp">/etc/</span>hosts
+<span class="hljs-number">25</span> <span class="hljs-regexp">/etc/</span>hosts
+</code></pre>
+<pre><code class="lang-bash">wc -c <span class="hljs-regexp">/etc/</span>hosts
+<span class="hljs-number">219</span> <span class="hljs-regexp">/etc/</span>hosts
+</code></pre>
+<p>Pipeng: &#39;|&#39;
+<code>head -n 50 /var/log/syslog | grep Inserted</code>
+explication: chercher &#39;Inserted&#39; don 50 premier line</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">"This is a test 123 !"</span>  | tr <span class="hljs-_">-d</span> <span class="hljs-string">'s'</span>
+Thi i a tet 123 !
+</code></pre>
+<p><code>echo &quot;Tis is a test 123 !&quot; | tr [i] [I]</code>standar autput:=&gt; <code>ThIs Is a test 123 !</code></p>
+<p><code>echo &quot;Tis is a test 123 !&quot; | tr -s &#39;s</code> =&gt; suprmer repetion de s</p>
+<p><code>echo &quot;Tis is a test 123 !&quot; | tr [a-z][A-Z]</code>:=&gt;<code>THIS IS A TEST 123 !</code></p>
+<p><code>echo &quot;Tis is a test 123 !&quot; | tr -d [:digt:]</code>=&gt;<code>This is a  !</code></p>
+<p><code>echo &quot;Tis is a test 123 !&quot; | tr [:digt:] &#39;z&#39;</code>=&gt;<code>This is a test zzz !</code></p>
+<p>[:lower:][ :upper:]</p>
+<h1 id="03-41-41-tr-and-cut-commands">03:41:41 tr and cut commands</h1>
+<h1 id="03-50-38-user-and-group-management">03:50:38 User and Group Management</h1>
+<h1 id="04-40-35-file-management">04:40:35 File Management</h1>
+<h1 id="04-58-53-filesystem-hierarchy-specifications-fhs-">04:58:53 Filesystem Hierarchy # Specifications (FHS)</h1>
+<h1 id="05-26-11-file-types-head-tail-more-less-mkdir-rmdir-rm">05:26:11 File types, head, tail, more, # less, mkdir, rmdir, rm</h1>
+<h1 id="05-36-34-finding-files">05:36:34 Finding files</h1>
+<h1 id="05-48-39-file-archive-and-compression">05:48:39 File Archive and Compression</h1>
+<h1 id="06-04-33-file-ownership-and-permissions">06:04:33 File Ownership and Permissions</h1>
+<h1 id="06-34-38-managing-linux-processes">06:34:38 Managing Linux Processes</h1>
+<h1 id="07-20-10-package-management">07:20:10 Package Management</h1>
+<h1 id="08-07-20-connecting-to-remote-servers-ssh-wget-curl-etc-">08:07:20 Connecting to Remote Servers # (ssh, wget, curl, etc.)</h1>
+<h1 id="09-21-50-introduction-to-shell-scripts">09:21:50 Introduction to Shell Scripts</h1>
+<h1 id="11-18-20-last-words">11:18:20 Last Words</h1>
+
+</body>
+</html>
