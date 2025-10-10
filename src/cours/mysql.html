@@ -7,58 +7,90 @@
     <link rel="stylesheet" href="../stylesrc.css">
 </head>
 <body>
-    <h1 id="mysql">mysql</h1>
-<p>install tools</p>
-<pre><code class="lang-linux">sudo apt <span class="hljs-keyword">install</span> apache2 php libapache2-<span class="hljs-keyword">mod</span>-php mysql-<span class="hljs-keyword">server</span> php-mysql
-
-
- sudo apt <span class="hljs-keyword">install</span> php-curl php-gd php-intl php-<span class="hljs-keyword">json</span> php-mbstring php-<span class="hljs-keyword">xml</span> php-zip
-
-  sudo apt <span class="hljs-keyword">install</span> phpmyadmin
-</code></pre>
-<p>SQL = Structured Query Language                                    &#39;The Language&#39;</p>
-<p>MySQL = Database System Same as [ MSSQL, Oracle ]  &#39;DB System Or Software&#39;</p>
-<p>RDBMS = Relational Database Management System</p>
-<p>MySQL Has Extensions To Connect To DB</p>
-<p>PDO : Extebsion Connect To Database</p>
+    <h1 id="git">Git</h1>
+<p>les commandes Git les plus impotantes:</p>
 <blockquote>
-<p><strong>mysql</strong>: start</p>
-<p>show databases;</p>
-<p><code>mysql -u root -pP0sswi0ed</code>, <code>-u</code> : user, <code>-p</code> : Password</p>
+<p><code>git init</code>: Crée un nouveau dépôt Git (repository) dans ton dossier. </p>
+<p><code>git clone[URL]</code>: Télécharge un projet GitHub vers ton PC.</p>
+<p><code>git status</code>: Montre les fichiers ou ajoutés depuis le dernier commit.</p>
+<p><code>git add [ficher]</code>: Prépare un fichier pour le prochain commit.(<code>git add .</code>: pour tout ajouter). \</p>
+<p><code>git commit -m &quot;message&quot;</code>: Sauvegarde les changements localment avec un message.(ex: <code>git commit -m &quot;Ajout du header et du footer&quot;</code> ). \</p>
+<p><code>git remote add origin[URL]</code>: lie ton dossier local à dépôt GitHub. (ex:<code>git remote add origin https://github.com/utilisateur/mon-projet.git</code>). \</p>
+<p><code>git push -u origin main</code>: Envoie ton code vers GitHub (branche&quot;main&quot;). \</p>
+<p><code>git pull</code>: Récupère les derniéres modifications depuis GitHub.</p>
 </blockquote>
-<pre><code class="lang-sql"><span class="hljs-keyword">show</span> <span class="hljs-keyword">variables</span> <span class="hljs-keyword">where</span> variable_name = <span class="hljs-string">'datadir'</span>;
-</code></pre>
-<p>Lancer XAMPP</p>
-<pre><code class="lang-linux"><span class="hljs-symbol">sudo</span> /<span class="hljs-meta">opt</span>/lampp/lampp start
-</code></pre>
-<p>Pour arrêter XAMPP</p>
-<pre><code class="lang-linux">sudo /<span class="hljs-keyword">opt</span>/lampp/lampp <span class="hljs-keyword">stop</span>
-</code></pre>
+<p>Résumé du cycke habituel d&#39;un développeur:</p>
+<p>1) Tu <strong>crées ou modifies</strong> ton code.
+1) Tu fais <code>git add .</code> pour <strong>préparer</strong> les fiches.
+1) Tu fais <code>git commit -m &quot;...&quot;</code> pour <strong>sauvgarder</strong> localement.
+1) Tu fais <code>git push</code> pour <strong>envoyer</strong> ton travail sur GitHub.
+1) Tu fais <code>git pull</code> pour <strong>récupérer</strong> les changements des autres.</p>
+<p>Exemple concret:
+<code>git init
+git add .
+git commit -m &quot;Premier commit&quot;
+git branch -M main
+git remote add origin https://github.com/ton-nom/mon-projet.git
+git push -u origin main</code></p>
+<h2 id="elziro">Elziro</h2>
 <blockquote>
-<p>localition
-exemple :</p>
+<p>git clone <a href="https://github.com/Elzero-Courses/Git_Course.git">https://github.com/Elzero-Courses/Git_Course.git</a>
+git status : ?
+git add</p>
+<p>git reset head <fille.ex> </p>
+<p>git commit -m &quot;Createed The main Project Structure&quot;</p>
+<p>git branch &gt; vu branche</p>
+<p>git push RemoteName BranchName</p>
+<p>git remote -v :?</p>
+<p>origin <a href="https://github.com/Elzero-Courses/Git_Course.git">https://github.com/Elzero-Courses/Git_Course.git</a> (fetch)</p>
+<p>origin <a href="https://github.com/Elzero-Courses/Git_Course.git">https://github.com/Elzero-Courses/Git_Course.git</a> (push)</p>
+<p>git push origin master</p>
+<p><img src="img/Screenshot%20from%202025-03-10%2021-42-27.png" alt="image"></p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>Variabel</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>datadir</td>
-<td>/var/lib/mysql</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> testdb;
-</code></pre>
+<hr>
+<hr>
+<hr>
+<h2 id="bigdata">BigData</h2>
+<ol>
+<li>git config --global user.name &quot;chokri bettaibi&quot;.</li>
+<li>git config --global user.email &quot;Bettaibichokrino001@gmail.com&quot;.</li>
+</ol>
+<p>adde the user for git</p>
+<p>(blob,tree,commit=pinter(:rapport))=&gt; object</p>
 <blockquote>
-<p>create data New database <strong>testdb</strong></p>
+<p>git config --list</p>
+<blockquote>
+<p>vu configiration</p>
 </blockquote>
-<pre><code class="lang-sql"><span class="hljs-keyword">use</span> <span class="hljs-title">testdb</span>;
-</code></pre>
+<p>git init</p>
+<blockquote>
+<p>add .git initiallaze this foder in git</p>
+</blockquote>
+<p>git status | git status -s</p>
+<blockquote>
+<p>trak fils en folder</p>
+</blockquote>
+<p>git ls-files</p>
+<blockquote>
+<p>trak fils en index</p>
+</blockquote>
+<p>git add | fil1 &amp; fil* &amp; ...</p>
+<blockquote>
+<p>file untrak to trak (y7athro)</p>
+</blockquote>
+<p>git ls-files -s</p>
+<blockquote>
+<p>ex: 100644 b7aec520ec0a7516c18eb64c68b64aeleb9b5a5e 0   file.txt &gt;&gt; shaOine code &gt; this fils trackt</p>
+</blockquote>
+<p>git commit -m</p>
+<blockquote>
+<p>intialial commit (first commit)</p>
+</blockquote>
+<p>git log</p>
+<blockquote>
+<p>infor deta</p>
+</blockquote>
+</blockquote>
 
 </body>
 </html>

@@ -330,6 +330,21 @@ element.classList.item("3"); // shw
 
 ```
 
+## setTimeout and clearTimeout
+
+BOM [Browser Object Model]
+
+>setTimeout(Function, Iimeout, Additional Params)
+>clearTimeout(Identifier)
+
+Exemple:
+
+```javaScript
+setTimeout(function(){
+    console.log(`Msg`)
+}, 3000);
+```
+
 ## 115 - Destructuring Arrays
 
 Destructuring: is a JavaScript experession that allows us to extract data from arrays, objects, and maps and set them into new, distinct variables.
