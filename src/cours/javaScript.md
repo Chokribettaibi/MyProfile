@@ -1,4 +1,4 @@
-# Learn JavaScript 
+# Learn JavaScript
 
 ## 023 - Number
 
@@ -10,7 +10,7 @@
 >> ```javaScript
 >> console.log(1000000);
 >> console.log(1_000_000);
->> console.log(1e6);
+>> console.log(1e6); 
 >> console.log(10 ** 6);
 >> console.log(1000000.0);
 >> ```
@@ -116,7 +116,7 @@ a.indexOf("Web", 8) // -1
 >> pop() Remove Last Element From Array
 >>
 
-## 066 - Arrow Function Syntax
+## 066 - Arrow Function Syntax 
 
 Arrow Function
 
@@ -251,7 +251,7 @@ DOM [Events]
   };
   ```
 
-```javascript
+ ```javascript
  let userInput = document.querySelector("[name='username']");
  let ageInput = document.querySelector("[name='age']");
  
@@ -270,7 +270,7 @@ DOM [Events]
         e.preventDefault();
     }
  }
-```
+ ```
 
 ## 094 - Event Simulation Click Focus Blur
 
@@ -301,14 +301,13 @@ one.onblur = function (){
 ## 095 - Class List Object And Methods
 
 DOM [Class List]
-
-> classList
-> -length
-> -contains
-> -item(index)
-> -add
-> -remove
-> -toggle
+>classList
+-length
+-contains
+-item(index)
+-add
+-remove
+-toggle
 
 HTML
 
@@ -328,21 +327,6 @@ element.classList.contains("two"); // true
 element.classList.item("3"); // shw
 
 
-```
-
-## setTimeout and clearTimeout
-
-BOM [Browser Object Model]
-
->setTimeout(Function, Iimeout, Additional Params)
->clearTimeout(Identifier)
-
-Exemple:
-
-```javaScript
-setTimeout(function(){
-    console.log(`Msg`)
-}, 3000);
 ```
 
 ## 115 - Destructuring Arrays
@@ -622,7 +606,6 @@ strTwo.constructor === String // true
 ## 152 - Class Static Properties And Methods
 
 Class
-
 > static Properties And Methods
 
 ```javascript
@@ -649,8 +632,7 @@ class User {
 ## 153 - Class Inheritance
 
 Class
-
-> Inheritance
+>Inheritance
 
 ```javascript
 class  User {
@@ -1015,7 +997,129 @@ Ajax
 [404] Not Found
 
 ```JavaScript
-consol.log('hello');
+let myRequest = new XMLHttpRequest();
+myRequest.open("GET", "https://api.github.com/users/elzero/resps", true /* mot de pass */)
+myRequest.send();
+
+myRequest.onreadystatechange = function (){
+    // console.log(myRequest.readyState);
+    // console.log(myRequest.status);
+    if (this.readyState === 4 && this.status === 200) {
+        console.log(this.responseText);
+    }
+}
+```
+
+## 178 - Loop On Data
+
+Search
+
+- Cross Origin API [CORS]
+- API Authentication
+
+```javaScript
+let myRequest = new XMLHttpRequest();
+myRequest.open("GET", "https://api.gethub.com/users/elzeero/repos");
+myRequest.send();
+myRequest.onreadystatechange = function (){
+    if(this.readyState === 4 && this.status === 200){
+        // console.log(this.responseText);
+        let jsData = JSON.parse(this.responseText);
+        // console.log(jsData);
+        for (let i = 0; i < jsData.length; i++){
+            let div = document.createElement("div");
+            let repoName = document.createTextNode(jsData[i].full_name);
+            div.appendChild(repoName);
+            document.body.appendChild(div);
+        }
+    }
+}
+```
+
+## 179 - Callback Hell Or Pyramid Of Domm
+
+To Understand Ajax, Fetch, Promises
+
+Pyramid Of Doom || Callback Hell
+
+- What Is Callback
+- Calback Hell Example
+
+What Is Callback
+
+- A Function That Is Passed Into Another One As An Argument To Be Executed Later
+- Function To Handle Photos.
+
+1-Download Photo From URL
+2-Resize Photo
+3-Add Logo To The Photo
+4-Show The Photo In Website
+
+```javaScript
+function makeItRed(e){
+    e.target.style.color = "red";
+}
+
+let p = document.querySelector(".test");
+p.addEventListener("click", makeItRed);
+
+function iamAcallback(){
+    console.log("Iam A Callback Function");
+}
+
+setTimeout(iamAcallback, 2000);
+
+setTimeout(() => {
+    console.log("Download Photo From URL");
+    setTimeout(() => {
+        console.log("Resize Poto");
+        setTimeout(() => {
+            console.log("Add logo To The Photo");
+            setTimeout(() = > {
+                console.log("Show The Photo In Website");
+            }, 4000);
+        }, 3000);
+    }, 2000);
+}, 1000);
+
+```
+
+## 180 - Promise Intro And Syntax
+
+Promis Intro And Syntax
+
+- Promise In JavaScript Is Like Promise In Real Life
+- Promise Is Something That Will Happen In The Future
+- Promise Avoid Calback Hell
+- Promise Is The Object That Represent The Status Of An Asynchronous Operation And Its Resulting Value
+
+- Promise Status
+- - *Pending*: Initial State
+- - *Fulfilled*: Completed Successfully
+- - *Rejected*: Failed
+
+- Story
+- - Once A Promise Has Been Called, It Will Start In A Pending State
+- - The Created Promise Will Eventually End In A Resolved State Or In A Rejected State
+- - Calling The Callback Functions (Passed To Then And Catch) Upon Finishing.
+
+- Then
+- - Takes 2 Optional Arguments [Callback For Success Or Failure]
+
+```javaScript
+const myPromise = new Promise((resolveFunction, rejectFunction)=> {
+    let connect = true;
+    if (connect){
+        resolveFunction("Connection Established");
+    } else {
+        rejectFunction(Error("Connection Failed"));
+    }
+}).then(
+    (resolveValue) => console.log(`Good ${resolveValue}`),
+    (rejectValue) => console.log(`Bad ${rejectValue}`)
+)
+
+console.log(myPromise);
 ```
 
 THe End.
