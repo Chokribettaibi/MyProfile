@@ -403,6 +403,28 @@ body {
 .course h3 {
   margin: 0 0 6px 0;
 }
+.application{
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: 12px;
+}
+.application h2 {
+  margin: 0 0 12px 0;
+}
+.application .content{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1.6;
+}
+.application .app-one, .app-fore, .app-two, .app-three{
+  background: rgba(255, 255, 255, 0.02);
+  padding: 14px;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(146, 20, 20, 0.02);
+}
 /* Responsive */
 @media (max-width: 880px) {
   .card {
