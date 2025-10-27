@@ -9,8 +9,9 @@
   --activityWarningBadge-background: #cca700;
   --max-width: 1100px;
   --actionBar-toggledBackground: #383a49;
-	--activityBar-activeBorder: #0078d4;
+  --activityBar-activeBorder: #0078d4;
   --editorGutter-addedBackground: #2ea043;
+  --akther: #369432;
   --editorGutter-deletedBackground: #f85149;
   --editorGutter-modifiedBackground: #0078d4;
 	--chat-editedFileForeground: #e2c08d;
@@ -180,6 +181,7 @@ h1,h2{
   padding: 40px 20px;
 } */
 .lang-javascript {
+	color: var(--editorGutter-modifiedBackground);
   background: #2d2d2d !important;
 }
 .hljs-selector-tag {
@@ -192,11 +194,26 @@ h1,h2{
   color: #ffb86c !important;
 }
 .lang-javaScript .hljs-keyword {
-  color: #ff79c6 !important;
+  color: var(--activityBar-activeBorder) !important;
 }
 .hljs-comment {
   color: var(--editorGutter-addedBackground) !important;
 }
 .hljs-number {
   color: var(--chat-editedFileForeground) !important;
+}
+p {
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+pre {
+  overflow-x: auto;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+code {
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  color: var(--activityWarningBadge-background);
 }
