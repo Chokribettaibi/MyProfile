@@ -629,7 +629,8 @@ body {
   color: var(--muted);
   line-height: 1.6;
 }
-.allbumExemple{
+.allbumExemple,
+.canvas{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -637,23 +638,26 @@ body {
   justify-content: space-around;
   margin-bottom: 20px;
 }
-.allbumExemple ul{
+.allbumExemple ul,
+.canvas ul{
   list-style: none;
   padding: 0;
   display: flex;
   gap: 15px;
 }
-.allbumExemple ul li{
+.allbumExemple ul li,
+.canvas ul li{
   background: var(--glass);
   padding: 10px;
   border-radius: 8px;
 }
-.allbumExemple ul li a{
+.allbumExemple ul li a,
+.canvas ul li a{
   text-decoration: none;
   color: var(--accent);
   font-weight: 600;
 }
-.allbumExemple ul li a:hover{
+.allbumExemple ul li a:hover,
+.canvas ul li a:hover{
   text-decoration: underline;
 }
-

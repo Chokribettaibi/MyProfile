@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesrc.css">
+  </head>
+  <body>
+    <div class="content">
+      <h1 id="typescript">TypeScript</h1>
+      <p>1) install <strong>Node.js</strong> and <strong>npm</strong></p>
+      <pre><code class="lang-Bash">sudo apt <span class="hljs-keyword">update</span>
+sudo apt <span class="hljs-keyword">install</span> nodejs npm
+</code></pre>
+      <ul>
+        <li><code>sudo apt update</code>: Updates your local package index.</li>
+        <li>
+          <code>sudo apt install nodejs npm</code>: Installs Node.js and npm.
+        </li>
+      </ul>
+      <p>verify Node.js and npm insstallation (Optional)</p>
+      <ul>
+        <li><code>node -v</code></li>
+        <li><code>npm -v</code></li>
+      </ul>
+      <p>2) instalatiion: <code>npm install -g typescript</code>.</p>
+      <ul>
+        <li>
+          <code>npm install</code>: The command to install an npm package.
+        </li>
+        <li><code>-g</code>: The flag for a global installation.</li>
+        <li><code>typescript</code>: The name of the package.</li>
+      </ul>
+      <p>verify TypeScript installation</p>
+      <ul>
+        <li><code>tsc -v</code>.</li>
+      </ul>
+      <h2 id="03-create-configuration-and-watch-filles">
+        03 - Create Configuration And Watch Filles
+      </h2>
+      <p>Compilation : <code>tsc index.ts</code></p>
+      <p>watch: <code>tsc -w index.ts</code></p>
+      <p>helpe: <code>tsc -h</code></p>
+      <p><code>tsc --init</code>: file tsconfig contian:</p>
+      <p>
+        <code>&quot;target&quot;: &quot;es2016&quot;</code>:
+        <code>&quot;rootDir&quot;: &quot;./src&quot;</code>: adress file
+        compiler <code>&quot;outDir&quot;: &quot;./dist&quot;</code>: adres
+        output
+      </p>
+      <p><code>tsc</code> <code>tsc -w</code></p>
+      <h2 id="04-statically-vs-dynamically-typed-lang">
+        04 - Statically vs Dynamically Typed Lang
+      </h2>
+      <p>Statically Typed Language Like [Rut, C, C++]</p>
+      <blockquote>
+        <p>
+          Variables Types Are Static, Once You Declare It You Cannot Change.\
+          Type Of A Variable Is Known At Compile Time &quot;Do Type Checking At
+          Compile-Time&quot;.\
+        </p>
+        <blockquote>
+          <p>
+            Have Better Performance At Run-Time Due To Not Needing To Check
+            Types Dynamically. Error Detected Earlier
+          </p>
+        </blockquote>
+      </blockquote>
+      <p>Dynamically Typed Language Like [PHP, Python, JavaScript]</p>
+      <blockquote>
+        <p>
+          Variables Type Are Dynamic, You Can Always Change It.\ &quot;Type
+          Checking At Execution-Time&quot;.\ Error Can Be Detected After
+          Execution
+        </p>
+      </blockquote>
+      <h2 id="05-type-annotations-and-any-data-type">
+        05 - Type Annotations And Any Data Type
+      </h2>
+      <p>Type Annotations || Signature</p>
+      <blockquote>
+        <p>
+          Indicate The Data Type Of Variables.\ Indicate The Data Type Of
+          Functions Input/Output.\ Objects, etc.
+        </p>
+      </blockquote>
+      <p>Why We Use It? Is It Mandatory? What Happen If We Didnt Use It?</p>
+      <pre><code class="lang-TypeScript"><span class="hljs-keyword">let</span> <span class="hljs-attr">theName</span> = <span class="hljs-string">"Jone"</span>;
+<span class="hljs-keyword">let</span> theAge: <span class="hljs-attr">number</span> = <span class="hljs-number">40</span>;
+<span class="hljs-keyword">let</span> hire: <span class="hljs-attr">boolean</span> = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">let</span> all: <span class="hljs-attr">any</span> = <span class="hljs-string">"Web School"</span>;
+
+<span class="hljs-attr">theNalme</span> = <span class="hljs-string">"Osama"</span>;
+<span class="hljs-attr">all</span> = <span class="hljs-number">100</span>;
+</code></pre>
+      <h2 id="06-type-annotations-with-multidimension">
+        06 - Type Annotations With Multidimension
+      </h2>
+      <p>Type Annotations With Multidimension Arrays</p>
+      <p>
+        ```TypeScript let arrayOne: number[] = [1, 2, 3, 4, 5]; let arrayTwo:
+        string[] = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]; let
+        arrayThree:(string | number)[] = [1, 2, 3, &quot;A&quot;, &quot;B&quot;,
+        &quot;C&quot;]
+      </p>
+    </div>
+  </body>
+</html>

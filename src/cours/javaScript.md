@@ -493,6 +493,30 @@ Array Methods
 >>>
 >>
 
+## 132 - Spread Syntax And Use Cases
+
+Spread Operator => ...Iterable
+"Allow Iterable To Expand In Place"
+
+>Spread With String => Expand String
+
+```javaScript
+console.log("Osama"); // Osama
+console.log(..."Osama"); // O s a m a
+console.log([..."Osama"]); // ["O", "s", "a", "m", "a"]
+```
+
+>Concatenate Arrays
+
+```javaScript
+let myArray1 = [1, 2, 3];
+let myArray2 = [4, 5, 6];
+
+let allArrays = [...myArray1, ...myArray2];
+
+console.log(allArrays); // [1, 2, 3, 4, 5, 6]
+```
+
 ## 148 - Constructor Function Introduction
 
 syntaxe:
@@ -1120,6 +1144,29 @@ const myPromise = new Promise((resolveFunction, rejectFunction)=> {
 )
 
 console.log(myPromise);
+```
+
+## 181 - Promise - Then, Catch And Finally
+
+Promise Training
+
+We will Go To The Meeting, Promise Me That We Find The 4 Employeess
+
+- then(We Will Choose Two People)
+- then(We Will Test Them Then Get One Of Then)
+- catch(No One Came)
+
+Then => Promise Is Successfull Use The Resolved Data
+Catch => Promise Is Failed, Catch The Error
+Finally => Promise Successfull Or Filed Finally Do Something
+
+```javaScript
+const myPromise = new Promise((resolveFunction, rejectFunction) => {});
+
+myPromise.then(
+    (resolveValue) => console.log(`${resolveValue}`),
+    (rejectValue) => console.log(`${rejectValue}` )
+);
 ```
 
 THe End.
