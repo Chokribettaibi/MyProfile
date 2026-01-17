@@ -4,36 +4,135 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../stylesrc.css" />
   </head>
   <body>
     <div class="container">
-      <h1 id="learn-javascript">Learn JavaScript</h1>
-      <h2 id="023-number">023 - Number</h2>
-      <blockquote>
-        <p><strong>Number</strong></p>
-        <blockquote>
-          <p>
-            Double Precision (recherche internet) Syntactic Sugar &quot;_&quot;
-            .
-          </p>
-          <pre><code class="lang-javaScript"><span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1000000);
-<span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1_000_000);
-<span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1<span class="hljs-selector-tag">e6</span>);
-<span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(10 ** 6);
-<span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1000000<span class="hljs-selector-class">.0</span>);
-</code></pre>
-          <p>e ** With Decimal Number Min Value</p>
-          <pre><code class="lang-javaScript">Number<span class="hljs-selector-class">.MAX_SAFE_INTEGER</span> <span class="hljs-comment">// "9007199254740991"</span>
-</code></pre>
-          <p>Number Max Value</p>
-        </blockquote>
-      </blockquote>
-      <pre><code class="lang-javaScript">Number<span class="hljs-selector-class">.MAX_VALUE</span> <span class="hljs-comment">// "1.7976931348623157e+308";</span>
-Number<span class="hljs-selector-class">.MAX_VALUE</span> + <span class="hljs-number">2035</span> = Number<span class="hljs-selector-class">.MAX_VALUE</span> <span class="hljs-comment">// "Number.MAX_VALUE"</span>
-</code></pre>
-      <h2 id="024-number-methodes">024 - Number Methodes</h2>
-      <h2 id="025-math-object">025 Math Object</h2>
+      <!-- Secend Nav Barr -->
+
+      <!-- End Secend Nav Barr -->
+      <nav class="navbar bg-body-tertiary fixed-top" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">JavaScript</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                JavaScript
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Number Methods</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Math Object</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">String Methos</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Arry Introduction
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Exercice</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <!-- Forme Serche -->
+              <!-- <form class="d-flex mt-3" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form> -->
+              <!-- End Serche Forme -->
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main class="pt-4">
+        <h1 id="learn-javascript">Learn JavaScript</h1>
+        <div class="box23 border border-primary">
+          <h2 id="023-number">023 - Number</h2>
+          <blockquote>
+            <p><strong>Number</strong></p>
+            <p>
+              Double Precision (recherche internet) Syntactic Sugar
+              &quot;_&quot; .
+            </p>
+            <blockquote>
+              <pre><code class="lang-javaScript"><span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1000000);
+    <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1_000_000);
+    <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1<span class="hljs-selector-tag">e6</span>);
+    <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(10 ** 6);
+    <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1000000<span class="hljs-selector-class">.0</span>);
+    </code></pre>
+              <p>e ** With Decimal Number Min Value</p>
+              <pre><code class="lang-javaScript">Number<span class="hljs-selector-class">.MAX_SAFE_INTEGER</span> <span class="hljs-comment">// "9007199254740991"</span>
+    </code></pre>
+              <p>Number Max Value</p>
+            </blockquote>
+          </blockquote>
+          <pre><code class="lang-javaScript">Number<span class="hljs-selector-class">.MAX_VALUE</span> <span class="hljs-comment">// "1.7976931348623157e+308";</span>
+    Number<span class="hljs-selector-class">.MAX_VALUE</span> + <span class="hljs-number">2035</span> = Number<span class="hljs-selector-class">.MAX_VALUE</span> <span class="hljs-comment">// "Number.MAX_VALUE"</span>
+    </code></pre>
+        </div>
+        <div class="box24 border border-primary">
+          <h2 id="024-number-methodes">024 - Number Methodes</h2>
+
+        </div>
+        <div class="box25 border border-primary">
+                <h2 id="025-math-object">025 Math Object</h2>
       <blockquote>
         <p>round, ceil, floor, main, max, pow, random, trunc [Es6]</p>
       </blockquote>
@@ -53,6 +152,18 @@ Math.random(); <span class="hljs-comment">// aliatoire</span>
 Math.trunc(<span class="hljs-number">99.5</span>); <span class="hljs-comment">// 99</span>
 Math.trunc(<span class="hljs-number">99.99</span>); <span class="hljs-comment">// 99</span>
 </code></pre>
+        </div>
+        <div class="box26 border border-primary"></div>
+        <div class="box27 border border-primary"></div>
+        <div class="box28 border border-primary"></div>
+        <div class="box29 border border-primary"></div>
+        <div class="box30 border border-primary"></div>
+        <div class="box31 border border-primary"></div>
+        <div class="box32 border border-primary"></div>
+      </main>
+    </div>
+    <div class="container">
+
       <h2 id="27-string-methods">27 - String Methods</h2>
       <blockquote>
         <p>
@@ -921,5 +1032,7 @@ Web API
 </code></pre>
       <p>THe End.</p>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
