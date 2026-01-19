@@ -418,7 +418,7 @@ body {
   justify-content: center;
   line-height: 1.6;
 }
-.application .app-one, .app-fore, .app-two, .app-three{
+.application .app-one, .app-fore, .app-two, .app-three, .app-five{
   background: rgba(255, 255, 255, 0.02);
   padding: 14px;
   gap: 10px;
