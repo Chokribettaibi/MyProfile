@@ -28,12 +28,7 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div
-            class="offcanvas offcanvas-end"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
                 JavaScript
@@ -56,7 +51,7 @@
                   <a class="nav-link" href="#">Math Object</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">String Methos</a>
+                  <a class="nav-link" href="#">String Methods</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -73,6 +68,37 @@
                     <li>
                       <a class="dropdown-item" href="#">Another action</a>
                     </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Exercice</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Number et dates
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Number</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">BigInt</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Math</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Date</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Temporal</a>
                     <li>
                       <hr class="dropdown-divider" />
                     </li>
@@ -159,7 +185,355 @@ Math.trunc(<span class="hljs-number">99.99</span>); <span class="hljs-comment">/
         <div class="box29 border border-primary"></div>
         <div class="box30 border border-primary"></div>
         <div class="box31 border border-primary"></div>
-        <div class="box32 border border-primary"></div>
+        <div class="box32 border border-primary">
+          <div class="reference">
+            <h3>Objets natifs</h3>
+            <h4>Propriétés de valeur</h4>
+            <ul>
+              <li>globalThis</li>
+              <li>Infinity</li>
+              <li>NaN</li>
+              <li>undefined</li>
+            </ul>
+            <h4>Propriétés de fonction</h4>
+            <ul>
+              <li>eval()</li>
+              <li>isFinite()</li>
+              <li>isNaN()</li>
+            </ul>
+            <h4>Propriétés de fonction</h4>
+            <ul>
+              <li>parseFloat()</li>
+              <li>parseInt()</li>
+              <li>decodeURI()</li>
+              <li>decodeURIComponent()</li>
+              <li>encodeURI()</li>
+              <li>encodeURIComponent()</li>
+              <li>escape() Obsolète</li>
+              <li>unescape() Obsolète</li>
+            </ul>
+            <h4>Objets fondamentaux</h4>
+            <ul>
+              <li>Object</li>
+              <li>Function</li>
+              <li>Boolean</li>
+              <li>Symbol</li>
+            </ul>
+            <h4>Objets d'erreur</h4>
+            <ul>
+              <li>Error</li>
+              <li>AggregateError</li>
+              <li>EvalError</li>
+              <li>RangeError</li>
+              <li>ReferenceError</li>
+              <li>SuppressedError</li>
+              <li>SyntaxError</li>
+              <li>TypeError</li>
+              <li>URIError</li>
+              <li>InternalError Non standard</li>
+            </ul>
+            <h4>Nombres et dates</h4>
+            <ul>
+              <li>Number</li>
+              <li>BigInt</li>
+              <li>Math</li>
+              <li>Date</li>
+              <li>Temporal</li>
+            </ul>
+            <h4>Traitement du texte</h4>
+            <ul>
+              <li>String</li>
+              <li>RegExp</li>
+            </ul>
+            <h4>Collections indexées</h4>
+            <ul>
+              <li>Array</li>
+              <li>Int8Array</li>
+              <li>Uint8Array</li>
+              <li>Uint8ClampedArray</li>
+              <li>Int16Array</li>
+              <li>Uint16Array</li>
+              <li>Int32Array</li>
+              <li>Uint32Array</li>
+              <li>BigInt64Array</li>
+              <li>BigUint64Array</li>
+              <li>Float16Array</li>
+              <li>Float32Array</li>
+              <li>Float64Array</li>
+            </ul>
+            <h4>Collections avec clés</h4>
+            <ul>
+              <li>Map</li>
+              <li>Set</li>
+              <li>WeakMap</li>
+              <li>WeakSet</li>
+            </ul>
+            <h4>Données structurées</h4>
+            <ul>
+              <li>ArrayBuffer</li>
+              <li>SharedArrayBuffer</li>
+              <li>DataView</li>
+              <li>Atomics</li>
+            </ul>
+            <h4>JSON</h4>
+            <ul>
+              <li>JSON</li>
+            </ul>
+            <h4>Gestion de la mémoire</h4>
+            <ul>
+              <li>WeakRef</li>
+              <li>FinalizationRegistry</li>
+            </ul>
+            <h4>Abstraction du contrôle</h4>
+            <ul>
+              <li>Iterator</li>
+              <li>AsyncIterator</li>
+              <li>Promise</li>
+              <li>GeneratorFunction</li>
+              <li>AsyncGeneratorFunction</li>
+              <li>Generator</li>
+              <li>AsyncGenerator</li>
+              <li>AsyncFunction</li>
+              <li>DisposableStack</li>
+              <li>AsyncDisposableStack</li>
+              <li>Réflexion</li>
+              <li>Reflect</li>
+              <li>Proxy</li>
+              <li>Internationalisation</li>
+              <li>Intl</li>
+              <li>Intl.Collator</li>
+              <li>Intl.DateTimeFormat</li>
+              <li>Intl.DisplayNames</li>
+              <li>Intl.DurationFormat</li>
+              <li>Intl.ListFormat</li>
+              <li>Intl.Locale</li>
+              <li>Intl.NumberFormat</li>
+              <li>Intl.PluralRules</li>
+              <li>Intl.RelativeTimeFormat</li>
+              <li>Intl.Segmenter</li>
+              <li>Instructions</li>
+            </ul>
+            <h3>Instructions et déclarations JavaScript</h3>
+            <p>Contrôle du flux d'exécution</p>
+            <ul>
+              <li>return</li>
+              <li>break</li>
+              <li>continue</li>
+              <li>throw</li>
+              <li>if...else</li>
+              <li>switch</li>
+              <li>try...catch</li>
+            </ul>
+            <p>Déclarations de variables</p>
+            <ul>
+              <li>var</li>
+              <li>let</li>
+              <li>const</li>
+              <li>using</li>
+              <li>await using</li>
+            </ul>
+            <h4>Fonctions et classes</h4>
+            <ul>
+              <li>function</li>
+              <li>function*</li>
+              <li>async function</li>
+              <li>async function*</li> 
+              <li>class</li>
+            </ul>
+            <h4>Itérations</h4>
+            <ul>
+              <li>do...while</li>
+              <li>for</li>
+              <li>for...in</li>
+              <li>for...of</li>
+              <li>for await...of</li>
+              <li>while</li>
+              <li>Autres</li>
+              <li>Vide</li>
+              <li>Bloc</li>
+              <li>Instruction d'expression</li>
+              <li>debugger</li>
+              <li>export</li>
+              <li>import</li>
+              <li>label</li>
+              <li>with Obsolète</li>
+            </ul>
+            <h4>Expressions et opérateurs</h4>
+            <p>Expressions et opérateurs JavaScript.</p>
+            <h4>Expressions primaires</h4>
+            <ul>
+              <li>this</li>
+              <li>Litéraux</li>
+              <li>[]</li>
+              <li>{}</li>
+            </ul>
+            <h4>Function</h4>
+            <ul>
+              <li>function</li>
+              <li>class</li>
+              <li>function*</li>
+              <li>async function</li>
+              <li>async function*</li>
+              <li>/ab+c/i</li>
+              <li>`string`</li>
+              <li>( )</li>
+            </ul>
+            <h3>Expressions vers la gauche</h3>
+            <ul>
+              <li>Accesseurs de propriété</li>
+              <li>?.</li>
+              <li>new</li>
+              <li>new.target</li>
+              <li>import.meta</li>
+              <li>super</li>
+              <li>import()</li>
+            </ul>
+            <h3>Increment & decrement</h3>
+            <ul>
+              <li>A++</li>
+              <li>A--</li>
+              <li>++A</li>
+              <li>--A</li>
+            </ul>
+            <h3>Opérateurs unaires</h3>
+            <ul>
+              <li>+</li>
+              <li>-</li>
+              <li>~</li>
+              <li>!</li>
+              <li>await</li>
+            </ul>
+            <h3>Opérateurs arithmétiques</h3>
+            <ul>
+              <li>**</li>
+              <li>*</li>
+              <li>/</li>
+              <li>%</li>
+              <li>+ (Plus)</li>
+              <li>-</li>
+              <li>~</li>
+              <li>!</li>
+            </ul>
+            <p>await</p>
+            <h3>Opérateurs arithmétiques</h3>
+            <ul>
+              <li>**</li>
+              <li>*</li>
+              <li>/</li>
+              <li>%</li>
+              <li>+ (Plus)</li>
+              <li>-</li>
+              <li>~</li>
+              <li>!</li>
+            </ul>
+            <p>await</p>
+            <h3>Opérateurs arithmétiques</h3>
+            <ul>
+              <li>**</li>
+              <li>*</li>
+              <li>/</li>
+              <li>%</li>
+              <li>+ (Plus)</li>
+              <li>-</li>
+              <li>~</li>
+              <li>!</li>
+            </ul>
+            <p>await</p>
+            <h3>Opérateurs arithmétiques</h3>
+            <ul>
+              <li>**</li>
+              <li>*</li>
+              <li>/</li>
+              <li>%</li>
+              <li>+ (Plus)</li>
+              <li>-</li>
+              <li>~</li>
+              <li>!</li>
+              <li>await</li>
+            </ul>
+            <h3>Opérateurs d'égalité</h3>
+            <ul>
+              <li>==</li>
+              <li>!=</li>
+              <li>===</li>
+              <li>!==</li>
+            </ul>
+            <h3>Opérateurs de décalage binaire</h3>
+            <ul>
+              <li>&lt;&lt;</li>
+              <li>&gt;&gt;</li>
+              <li>&gt;&gt;&gt;</li>
+            </ul>
+            <h3>Opérateurs logiques binaires</h3>
+            <ul>
+              <li>&amp;</li>
+              <li>|</li>
+              <li>^</li>
+            </ul>
+            <h3>Opérateurs logiques</h3>
+            <ul>
+              <li>&amp;&amp;</li>
+              <li>||</li>
+              <li>??</li>
+            </ul>
+            <h3>Opérateur conditionnel (opérateur ternaire)</h3>
+            <p>(condition ? ifTrue : ifFalse)</p>
+            <h3>Opérateurs d'affectation</h3>
+            <ul>
+              <li>=</li>
+              <li>*=</li>
+              <li>/=</li>
+              <li>%=</li>
+              <li>+=</li>
+              <li>-=</li>
+              <li>&lt;&lt;=</li>
+              <li>&gt;&gt;=</li>
+              <li>&gt;&gt;&gt;=</li>
+              <li>&amp;=</li>
+              <li>^=</li>
+              <li>|=</li>
+              <li>**=</li>
+              <li>&amp;&amp;=</li>
+              <li>||=</li>
+              <li>??=</li>
+              <li>{a, b} = {a:1, b:2}</li>
+            </ul>
+            <h3>Opérateurs de génération</h3>
+            <ul>
+              <li>yield</li>
+              <li>yield*</li>
+            </ul>
+            <h3>Syntaxe de déploiement</h3>
+            <ul>
+              <li>...obj</li>
+            </ul>
+            <h3>Opérateur virgule</h3>
+            <p>,</p>
+            <h3>Fonctions</h3>
+            <p>Les fonctions JavaScript</p>
+            <h3>Fonctions fléchées</h3>
+            <p>Paramètres par défaut</p>
+            <ul>
+              <li>Paramètres rest</li>
+              <li>arguments</li>
+              <li>Définitions de méthodes</li>
+              <li>Accesseur</li>
+              <li>Mutateur</li>
+            </ul>
+            <h3>Classes</h3>
+            <p>Classes JavaScript</p>
+            <ul>
+              <li>constructor</li>
+              <li>extends</li>
+              <li>Éléments privés</li>
+              <li>Champs de classe publics</li>
+              <li>static</li>
+              <li>Blocs d'initialisation statique</li>
+              <li>Expressions régulières</li>
+              <li>Expressions régulières JavaScript</li>
+            </ul>
+          </div>
+        </div>
       </main>
     </div>
     <div class="container">
