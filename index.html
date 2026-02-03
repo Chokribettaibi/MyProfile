@@ -12,187 +12,130 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Navbar (Bootstrap) -->
-    <nav class="navbar navbar-expand-lg navbar-dark site-nav">
-      <div class="container">
-        <a class="navbar-brand" href="#">Bettaibi Chokri</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Basculer la navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#courses">Cours</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#application">My application</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <main class="hero">
-      <div class="card">
-        <div class="profile">
-          
-          <!-- <button type="button" class="btn-close" aria-lable="close"></button> -->
-          <!-- End Carousel -->
-          <!-- Carousel  -->
-          <div
-            class="carousel"
-            role="region"
-            aria-roledescription="carousel"
-            aria-label="Galerie de photos"
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark site-nav">
+        <div class="container">
+          <a class="navbar-brand" href="#">Bettaibi Chokri</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Basculer la navigation"
           >
-            <div class="slides">
-              <div class="slide" data-index="1">
-                <img
-                  src="./img/1759611046285.png"
-                  alt="Portrait du professeur - photo 2"
-                  class="photo"
-                />
-              </div>
-              <div class="slide" data-index="4">
-                <img
-                  src="./img/IMG_20251022_005827.png"
-                  alt="Portrait du professeur - photo 5"
-                  class="photo"
-                />
-              </div>
-              <div class="slide" data-index="0">
-                <img
-                  src="./img/1759430992709.jpg"
-                  alt="Portrait du professeur - photo 1"
-                  class="photo"
-                />
-              </div>
-              <div class="slide" data-index="2">
-                <img
-                  src="./img/1760734199998.jpg"
-                  alt="Portrait du professeur - photo 3"
-                  class="photo"
-                />
-              </div>
-              <div class="slide" data-index="3">
-                <img
-                  src="./img/IMG_20251005_224139.png"
-                  alt="Portrait du professeur - photo 4"
-                  class="photo"
-                />
-              </div>
-            </div>
-            <button class="carousel-btn prev" aria-label="Photo précédente">
-              ‹
-            </button>
-            <button class="carousel-btn next" aria-label="Photo suivante">
-              ›
-            </button>
-            <div class="dots" role="tablist"></div>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#courses">Cours</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#application">My application</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
           </div>
-          <!-- End Carousel -->
         </div>
-        <div class="info">
-          <h1 class="name">Développeur et Mathématicien</h1>
-          <p class="role">Enseignant · Mentor · Développeur</p>
-          <p class="tagline">
-            J'aide les étudiants à comprendre les concepts mathématiques
-            profonds et à construire des applications modernes en code propre et
-            testé.
-          </p>
+      </nav>
 
-          <ul class="skills">
-            <li>Mathématiques appliquées & théoriques</li>
-            <li>
-              <a href="src/cours/javaScript.html">JavaScript</a>,
-              <a href="">HTML</a>, <a href="">C++</a>,<a href="">MySQL</a>
-            </li>
-            <li>
-              <a href="src/cours/javaScript.md">JavaScript md</a>,
-              <a href="">HTML</a>, <a href="src/cours/css.html">CSS</a>,<a
-                href=""
-                >MySQL</a
-              >
-            </li>
-            <li>Algorithmique & structures de données</li>
-            <li>Architecture logicielle & bonnes pratiques</li>
-            <li></li>
-          </ul>
-
-          <div class="actions">
-            <a href="#contact" class="btn primary" id="contactBtn">Contacter</a>
-            <a href="page/cours.html" class="btn ghost">Voir les cours</a>
+    </header>
+    <!-- Navbar (Bootstrap) -->
+    <main class="hero">
+      <section>
+        <div class="card">
+          <div class="profile">
+            
+            <div
+              class="carousel"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Galerie de photos"
+            >
+              <div class="slides">
+                <div class="slide" data-index="1">
+                  <img
+                    src="./img/1759611046285.png"
+                    alt="Portrait du professeur - photo 2"
+                    class="photo"
+                  />
+                </div>
+                <div class="slide" data-index="4">
+                  <img
+                    src="./img/IMG_20251022_005827.png"
+                    alt="Portrait du professeur - photo 5"
+                    class="photo"
+                  />
+                </div>
+                <div class="slide" data-index="0">
+                  <img
+                    src="./img/1759430992709.jpg"
+                    alt="Portrait du professeur - photo 1"
+                    class="photo"
+                  />
+                </div>
+                <div class="slide" data-index="2">
+                  <img
+                    src="./img/1760734199998.jpg"
+                    alt="Portrait du professeur - photo 3"
+                    class="photo"
+                  />
+                </div>
+                <div class="slide" data-index="3">
+                  <img
+                    src="./img/IMG_20251005_224139.png"
+                    alt="Portrait du professeur - photo 4"
+                    class="photo"
+                  />
+                </div>
+              </div>
+              <button class="carousel-btn prev" aria-label="Photo précédente">
+                ‹
+              </button>
+              <button class="carousel-btn next" aria-label="Photo suivante">
+                ›
+              </button>
+              <div class="dots" role="tablist"></div>
+            </div>
+            <!-- End Carousel -->
           </div>
-
-          <div id="contact" class="contact-card">
-            <h3>Contact</h3>
-            <p>
-              Email: <span id="email">Bettaibichokrino001@gmail.com</span>
-              <button id="copyBtn" title="Copier l'email">Copier</button>
+          <div class="info">
+            <h1 class="name">Développeur et Mathématicien</h1>
+            <p class="role">Enseignant · Mentor · Développeur</p>
+            <p class="tagline">
+              J'aide les étudiants à comprendre les concepts mathématiques
+              profonds et à construire des applications modernes en code propre et
+              testé.
             </p>
-            <p>Téléphone: +216 98 104 699</p>
-            <div class="socials">
-              <a
-                class="social-btn fb"
-                href="https://www.facebook.com/cbettaibi"
-                target="_blank"
-                rel="noopener"
-                aria-label="Facebook"
-              >
-                <!-- Facebook SVG -->
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
+  
+            <ul class="skills">
+              <li>Mathématiques appliquées & théoriques</li>
+              <li>
+                <a href="src/cours/javaScript.html">JavaScript</a>,
+                <a href="">HTML</a>, <a href="">C++</a>,<a href="">MySQL</a>
+              </li>
+              <li>
+                <a href="src/cours/javaScript.md">JavaScript md</a>,
+                <a href="">HTML</a>, <a href="src/cours/css.html">CSS</a>,<a
+                  href=""
+                  >MySQL</a
                 >
-                  <path
-                    d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.99H7.898v-2.888h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.444 2.888h-2.329v6.99C18.343 21.128 22 16.991 22 12z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <span>Facebook</span>
-              </a>
-              <a
-                class="social-btn wa"
-                href="https://wa.me/21622949285"
-                target="_blank"
-                rel="noopener"
-                aria-label="WhatsApp"
-              >
-                <!-- WhatsApp SVG -->
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M20.52 3.48A11.86 11.86 0 0 0 12 .5C6  .5 1.1 5.4 1.1 11.4c0 2.02.53 3.94 1.54 5.66L.5 23.5l6.8-1.77A11.86 11.86 0 0 0 12 22.3c6 0 10.9-4.9 10.9-10.9 0-2.92-1.14-5.64-3.38-7.92zM12 20c-1.6 0-3.16-.42-4.5-1.2l-.32-.19-4.04 1.05 1.08-3.93-.21-.34A8.02 8.02 0 0 1 4 11.4c0-4.42 3.58-8 8-8s8 3.58 8 8-3.6 8-8 8z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <span>WhatsApp</span>
-              </a>
-            </div>
+              </li>
+              <li>Algorithmique & structures de données</li>
+              <li>Architecture logicielle & bonnes pratiques</li>
+              <li></li>
+            </ul>
+  
+            
           </div>
         </div>
-      </div>
+
+      </section>
 
       <section id="courses" class="courses">
         <h2>Cours & Ateliers</h2>
@@ -235,38 +178,54 @@
         </div>
       </section>
 
-      <section id="application" class="application">
+      <section id="application" class="application text-center">
         <h2>My Application</h2>
         <div class="content">
-          <div class="app-one">
+          <div class="cardApp">
             <p>Controle Caisse Aziza</p>
-            <a href="https://chokribettaibi.github.io/ControleCaissiereAzizaa/"
-              >Voir app</a
-            >
+            <button class="btn btn-outline-primary">
+              <a class="text-white" href="https://chokribettaibi.github.io/ControleCaissiereAzizaa/"
+                >Voir app</a
+              >
+            </button>
           </div>
-          <div class="app-two">
+          <div class="cardApp">
             <p>exhaustif Aziza</p>
-            <a href="https://chokribettaibi.github.io/exxhaustif-a-t-22.08.24/"
-              >Voir app</a
-            >
+            <button class="btn btn-outline-primary">
+              <a class="text-white" href="https://chokribettaibi.github.io/exxhaustif-a-t-22.08.24/"
+              >Voir app</a>
+            </button>
           </div>
-          <div class="app-three">
+          <div class="cardApp">
             <p>Détails Reparation</p>
-            <a href="https://chokribettaibi.github.io/D-tails_R-paration/"
-              >Voir app</a
-            >
+            <button class="btn btn-outline-primary">
+              <a class="text-white" href="https://chokribettaibi.github.io/D-tails_R-paration/"
+                >Voir app</a>
+            </button>
           </div>
-          <div class="app-fore">
+          <div class="cardApp">
             <p>Small Aplication Stock</p>
-            <a href="https://chokribettaibi.github.io/Small_Application_Stock/"
-              >Voir app</a
-            >
+            <button class="btn btn-outline-primary">
+              <a class="text-white" href="https://chokribettaibi.github.io/Small_Application_Stock/"
+                >Voir app</a
+              >
+            </button>
           </div>
-          <div class="app-five">
+          <div class="cardApp">
             <p>AppPotentatPro</p>
-            <a href="https://chokribettaibi.github.io/AppPotentatPro/"
-              >Voir app</a
-            >
+            <button class="btn btn-outline-primary">
+              <a class="text-white" href="https://chokribettaibi.github.io/AppPotentatPro/"
+                >Voir app</a>
+
+            </button>
+        </div>
+        <div class="cardApp">
+            <p>Model Phone</p>
+            <button class="btn btn-outline-primary">
+              <a class="text-white" href="https://chokribettaibi.github.io/Small_Application_Stock01/"
+                >Voir app</a>
+
+            </button>
         </div>
       </section>
 
@@ -311,7 +270,69 @@
         <div class="ia-dots" id="iaDots"></div>
       </div>
     </div>
-
+    <footer class="text-center m-2 p-2">
+      <div class="actions text-center">
+              <a href="#contact" class="btn primary" id="contactBtn">Contacter</a>
+              <a href="page/cours.html" class="btn ghost">Voir les cours</a>
+            </div>
+  
+            <div id="contact" class="contact-card text-center">
+              <h3>Contact</h3>
+              <p>
+                Email: <span id="email">Bettaibichokrino001@gmail.com</span>
+                <button id="copyBtn" title="Copier l'email">Copier</button>
+              </p>
+              <p>Téléphone: +216 98 104 699</p>
+              <div class="socials text-center">
+                <a
+                  class="social-btn fb"
+                  href="https://www.facebook.com/cbettaibi"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Facebook"
+                >
+                  <!-- Facebook SVG -->
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.99H7.898v-2.888h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.444 2.888h-2.329v6.99C18.343 21.128 22 16.991 22 12z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <!-- <span>Facebook</span> -->
+                </a>
+                <a
+                  class="social-btn wa"
+                  href="https://wa.me/21622949285"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="WhatsApp"
+                >
+                  <!-- WhatsApp SVG -->
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M20.52 3.48A11.86 11.86 0 0 0 12 .5C6  .5 1.1 5.4 1.1 11.4c0 2.02.53 3.94 1.54 5.66L.5 23.5l6.8-1.77A11.86 11.86 0 0 0 12 22.3c6 0 10.9-4.9 10.9-10.9 0-2.92-1.14-5.64-3.38-7.92zM12 20c-1.6 0-3.16-.42-4.5-1.2l-.32-.19-4.04 1.05 1.08-3.93-.21-.34A8.02 8.02 0 0 1 4 11.4c0-4.42 3.58-8 8-8s8 3.58 8 8-3.6 8-8 8z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <!-- <span>WhatsApp</span> -->
+                </a>
+              </div>
+            </div>
+    </footer>
     <!-- Bootstrap JS bundle (Popper included) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>

@@ -296,7 +296,7 @@ body {
   font-size: 14px;
 }
 .actions {
-  display: flex;
+  /* display: flex; */
   gap: 12px;
   margin-top: 6px;
 }
@@ -335,7 +335,7 @@ body {
   cursor: pointer;
 }
 .socials {
-  display: flex;
+  /* display: flex; */
   gap: 8px;
   margin-top: 10px;
 }
@@ -418,12 +418,19 @@ body {
   justify-content: center;
   line-height: 1.6;
 }
-.application .app-one, .app-fore, .app-two, .app-three, .app-five{
+.application .cardApp{
   background: rgba(255, 255, 255, 0.02);
   padding: 14px;
   gap: 10px;
   border-radius: 10px;
   border: 1px solid rgba(146, 20, 20, 0.02);
+  text-wrap: wrap;
+}
+.application .cardApp .btn{
+      font-size: xx-small;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 /* Responsive */
 @media (max-width: 880px) {
@@ -660,4 +667,27 @@ body {
 .allbumExemple ul li a:hover,
 .canvas ul li a:hover{
   text-decoration: underline;
+}
+.cardApp{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.cardApp:has(.btn:hover){
+  border: 2px solid rgba(24, 119, 242, 0.95);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  box-shadow: 0 20px 20px rgba(24, 119, 242, 0.95);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+.btn:hover{
 }
