@@ -19,12 +19,108 @@
   </head>
   <body>
     <div class="container">
+      <div class="box m-2 p-2">
+        <h2>GÉOMÉTRIE ANALYTIQUE</h2>
+        <p>
+          La géométrie analytique est l’art de résoudre les problémes de
+          géométrie par le calcul.
+          <span class="text-danger">René Descartes (1596-1650)</span>
+        </p>
+        <div class="box">
+          <article>
+            <h5>Coordonnées du barycentre</h5>
+            <p>
+              Le plan est muni d’un repère cartésien \( (O, \vec{i}, \vec{j})
+              \).
+            </p>
+            <p>
+              Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \) deux points du plan et
+              \( I \) le milieu du segment \([AB]\). Alor: \( I\left(\frac{x_A +
+              x_B}{2}, \frac{y_A + y_B}{2}\right) \)
+            </p>
+            <p>
+              Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \), et \( \alpha, \beta
+              \in \mathbb{R} \) tels que \( \alpha + \beta \neq 0 \).
+            </p>
+            <p>
+              Le barycentre \( G \) des points \( (A,\alpha) \) et \( (B,\beta)
+              \) a pour coordonnées :
+            </p>
+            <div class="formula">
+              \[ G\left( \frac{\alpha x_A + \beta x_B}{\alpha + \beta},
+              \frac{\alpha y_A + \beta y_B}{\alpha + \beta} \right) \]
+            </div>
+            <p>
+              Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \), \( C(x_C, y_C) \) et
+              \( \alpha, \beta, \gamma \in \mathbb{R} \) tels que \(
+              \alpha+\beta+\gamma \neq 0 \).
+            </p>
+            <p>
+              Le barycentre \( G \) des points \( (A,\alpha), (B,\beta),
+              (C,\gamma) \) a pour coordonnées :
+            </p>
+            <div class="formula">
+              \[ G\left( \frac{\alpha x_A + \beta x_B + \gamma x_C}{\alpha +
+              \beta + \gamma}, \frac{\alpha y_A + \beta y_B + \gamma y_C}{\alpha
+              + \beta + \gamma} \right) \]
+            </div>
+          </article>
+
+          <article>
+            <h5>Equation cartésienne d’une droite</h5>
+            <p>
+              Le plan est muni d’un repère cartésien \( (O, \vec{i}, \vec{j})
+              \).
+            </p>
+            <p>Toute droite admet une équation cartésienne de la forme :</p>
+
+            <div class="formula">
+              \[ ax + by + c = 0 \quad \text{avec} \quad (a,b) \neq (0,0) \]
+            </div>
+
+            <p>L’équation \( ax + by + c = 0 \) est celle d’une droite.</p>
+          </article>
+
+          <article>
+            <h5>Vecteur directeur - Droites parallèles</h5>
+            <p>
+              Le plan est muni d’un repère cartésien \( (O, \vec{i}, \vec{j})
+              \).
+            </p>
+            <p>
+              Si \( D \) a pour équation \( ax + by + c = 0 \), alors un vecteur
+              directeur est :
+            </p>
+
+            <div class="formula">\[ \vec{u}(-b, a) \]</div>
+
+            <p>
+              Deux droites \( D: ax+by+c=0 \) et \( D': a'x + b'y + c' = 0 \)
+              sont parallèles si :
+            </p>
+
+            <div class="formula">\[ ab' - a'b = 0 \]</div>
+          </article>
+
+          <article>
+            <h5>Vecteur normal à une droite - Droites perpendiculaires</h5>
+          </article>
+
+          <article>
+            <p>\( lim_{x \to \infty} \frac{1}{x} = 0 \)</p>
+            <p>\( \int_{a}^{b} f(x) \, dx\)</p>
+            <p>\( \frac{df}{dx} \)</p>
+            <p>\( \sum_{i=1}^{n} i \)</p>
+            <p>\( \sqrt{x} \sqrt[3]{x} \)</p>
+          </article>
+        </div>
+      </div>
       <div class="box m-2">
         <h2>Réper orthornormer</h2>
         <div
           id="BOARDID"
           class="jxgbox"
-          style="width: 300px; aspect-ratio: 1/1"
+          style="width: 400px; aspect-ratio: 1/1"
         ></div>
         <div class="One">
           <p class="text-primary m-2">
@@ -96,6 +192,17 @@
             style="width: 300px; aspect-ratio: 1/1"
           ></div>
         </div>
+      </div>
+      <div class="box m-2 p-2">
+        <p>
+          <span class="text-primary">Collinear:</span> (of point) lying in the
+          same straight line.
+        </p>
+        <p>
+          <span class="text-primary">Vector:</span> a quantity having direction
+          as well as magnitude, especially as determining the position of one
+          point in space relative to another.
+        </p>
       </div>
       <div class="box m-2">
         <h2>\(f(x)=Cosx\) : 3D</h2>
