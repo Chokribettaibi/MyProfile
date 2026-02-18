@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesrc.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    pre{
+      background-color: #0a0a23;
+    }
+    pre,
+    code {
+      font-family: "Merriweather" !important;
+    }
+  </style>
+  <body>
+    <header></header>
+    <main class="p-2">
+      <section>
+        <article>
+          <h3>Boilerplate and Encoding</h3>
+          <p>
+            HTML boilerplate: This is a boilerplate that includes the basic
+            structure and essential elements every HTML document needs.
+          </p>
+          <pre
+            class="language-html  m-2"
+          ><code><span class="token tag">
+<span class="token symbol">&lt;!</span> <span class="token keyword">DOCTYPE</span> <span class="token symbol">&gt;</span></span>
+  <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">html</span> <span class="atrube">lang =</span><span class="token value">"en"</span> <span class="token symbol">&gt;</span>
+  <span class="token symbol">&lt;</span> <span class="token keyword">head</span> <span class="token symbol">&gt;</span></span>
+<span class="token symbol">&lt;&sol;</span> <span class="token keyword">head</span><span class="token symbol"> &gt;</span></span>
+</span><span class="token tag"><span class="token tag"><span class="token symbol">&lt;</span> <span class="keyword">body</span></span> <span class="token symbol">&gt;</span>
+</span></code>
+</pre>
+        </article>
+        <article>
+          <div class="container">
+            <ul>
+              <li>
+                <code class="keyword">DOCTYPE</code>: This is used to tell
+                browsers which version of HTML you're using.
+              </li>
+              <li>
+                <code class="keyword">html</code> Element: This represents the top level element
+                or the root of an HTML document. To specify the language for the
+                document, you should use the lang attribute.
+              </li>
+
+              <li>
+                <code class="keyword">head</code> Element: The head section contains important
+                meta data which is behind-the-scenes information needed for
+                browsers and search engines.
+              </li>
+              <li>
+                <code class="keyword">meta</code> Elements: These elements represent your site's
+                metadata. These element have details about things like character
+                encoding, and how websites like Twitter should preview your
+                page's link and more.
+              </li>
+              <li>
+                <code class="keyword">title</code> Element: This element is used to set the text
+                that appears in the browser tab or window.
+              </li>
+              <li>
+                UTF-8 character encoding: UTF-8, or UCS Transformation Format 8,
+                is a standardized character encoding widely used on the web.
+                Character encoding is the method computers use to store
+                characters as data. The charset attribute is used inside of a
+                meta element to set the character encoding to UTF-8.
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h4>Link states</h4>
+            <p>
+                
+              
+            </p>
+            <ul>
+              <li><code><span class="keyword">:link</span></code>: This is the default state. This state
+              represents a link which the user has not visited, clicked, or
+              interacted with yet. You can think of this state as providing the
+              base styles for all links on your page. The other states build on
+              top of it.</li>
+              <li><code class="keyword">:visited</code>: This applies when a user has already visited
+              the page being linked to. By default, this turns the link purple -
+              but you can leverage CSS to provide a different visual indication
+              to the user.</li>
+              <li><code class="keyword">:hover</code>: This state applies when a user is hovering
+              their cursor over a link. This state is helpful for providing
+              extra attention to a link, to ensure a user actually intends to
+              click it.</li>
+              <li><code class="keyword">:focus</code>: This state applies when we focus on a link.</li>
+              <li><code class="keyword">:active</code>: This state applies to links that are being activated by
+              the user. This typically means clicking on the link with the
+              primary mouse button by left clicking, in most cases.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

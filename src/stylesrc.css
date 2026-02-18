@@ -190,9 +190,7 @@ h1,h2{
 .hljs-selector-class {
   color: #ffb86c !important;
 }
-.hljs-selector-class {
-  color: #ffb86c !important;
-}
+
 .lang-javaScript .hljs-keyword {
   color: var(--activityBar-activeBorder) !important;
 }
@@ -217,8 +215,3 @@ code {
   font-size: 16px;
   color: var(--activityWarningBadge-background);
 }
-/* Style page cours */
-/* .container nav {
-	background-color: #0F0F10 !important;
-	color: #f4faff !important;
-} */

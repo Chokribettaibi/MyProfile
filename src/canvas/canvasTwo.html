@@ -1,157 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Text Draw</title>
+
     <style>
-        @import "compass/css3";
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: black;
+      }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  overflow: hidden;
-  
-    &:hover {
-   span {
-      display: none; 
-    }
-  }
-}
+      canvas {
+        display: block;
+        touch-action: none; /* مهم للموبايل */
+      }
 
-canvas {
- cursor: crosshair;
-  
-}
-
-span {
-    font-family: 'Georgia', cursive;
-  font-size: 40px;
- position: fixed; 
-  top: 50%;
-  left: 50%;
-  color: #000;
-  margin-top: -40px;
-  margin-left: -200px;
-}
+      #info {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
     </style>
-</head>
-<body>
-    <canvas id='canvas'></canvas>
-<span id='info'>Click and drag to draw!<span>
+  </head>
+
+  <body>
+    <div id="info">Click / Touch and drag to draw</div>
+    <canvas id="canvas"></canvas>
+
     <script>
-        // Drawing with text. Ported from Generative Design book - http://www.generative-gestaltung.de - Original licence: http://www.apache.org/licenses/LICENSE-2.0
+      // Application variables
+      var position = { x: 0, y: window.innerHeight / 2 };
+      var counter = 0;
+      var minFontSize = 4;
 
-// Application variables
-var position = {x: 0, y: window.innerHeight/2};
-var counter = 0;
-var minFontSize = 3;
-var angleDistortion = 0;
-var letters = "There was a table set out under a tree in front of the house, and the March Hare and the Hatter were having tea at it: a Dormouse was sitting between them, fast asleep, and the other two were using it as a cushion, resting their elbows on it, and talking over its head. 'Very uncomfortable for the Dormouse,' thought Alice; 'only, as it's asleep, I suppose it doesn't mind.'";
+      var letters =
+        "Bettaibi     2026     Chokri";
 
-// Drawing variables
-var canvas;
-var context;
-var mouse = {x: 0, y: 0, down: false}
+      var canvas;
+      var context;
+      var mouse = { x: 0, y: 0, down: false };
 
-function init() {
-  canvas = document.getElementById( 'canvas' );
-  context = canvas.getContext( '2d' );
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  
-  canvas.addEventListener('mousemove', mouseMove, false);
-  canvas.addEventListener('mousedown', mouseDown, false);
-  canvas.addEventListener('mouseup',   mouseUp,   false);
-  canvas.addEventListener('mouseout',  mouseUp,  false);  
-  canvas.addEventListener('dblclick', doubleClick, false);
-  
-  window.onresize = function(event) {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-}
+      // Init
+      function init() {
+        canvas = document.getElementById("canvas");
+        context = canvas.getContext("2d");
 
-function mouseMove ( event ){
-  mouse.x = event.pageX;
-  mouse.y = event.pageY;
-  draw();
-}
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
 
-function draw() {
- if ( mouse.down ) {
-    var d = distance( position, mouse );
-    var fontSize = minFontSize + d/2;
-    var letter = letters[counter];
-    var stepSize = textWidth( letter, fontSize );
-    
-    if (d > stepSize) {
-      var angle = Math.atan2(mouse.y-position.y, mouse.x-position.x);
-      
-      context.font = fontSize + "px Georgia";
-    
-      context.save();
-      context.translate( position.x, position.y);
-      context.rotate( angle );
-      context.fillText(letter,0,0);
-      context.restore();
+        // Pointer Events (PC + Mobile)
+        canvas.addEventListener("pointerdown", pointerDown);
+        canvas.addEventListener("pointermove", pointerMove);
+        canvas.addEventListener("pointerup", pointerUp);
+        canvas.addEventListener("pointerleave", pointerUp);
 
-      counter++;
-      if (counter > letters.length-1) {
-        counter = 0;
+        canvas.addEventListener("dblclick", clearCanvas);
+
+        canvas.style.touchAction = "none";
       }
-    
-    //console.log (position.x + Math.cos( angle ) * stepSize)
-      position.x = position.x + Math.cos(angle) * stepSize;
-      position.y = position.y + Math.sin(angle) * stepSize;
 
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
       }
-  }     
-}
 
-function distance( pt, pt2 ){
-  
-  var xs = 0;
-  var ys = 0;
- 
-  xs = pt2.x - pt.x;
-  xs = xs * xs;
- 
-  ys = pt2.y - pt.y;
-  ys = ys * ys;
- 
-  return Math.sqrt( xs + ys );
-}
+      // Pointer Functions
+      function pointerMove(event) {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+        draw();
+      }
 
-function mouseDown( event ){
-  mouse.down = true;
-  position.x = event.pageX;
-  position.y = event.pageY;
-  
-  document.getElementById('info').style.display = 'none';
-}
+      function pointerDown(event) {
+        mouse.down = true;
+        position.x = event.clientX;
+        position.y = event.clientY;
+        document.getElementById("info").style.display = "none";
+      }
 
-function mouseUp( event ){
-    mouse.down = false;
-}
+      function pointerUp() {
+        mouse.down = false;
+      }
 
-function doubleClick( event ) {
-  canvas.width = canvas.width; 
-}
+      // Drawing
+      function draw() {
+        if (!mouse.down) return;
 
-function textWidth( string, size ) {
-  context.font = size + "px Georgia";
-  
-  if ( context.fillText ) {
-    return context.measureText( string ).width;
-  } else if ( context.mozDrawText) {
-    return context.mozMeasureText( string );
-  }
-  
- };
+        var d = distance(position, mouse);
+        var fontSize = minFontSize + d / 2;
+        var letter = letters[counter];
+        var stepSize = textWidth(letter, fontSize);
 
-init();
+        if (d > stepSize) {
+          var angle = Math.atan2(mouse.y - position.y, mouse.x - position.x);
+
+          context.font = fontSize + "px Georgia";
+          context.fillStyle = "white";
+
+          context.save();
+          context.translate(position.x, position.y);
+          context.rotate(angle);
+          context.fillText(letter, 0, 0);
+          context.restore();
+
+          counter++;
+          if (counter >= letters.length) counter = 0;
+
+          position.x += Math.cos(angle) * stepSize;
+          position.y += Math.sin(angle) * stepSize;
+        }
+      }
+
+      // Helpers
+      function distance(pt1, pt2) {
+        var dx = pt2.x - pt1.x;
+        var dy = pt2.y - pt1.y;
+        return Math.sqrt(dx * dx + dy * dy);
+      }
+
+      function textWidth(string, size) {
+        context.font = size + "px Georgia";
+        return context.measureText(string).width;
+      }
+
+      function clearCanvas() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      init();
     </script>
-</body>
+  </body>
 </html>
