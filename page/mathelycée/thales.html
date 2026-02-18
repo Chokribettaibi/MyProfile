@@ -39,16 +39,15 @@
         Si deux droites parallèles coupent deux droites sécantes (en un point, dans un triangle ou une
         configuration "papillon"), alors les longueurs des segments formés sont
         proportionnelles, permettant de calculer des mesures manquantes <br><br>
-        <span class="text-bg-primary  p-2"> \( \frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC} \) .</span>
+        <span class="bg-warning-subtle p-2"> \( \frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC} \) .</span>
       </p>
       <hr>
     <h4 class="text-white m-4  bg-dark">Schéma</h4>
 
       <div id="box" class="jxgbox"></div>
 
-      <p class="fs-1 p-2 m-2">
-        \( \frac{AD}{AB} = \) <span class="info text-primary" id="result"></span> || \( \frac{AD}{AB} = \)
-        <span class="info text-primary" id="resultTwo"></span>
+      <p class="fs-2 p-2 m-2 bg-primary-subtle">
+        \( \frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC} =\) <span class="info text-primary" id="result"></span>
       </p>
 
     </div>
@@ -99,7 +98,6 @@
         let r2 = (AE / AC).toFixed(2);
 
         document.getElementById("result").innerHTML = r1 ;
-        document.getElementById("resultTwo").innerHTML = r2;
       });
     </script>
   </body>
