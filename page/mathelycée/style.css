@@ -1,10 +1,27 @@
-*{
-    margin: 0;
-    padding: O;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.04);
+* {
+  margin: 0;
+  padding: O;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
-.box{
-        background-color: rgb(13 110 253 / 8%);
+.box {
+  background-color: rgb(13 110 253 / 8%);
+}
+#box {
+  width: 300px;
+  height: 200px;
+  margin: auto;
+}
+#box {
+  overflow: auto;
+}
+@media (max-width: 400px) {
+    .formula{
+        font-size: 0.8rem;
+    }
+    .One > p {
+      font-size: 0.6rem;
+    }
+  
 }
