@@ -4,18 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styel.css" />
   </head>
   <body>
     <div class="container">
-      <canvas id="canvas1"></canvas>
-      <label for="animeOne">Animation 1</label>
-      <input type="range" name="animeOne" id="animeOne" min="0" max="100">
-      <!-- <label for="animeTwo">Animation 2</label>
-      <input type="range" name="animeTwo" id="animeTwo">
-      <label for="animeThree">Animation 3</label>
-      <input type="range" name="animeThree" id="animeThree"> -->
-    </div>
+      <div class="row">
+        <div class="col">
+          <h4 class="text-center p-2 text-bg-dark rounded-2">Canvas Animation Image</h4>
+        </div>
+        <!-- <div class="col"></div> -->
+      </div>
+
+
+      <div class="row text-white">
+        <form class="col d-flex flex-column m-2 p-2"  >
+          <label for="animeOne">Animation 1</label>
+          <input type="range" name="animeOne" id="animeOne" min="0" max="10" />
+          <label for="animeTwo">Animation 2</label>
+          <input type="range" name="animeTwo" id="animeTwo" min="0" max="100" />
+          <label for="animeThree">Animation 3</label>
+          <input
+            type="range"
+            name="animeThree"
+            id="animeThree"
+            min="0"
+            max="100"
+          />
+          <label for="animeFour">Animation 4</label>
+          <input type="range" name="animeFour" id="animeFour" min="0" max="10" value="5" />
+          <hr>
+          <div class="btn">
+            <button type="button" class="btn btn-outline-primary" id="img1">Img 1</button>
+            <button type="button" class="btn btn-outline-primary" id="img2">Img 2</button>
+            <button type="button" class="btn btn-outline-primary" id="img3">Img 3</button>
+          </div>
+
+        </form >
+        </div>
+        
+        
+        
+        <div class="row">
+          <canvas class="rounded-2" id="canvas1"></canvas>
+        </div>
+
+      </div>
+
     <script src="main.js"></script>
     <!-- <script
       type="module"

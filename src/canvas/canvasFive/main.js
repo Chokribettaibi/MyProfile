@@ -1,16 +1,38 @@
 let canvas = document.getElementById('canvas1');
-let animRange = document.getElementById('animeOne')
+let animRange = document.getElementById('animeOne');
+let animRange2 = document.getElementById('animeTwo');
+let animRange3 = document.getElementById('animeThree');
+let animRange4 = document.getElementById('animeFour');
+let img1 = document.getElementById('img1');
+let img2 = document.getElementById('img2');
+let img3 = document.getElementById('img3');
 
-animRange.onclick = function aniValue(){
+// animRange.onclick = function aniValue(){
+//     console.log(animRange.value);
+// };
+// animRange2.onclick = function aniValue2(){
+//     console.log(animRange2.value);
+// };
+// animRange3.onclick = function aniValue3(){
+//     console.log(animRange3.value);
+// };
 
-
-}
 let ctx = canvas.getContext('2d');
 canvas.width = 600;
 canvas.height = 600;
 
 let image1 = new Image();
 image1.src = '1760830748021.jpg';
+
+img1.onclick = function() {
+    image1.src = '1760830748021.jpg';
+}
+img2.onclick = function() {
+    image1.src = '1766736530645.jpg';
+}
+img3.onclick = function() {
+    image1.src = '1761094810451.jpg';
+}
 
 image1.addEventListener('load',()=>{
     ctx.drawImage(image1, 0, 0, canvas.width, canvas.height);
@@ -20,6 +42,9 @@ image1.addEventListener('load',()=>{
 
     let particlesArray = [];
     const numberOfParticles = 5000;
+    animRange4.onclick = function aniValue4(){
+        numberOfParticles = numberOfParticles * animRange4.value * 0.1; // animRange4.value * 0.1 to adjust the number of particles based on the range input
+    }
 
     let mappedImage = [];
 
@@ -85,10 +110,10 @@ image1.addEventListener('load',()=>{
         ctx.globalAlpha = 0.02;
         ctx.fillStyle = 'rgb(0, 0, 0)';
         ctx.fillRect(0,0, canvas.width, canvas.height);
-        ctx.globalAlpha = 0.05;
+        ctx.globalAlpha = 0.05 * animRange2.value * 0.01; // animRange2.value * 0.01 to adjust the alpha based on the range input
         for(let i = 0; i < particlesArray.length; i++){
             particlesArray[i].update();
-            ctx.globalAlpha = particlesArray[i].speed * animRange.value * 0.01;
+            ctx.globalAlpha = particlesArray[i].speed * animRange.value * 0.01; // animRange.value * 0.01 to adjust the alpha based on the range input
             particlesArray[i].draw();
         }
         requestAnimationFrame(animate);
