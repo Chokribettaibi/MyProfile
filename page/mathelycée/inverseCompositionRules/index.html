@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+      <div class="container">
+          <table class="table table-bordered text-center" style="padding: 5px; margin: 2px">
+            <tr style="color: blue">
+              <th class="text-primary">f(x)</th>
+              <td class="text-primary">sin(x)</td>
+              <td class="text-primary">cos(x)</td>
+              <td class="text-primary">tan(x)</td>
+              <td class="text-primary">x<sup>2</sup></td>
+              <td class="text-primary">sinh(x)</td>
+              <td class="text-primary">exp(x)</td>
+            </tr>
+            <tr>
+              <td> </td>
+              <td>
+                <input
+                  type="radio"
+                  name="f"
+                  value="sin"
+                  checked
+                  onChange="change(this, 'f')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="f"
+                  value="cos"
+                  onChange="change(this, 'f')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="f"
+                  value="tan"
+                  onChange="change(this, 'f')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="f"
+                  value="square"
+                  onChange="change(this, 'f')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="f"
+                  value="sinh"
+                  onChange="change(this, 'f')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="f"
+                  value="exp"
+                  onChange="change(this, 'f')"
+                />
+              </td>
+            </tr>
+            <tr class=" bg-danger" >
+              <th class="text-center text-success">g(x)</th>
+              <td class="text-center text-success">arcsin(x)</td>
+              <td class="text-center text-success">arccos(x)</td>
+              <td class="text-center text-success">arctan(x)</td>
+              <td class="text-center text-success">√(x)</td>
+              <td class="text-center text-success">arcsinh(x)</td>
+              <td class="text-center text-success">log(x)</td>
+            </tr>
+            <tr>
+              <td> </td>
+              <td>
+                <input
+                  type="radio"
+                  name="g"
+                  value="asin"
+                  checked
+                  onChange="change(this, 'g')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="g"
+                  value="acos"
+                  onChange="change(this, 'g')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="g"
+                  value="atan"
+                  onChange="change(this, 'g')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="g"
+                  value="sqrt"
+                  onChange="change(this, 'g')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="g"
+                  value="asinh"
+                  onChange="change(this, 'g')"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                  name="g"
+                  value="log"
+                  onChange="change(this, 'g')"
+                />
+              </td>
+            </tr>
+            <tr style="color: red">
+              <th class="text-danger">Composition</th>
+              <td class="text-danger">f(g(x))</td>
+              <td class="text-danger">g(f(x))</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td> </td>
+              <td>
+                <input
+                  type="radio"
+                  name="fg"
+                  value="fg"
+                  checked
+                  onChange="compose(this)"
+                />
+              </td>
+              <td>
+                <input type="radio" name="fg" value="gf" onChange="compose(this)" />
+              </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+          </table>
+          <hr>
+          <div id="BOARDID" class="jxgbox" style="aspect-ratio: 1/1"></div>
+        </div>
+    <script>
+      // Define the id of your board in BOARDID
+
+      const board = JXG.JSXGraph.initBoard(BOARDID, {
+        axis: true,
+        boundingbox: [-3, 3, 3, -3],
+      });
+
+      var f, g, fg, plotf, plotg, plotfg;
+
+      // Change function f or g
+      var change = function (obj, name) {
+        var t = obj.value + "(x)";
+
+        if (obj.value === "square") {
+          t = "x * x";
+        }
+
+        if (name === "f") {
+          f = board.jc.snippet(t, true, "x");
+          plotf.Y = f;
+          plotf.updateCurve();
+        } else {
+          g = board.jc.snippet(t, true, "x");
+          plotg.Y = g;
+          plotg.updateCurve();
+        }
+        board.update();
+      };
+
+      // Change composition order
+      var compose = function (obj) {
+        var t = obj.value;
+
+        if (t == "fg") {
+          fg = (x) => f(g(x));
+        } else if (t == "gf") {
+          fg = (x) => g(f(x));
+        }
+        plotfg.Y = fg;
+        plotfg.updateCurve();
+        board.update();
+      };
+
+      f = (x) => Math.sin(x);
+      g = (x) => Math.asin(x);
+      fg = (x) => f(g(x));
+
+      plotf = board.create("functiongraph", [f, -2, 2], {
+        dash: 2,
+        strokeColor: "blue",
+        strokeWidth: 3,
+      });
+
+      plotg = board.create("functiongraph", [g, -2, 2], {
+        dash: 3,
+        strokeColor: "green",
+        strokeWidth: 3,
+      });
+
+      plotfg = board.create("functiongraph", [fg, -2, 2], {
+        strokeColor: "red",
+        strokeWidth: 3,
+      });
+    </script>
+  </body>
+</html>
