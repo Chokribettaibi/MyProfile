@@ -21,6 +21,7 @@
     <div class="container">
       <div class="box m-2 p-2">
         <h2 class="text-center">GÉOMÉTRIE ANALYTIQUE</h2>
+        
         <div class="card border-primary-subtle mb-3 position-relative  opacity-50" style="max-width: 18rem">
           <div class="card-header bg-dark text-white text-end d-flex justify-content-between"> <span>historique</span> (1596-1650)</div>
           <div class="card-body">
@@ -46,7 +47,8 @@
               \( I \) le milieu du segment \([AB]\). Alor: \( I\left(\frac{x_A +
               x_B}{2}, \frac{y_A + y_B}{2}\right) \)
             </p>
-            <p>
+            <div id="box" style="width:300px;background-color: aliceblue; height:500px;"></div>
+            <p class="mt-2">
               Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \), et \( \alpha, \beta
               \in \mathbb{R} \) tels que \( \alpha + \beta \neq 0 \).
             </p>
@@ -128,6 +130,11 @@
         </div>
       </div>
       <div class="box m-2">
+        <div
+                  id="BOARDIDtext3d"
+                  class="jxgbox"
+                  style="width: 300px; aspect-ratio: 1/2"
+                ></div>
         <h2>Réper orthornormer</h2>
         <div class="jsgboxS">
           <div id="BOARDID" class="jxgbox" style="aspect-ratio: 1/1"></div>
@@ -283,5 +290,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
     <script src="main.js"></script>
+    <script src="mainGraph.js"></script>
   </body>
 </html>

@@ -399,3 +399,25 @@ var dFx = () => Fdx(A.X(), A.Y()),
     // Tangent vectors of length 1
     a4 = view.create("line3d", [A, dFx_vec, [0, 1]]),
     b4 = view.create("line3d", [A, dFy_vec, [0, 1]]);
+
+
+    //text 3d
+
+            var board34 = JXG.JSXGraph.initBoard(BOARDIDtext3d, {
+            boundingbox: [-10, 7, 6, -9],
+            // keepaspectratio: false,
+            // axis: false,
+            // pan: { enabled: false}
+        });
+
+    var bound34 = [-4, 6];
+    var view3D = board34.create('view3d',
+        [[-4, -3], [8, 8],
+        [bound34, bound34, bound34]],
+        {
+            projection: 'central'
+        });
+
+    var txt1 = view3D.create('text3d', [[2, -2, -2], 'La géométrie analytique est l’art de résoudre les problémes degéométrie par le calcul '], {
+        fontSize: 20,
+    });
