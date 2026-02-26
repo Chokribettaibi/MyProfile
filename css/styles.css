@@ -16,9 +16,17 @@ body {
 }
 body {
   margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial;
-  background: radial-gradient(
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  background:
+    radial-gradient(
       1200px 600px at 10% 10%,
       rgba(30, 30, 30, 0.6),
       transparent
@@ -99,7 +107,9 @@ body {
   );
   pointer-events: none;
   z-index: 0;
-  transition: opacity 0.28s ease, transform 0.36s ease;
+  transition:
+    opacity 0.28s ease,
+    transform 0.36s ease;
   animation: pulseRing 4s ease-in-out infinite;
 }
 .profile:hover::before {
@@ -193,7 +203,9 @@ body {
   height: 420px;
   object-fit: cover;
   display: block;
-  transition: opacity 0.36s ease, transform 0.36s ease;
+  transition:
+    opacity 0.36s ease,
+    transform 0.36s ease;
 }
 .slides {
   position: relative;
@@ -204,7 +216,9 @@ body {
   display: block;
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity 0.36s ease, transform 0.36s ease;
+  transition:
+    opacity 0.36s ease,
+    transform 0.36s ease;
 }
 .slides .slide.hidden {
   pointer-events: none;
@@ -403,34 +417,57 @@ body {
 .course h3 {
   margin: 0 0 6px 0;
 }
-.application{
+.application {
   margin-top: 28px;
+  position: relative;
   padding: 22px;
   border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }
+#canvas1 {
+  position: absolute;
+  /* width: 100%; */
+  /* height: 400px; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.application .content {
+  position: relative;
+  z-index: 1;
+}
+
 .application h2 {
   margin: 0 0 12px 0;
+  background: black;
 }
-.application .content{
+.application .content {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
   line-height: 1.6;
 }
-.application .cardApp{
-  background: rgba(255, 255, 255, 0.02);
+.application .cardApp {
+  background: black;
   padding: 14px;
   gap: 10px;
   border-radius: 10px;
   border: 1px solid rgba(146, 20, 20, 0.02);
   text-wrap: wrap;
 }
-.application .cardApp .btn{
-      font-size: xx-small;
-    text-align: center;
-    justify-content: center;
-    display: flex;
+.application .cardApp .btn {
+  font-size: xx-small;
+  text-align: center;
+  justify-content: center;
+  display: flex;
 }
 /* Responsive */
 @media (max-width: 880px) {
@@ -534,7 +571,9 @@ body {
   justify-content: center;
   opacity: 0;
   transform: scale(0.98);
-  transition: opacity 0.36s ease, transform 0.36s ease;
+  transition:
+    opacity 0.36s ease,
+    transform 0.36s ease;
 }
 .ia-slides .ia-slide.active {
   opacity: 1;
@@ -637,45 +676,51 @@ body {
   line-height: 1.6;
 }
 .allbumExemple,
-.canvas{
+.canvas {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   gap: 15px;
   justify-content: space-around;
   margin-bottom: 20px;
 }
+
 .allbumExemple ul,
-.canvas ul{
+.canvas ul {
   list-style: none;
   padding: 0;
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .allbumExemple ul li,
-.canvas ul li{
+.canvas ul li {
   background: var(--glass);
   padding: 10px;
   border-radius: 8px;
 }
 .allbumExemple ul li a,
-.canvas ul li a{
+.canvas ul li a {
   text-decoration: none;
   color: var(--accent);
   font-weight: 600;
 }
 .allbumExemple ul li a:hover,
-.canvas ul li a:hover{
+.canvas ul li a:hover {
   text-decoration: underline;
 }
-.cardApp{
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: column;
-    flex-wrap: nowrap;
+.cardApp {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: rgb(21 21 23);
 }
-.cardApp:has(.btn:hover){
+.cardApp:has(.btn:hover) {
   border: 2px solid rgba(24, 119, 242, 0.95);
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
@@ -689,5 +734,9 @@ body {
   -o-border-radius: 20px;
   border-radius: 20px;
 }
-.btn:hover{
-}
+
+
+/* canvas styles */
+
+
+
