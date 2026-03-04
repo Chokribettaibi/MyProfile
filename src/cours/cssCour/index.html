@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main class="p-2">
+      <section>
+        <article>
+          <div class="container">
+            <h1 class="text-center">CSS</h1>
+            <p>
+              CSS (Cascading Style Sheets) is a stylesheet language used to
+              describe the presentation of a document written in HTML or XML. It
+              allows you to control the layout, colors, fonts, and overall
+              appearance of web pages. CSS works by associating rules with HTML
+              elements, which specify how those elements should be displayed on
+              the screen.
+            </p>
+            <p>
+              CSS is a cornerstone technology of the World Wide Web, alongside
+              HTML and JavaScript. It enables web developers to create visually
+              appealing and responsive websites by separating the content (HTML)
+              from the presentation (CSS). With CSS, you can define styles for
+              various elements, such as headings, paragraphs, links, and images,
+              and apply those styles consistently across multiple pages of a
+              website.
+            </p>
+          </div>
+        </article>
+        <article>
+            <div class="container">
+                <h2 class="text-center">Syntax</h2>
+                <p>
+                CSS syntax consists of a selector and a declaration block. The
+                selector specifies which HTML elements the styles will be applied
+                to, while the declaration block contains one or more declarations,
+                each consisting of a property and a value. For example:
+                </p>
+                <pre><code><span class="token keyword">selector</span> <span class="token punctuation">{</span>
+    property: value;
+}</code></pre>
+                <p>
+                In this example, "selector" is the HTML element or group of
+                elements you want to style, "property" is the CSS property you
+                want to set (such as color, font-size, or margin), and "value"
+                is the specific value you want to assign to that property (such
+                as red, 16px, or 10px).
+                </p>
+            </div>
+        </article>
+        <article>
+            <div class="container">
+                <h2 class="text-center">Example</h2>
+                <p>
+                Here is a simple example of CSS in action:
+                </p>
+                <pre><code>body {
+    background-color: lightblue;
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+p {
+    font-family: verdana;
+    font-size: 20px;
+}</code></pre>
+                <p>
+                In this example, the body of the webpage will have a light blue
+                background, all h1 elements will have white text that is centered,
+                and all p elements will use the Verdana font at a size of 20px.
+                </p>
+            </div>
+        </article>
+        <article>
+            <div class="container">
+                <h2>Flex Box Parent</h2>
+                <p>
+                The flex container is the parent element that holds the flex items.
+                It is defined by setting the display property to flex or inline-flex.
+                The flex container establishes a new flex formatting context for its
+                children, allowing them to be laid out in a flexible and responsive
+                manner. The flex container can be configured with various properties
+                to control the layout and alignment of its child elements, such as
+                flex-direction, justify-content, align-items, and more.
+                </p>
+            </div>
+        </article>
+      </section>
+    </main>
+    <footer></footer>
+
+    <!-- <pre
+              class="language-html  m-2"
+            ><code><span class="token tag">
+  <span class="token symbol">&lt;!</span> <span class="token keyword">DOCTYPE</span> <span>html</span> <span class="token symbol">&gt;</span></span>
+      <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">html</span> <span class="atrube">lang =</span><span class="token value">"en"</span> <span class="token symbol">&gt;</span>
+          <span class="token symbol">&lt;</span> <span class="token keyword">head</span> <span class="token symbol">&gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">meta</span> <span class="token atrube">charset =</span><span class="token value">"UTF-8"</span> <span class="token symbol">&gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">meta</span> <span class="token atrube">name =</span><span class="token value">"viewport"</span> <span class="token atrube">content =</span><span class="token value">"width=device-width, initial-scale=1.0"</span> <span class="token symbol">&gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">title</span><span class="token symbol">&gt;</span></span>Document<span class="token tag"><span class="token symbol">&lt;&sol;</span> <span class="token keyword">title</span><span class="token symbol"> &gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">link</span> <span class="token atrube">rel =</span><span class="token value">"stylesheet"</span> <span class="token atrube">href =</span><span class="token value">"styles.css"</span> <span class="token symbol">&gt;</span></span>
+          <span class="token symbol">&lt;&sol;</span> <span class="token keyword">head</span><span class="token symbol"> &gt;</span></span>
+          </span><span class="token tag"><span class="token tag"><span class="token symbol">&lt;</span> <span class="keyword">body</span></span> <span class="token symbol">&gt;</span>
+          <span class="token symbol">&lt;&sol;</span> <span class="token keyword">body</span><span class="token symbol"> &gt;</span></span>
+      <span class="token symbol">&lt;&sol;</spa> <span class="token keyword">html</span><span class="token symbol"> &gt;</span></span>
+  </span></code>
+  </pre> -->
+  </body>
+</html>
