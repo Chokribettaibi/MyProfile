@@ -106,7 +106,7 @@ image1.addEventListener('load',()=>{
     }
     init();
     function animate(){
-        ctx.drawImage(image1, 0, 0, canvas.width, canvas.height);
+        // ctx.drawImage(image1, 0, 0, canvas.width, canvas.height);
         ctx.globalAlpha = 0.02;
         ctx.fillStyle = 'rgb(0, 0, 0)';
         ctx.fillRect(0,0, canvas.width, canvas.height);
