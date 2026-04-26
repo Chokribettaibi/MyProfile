@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center bg-dark text-primary p-3">
+        <i class="bi bi-filetype-css"></i> CSS Course
+      </h1>
+    </header>
+    <main class="p-2">
+      <section>
+        <article>
+          <div class="container">
+            <p>
+              <span class="text-primary fs-2">CSS</span> ( Cascading Style
+              Sheets ) is a stylesheet language used to describe the
+              presentation of a document written in HTML or XML. It allows you
+              to control the layout, colors, fonts, and overall appearance of
+              web pages. CSS works by associating rules with HTML elements,
+              which specify how those elements should be displayed on the
+              screen.
+            </p>
+            <p>
+              CSS is a cornerstone technology of the World Wide Web, alongside
+              HTML and JavaScript. It enables web developers to create visually
+              appealing and responsive websites by separating the content (HTML)
+              from the presentation (CSS). With CSS, you can define styles for
+              various elements, such as headings, paragraphs, links, and images,
+              and apply those styles consistently across multiple pages of a
+              website.
+            </p>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h2 class="text-center">Syntax</h2>
+            <p>
+              CSS syntax consists of a selector and a declaration block. The
+              selector specifies which HTML elements the styles will be applied
+              to, while the declaration block contains one or more declarations,
+              each consisting of a property and a value. For example:
+            </p>
+            <pre><code><span class="token value">selector</span> <span class="token symbol">{</span>
+    <span class="token keyword">property</span>: <span class="token symbol">value</span>;
+<span class="token symbol">}</span></code></pre>
+            <p>
+              In this example, "selector" is the HTML element or group of
+              elements you want to style, "property" is the CSS property you
+              want to set (such as color, font-size, or margin), and "value" is
+              the specific value you want to assign to that property (such as
+              red, 16px, or 10px).
+            </p>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h2 class="text-center">Example</h2>
+            <p>Here is a simple example of CSS in action:</p>
+            <pre><code><span class="token value">body</span> <span class="token symbol">{</span>
+    <span class="token keyword">background-color</span>: <span class="token value">lightblue</span>;
+<span class="token symbol">}</span>
+<span class="token value">h1</span> <span class="token symbol">{</span>
+    <span class="token keyword">color</span>: <span class="token value">white</span>;
+    <span class="token keyword">text-align</span>: <span class="token value">center</span>;
+}
+<span class="token value">p</span> <span class="token symbol">{</span>
+    <span class="token keyword">font-family</span>: <span class="token value">verdana</span>;
+    <span class="token keyword">font-size</span>: <span class="token value">20px</span>;
+<span class="token symbol">}</span></code></pre>
+            <p>
+              In this example, the body of the webpage will have a light blue
+              background, all <span class="code">h1</span> elements will have
+              white text that is centered, and all
+              <span class="code">p</span> elements will use the Verdana font at
+              a size of 20px.
+            </p>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h4>Absolute Units</h4>
+            <ul>
+              <li>
+                <span class="code">px</span> (Pixels): This absolute unit is a fixed-size unit of
+                measurement in CSS, providing precise control over dimensions.
+                This means that 1px is always equal to 1/96th of an inch.
+              </li>
+              <li><span class="code">in</span> (Inch): This absolute unit is equal to 96px.</li>
+              <li>
+                <span class="code">cm</span> (Centimeters): This absolute unit is equal to 25.2/64 of an
+                inch.
+              </li>
+              <li>
+                <span class="code">mm</span> (Millimeters): This absolute unit is equal to 1/10th of a
+                centimeter.
+              </li>
+              <li>
+                <span class="code">q</span> (Quarter-Millimeters): This absolute unit is equal to 1/40th
+                of a centimeter.
+              </li>
+              <li>
+                <span class="code">pc</span> (Picas): This absolute unit is equal to 1/6th of an inch.
+              </li>
+              <li>
+                <span class="code">pt</span> (Points): This absolute unit is equal to 1/72th of an inch.
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h4>Relative Units</h4>
+            <ul>
+              <li>
+                <span class="code">%</span>Percentages: These relative units allow you to define sizes, dimensions, and other properties as a proportion of their parent element. For example, if you set <span class="code">width: 50%;</span> on an element, it will occupy half the width of its parent container.
+              </li>
+              <li>
+                <span class="code">em</span> Unit: These units are relative to the font size of the element. If you are using <span class="code">ems</span> for the font-size property, the size of the text will be relative to the font size of the parent element.
+              </li>
+              <li>
+                <span class="code">rem</span> Unit: These units are relative to the font size of the root element, which is the <span class="code">html</span> element.
+              </li>
+              <li>
+                <span class="code">vh</span> Unit: <span class="code">vh</span> stands for <span class="code">"viewport height"</span> and <span class="code">1vh</span> is equal to 1% of the viewport's height.
+              </li>
+              <li>
+                <span class="code">vw</span> Unit: <span class="code">vw</span> stands for <span class="code">"viewport width"</span> and <span class="code">1vw</span> is equal to 1% of the viewport's width.
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h2 class="text-center">Color</h2>
+            <p>CSS provides several ways to specify colors, including:</p>
+            <ul>
+              <li>Named colors (e.g., red, blue, green)</li>
+              <li>Hexadecimal colors (e.g., #ff0000 for red)</li>
+              <li>
+                <div class="container">
+                  RGB colors Model:
+                  <pre><code><span class="symbol">element</span> <span class="symbole">{</span>
+  <span class="tag">color:</span> <span class="value">rgb</span> <span class="symbole">(</span> red, green, blue <span class="symbole">)</span>;
+  <span>}</span></code></pre>
+                  <p>
+                    The values for red, green, and blue can range from
+                    <span class="code">0</span> to
+                    <span class="code">255</span>, where
+                    <span class="code">0</span> represents the absence of that
+                    color, and 255 represents full saturation.
+                  </p>
+                </div>
+              </li>
+              <li>
+                RGBA colors (e.g., rgba(255, 0, 0, 0.5) for semi-transparent
+                red)
+              </li>
+              <li>HSL colors (e.g., hsl(0, 100%, 50%) for red)</li>
+              <li>
+                HSLA colors (e.g., hsla(0, 100%, 50%, 0.5) for semi-transparent
+                red)
+              </li>
+            </ul>
+            <p>
+              Choosing the right color format can depend on your specific needs,
+              such as whether you need transparency or want to use a specific
+              color palette. CSS also allows you to use color functions and
+              variables for more dynamic and maintainable styling.
+            </p>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h2 class="text-center">Selectors</h2>
+            <p>
+              CSS selectors are patterns used to select the elements you want to
+              style. There are various types of selectors, including:
+            </p>
+            <ul>
+              <li>Element selectors (e.g., p, h1)</li>
+              <li>Class selectors (e.g., .class-name)</li>
+              <li>ID selectors (e.g., #id-name)</li>
+              <li>Attribute selectors (e.g., [type="text"])</li>
+              <li>Pseudo-class selectors (e.g., :hover, :first-child)</li>
+            </ul>
+            <p>
+              Understanding how to use these selectors effectively is crucial
+              for creating dynamic and maintainable CSS styles.
+            </p>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h2 class="text-center">Pseudo-classes</h2>
+            <p>User Action Pseudo-classes</p>
+            <ul>
+              <li>
+                <strong>Pseudo-classes Definition:</strong>
+                Thes are special CSS keywords tha allow you to select an element
+                based on tis specific state or position.
+              </li>
+              <li>
+                <strong>User Action Pseudo-classes:</strong>
+                Thes are special keywords that allow you to change the apperance
+                of elements based on user interactions, improving the overall
+                user exoeruence.
+              </li>
+              <li>
+                <span class="code">:active</span><strong>Pseudo-class:</strong>
+                This pseudo-class lets you select the active state of an
+                element, like clicking on a button.
+              </li>
+              <li>
+                <span class="code">:hover</span><strong>Pseudo-class:</strong>
+                This pseudo-class defines the hiver state if an element.
+              </li>
+              <li>
+                <span class="code">:hover</span>
+                <strong>Pseudo-class:</strong> This pseudo-class defines the
+                hover state of an element.
+              </li>
+              <li>
+                <span class="code">:focus</span
+                ><strong>Pseudo-class:</strong> This pseudo-class applies styles
+                when an element gains focus, typically through keyboard
+                navigation or when a user clicks into a form input.
+              </li>
+              <li>
+                <span class="code">:focus-within </span
+                ><strong>Pseudo-class:</strong> This pseudo-class is used to
+                apply styles to an element when it or any of its descendants
+                have focus.
+              </li>
+            </ul>
+            <div>
+              <p>Exemple:</p>
+              <pre><code class="lang-CSS"><span class="token value">a</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="token keyword">color</span>: red;
+}
+<span class="token value">ch</span><span class="selector-pseudo">:checked</span> {
+    <span class="token keyword">display</span>: none;
+}
+<span class="token value">a</span><span class="hljs-selector-pseudo">:visited</span> {
+    <span class="token keyword">color</span>: blue;
+}
+<span class="token value">div</span><span class="hljs-selector-pseudo">:empty</span>{
+    <span class="token keyword">background</span>: green;
+}
+<span class="hljs-selector-class">.in</span><span class="hljs-selector-pseudo">:focus</span>{
+    <span class="token keyword">border</span>: blue;
+}
+</code></pre>
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h2>Flex Box Parent</h2>
+            <p>
+              The flex container is the parent element that holds the flex
+              items. It is defined by setting the display property to flex or
+              inline-flex. The flex container establishes a new flex formatting
+              context for its children, allowing them to be laid out in a
+              flexible and responsive manner. The flex container can be
+              configured with various properties to control the layout and
+              alignment of its child elements, such as flex-direction,
+              justify-content, align-items, and more.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer></footer>
+
+    <!-- <pre
+              class="language-html  m-2"
+            ><code><span class="token tag">
+  <span class="token symbol">&lt;!</span> <span class="token keyword">DOCTYPE</span> <span>html</span> <span class="token symbol">&gt;</span></span>
+      <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">html</span> <span class="atrube">lang =</span><span class="token value">"en"</span> <span class="token symbol">&gt;</span>
+          <span class="token symbol">&lt;</span> <span class="token keyword">head</span> <span class="token symbol">&gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">meta</span> <span class="token atrube">charset =</span><span class="token value">"UTF-8"</span> <span class="token symbol">&gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">meta</span> <span class="token atrube">name =</span><span class="token value">"viewport"</span> <span class="token atrube">content =</span><span class="token value">"width=device-width, initial-scale=1.0"</span> <span class="token symbol">&gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">title</span><span class="token symbol">&gt;</span></span>Document<span class="token tag"><span class="token symbol">&lt;&sol;</span> <span class="token keyword">title</span><span class="token symbol"> &gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">link</span> <span class="token atrube">rel =</span><span class="token value">"stylesheet"</span> <span class="token atrube">href =</span><span class="token value">"styles.css"</span> <span class="token symbol">&gt;</span></span>
+          <span class="token symbol">&lt;&sol;</span> <span class="token keyword">head</span><span class="token symbol"> &gt;</span></span>
+          </span><span class="token tag"><span class="token tag"><span class="token symbol">&lt;</span> <span class="keyword">body</span></span> <span class="token symbol">&gt;</span>
+          <span class="token symbol">&lt;&sol;</span> <span class="token keyword">body</span><span class="token symbol"> &gt;</span></span>
+      <span class="token symbol">&lt;&sol;</spa> <span class="token keyword">html</span><span class="token symbol"> &gt;</span></span>
+  </span></code>
+  </pre> -->
+  </body>
+</html>

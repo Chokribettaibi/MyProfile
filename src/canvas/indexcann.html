@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Learn Creative Coding: </p>
+        <pre><code>
+            class Particle{}
+            class Effect{}
+            function animate(){}
+        </code></pre>
+        <pre><code>
+            class Particle{
+                constructor(effect){
+                    this.effect = effect;
+                }
+            }
+        </code></pre>
+        <pre><code>            class Effect{
+                constructor(){
+                    this.width = canvas.width;
+                    this.height = canvas.height;
+                    this.particlesArray = [];
+                    this.numberOfParticles = 100;
+                    this.init();
+                }
+                init(){
+                    for(let i = 0; i < this.numberOfParticles; i++){
+                        this.particlesArray.push(new Particle(this));
+                    }
+                }
+            }
+        </code></pre>
+        <pre><code>            function animate(){
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                effect.particlesArray.forEach(particle => {
+                    particle.update();
+                    particle.draw(ctx);
+                });
+                requestAnimationFrame(animate);
+            }
+        </code></pre>
+    </div>
+</body>
+</html>

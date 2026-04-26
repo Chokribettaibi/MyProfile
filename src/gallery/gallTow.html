@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @layer reset {
+        body {
+          margin: 0;
+          font-family: "Inconsolata", mono-spaced;
+        }
+
+        h2 {
+          margin: 0;
+        }
+
+        figure,
+        ul {
+          padding: 0;
+          margin: 0;
+        }
+
+        ul {
+          list-style: none;
+        }
+      }
+
+      body {
+        background: #546e7a;
+        perspective: 100vw;
+      }
+
+      main {
+        display: grid;
+        padding: 1rem;
+        place-items: center;
+        height: 100svh;
+        box-sizing: border-box;
+        transform: translate(5vw) rotateY(20deg);
+
+        &::before {
+          content: "";
+          position: fixed;
+          inset: -100vh -100vw;
+          background: repeating-linear-gradient(
+              #0000 0,
+              #0000 calc(10rem - 1px),
+              #263238 10rem
+            ),
+            repeating-linear-gradient(
+              90deg,
+              #0000 0,
+              #0000 calc(10rem - 1px),
+              #263238 10rem
+            ),
+            repeating-linear-gradient(
+              #0000 0,
+              #0000 calc(1rem - 1px),
+              #90a4ae 1rem
+            ),
+            repeating-linear-gradient(
+              90deg,
+              #0000 0,
+              #0000 calc(1rem - 1px),
+              #90a4ae 1rem
+            );
+          opacity: 0.2;
+          mix-blend-mode: overlay;
+          pointer-events: none;
+          z-index: 999;
+        }
+      }
+
+      ul {
+        display: grid;
+        width: 75vw;
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+        gap: 2rem;
+
+        li {
+          container-type: inline-size;
+          position: relative;
+          perspective: 100vh;
+          max-height: calc(100svh - 4rem);
+          aspect-ratio: 2/3;
+          transition: all 140ms ease;
+          transform-style: preserve-3d;
+
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: #212121;
+            transition: all 140ms ease;
+          }
+
+          figure {
+            background: #fff;
+            transition: all 140ms ease;
+            padding: 0.5rem;
+            height: 100%;
+          }
+
+          .image__container {
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(16, 1fr);
+            inset: 0;
+            overflow: hidden;
+
+            &::before,
+            &::after {
+              content: "";
+              z-index: 1;
+              grid-column: var(--col-start, 1) / var(--col-end, 1);
+              grid-row: var(--row-start, 1) / var(--row-end, 1);
+              backdrop-filter: contrast(1.1) url(#pixelate);
+            }
+
+            &::before {
+              animation: square1 1100ms steps(24) infinite;
+            }
+
+            &::after {
+              animation: square1 2700ms steps(24) infinite;
+            }
+          }
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            grid-column: -1 / 1;
+            grid-row: -1 / 1;
+            object-fit: cover;
+          }
+
+          figcaption {
+            position: absolute;
+            bottom: 1em;
+            backdrop-filter: blur(10px);
+            color: #fff;
+            clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+            padding: 0.5em;
+            font-size: 9cqw;
+            text-wrap: pretty;
+            translate: 0.5em;
+            transform: translateY(1em);
+            transition: all 240ms ease;
+            z-index: 2;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            inset: 0;
+            backdrop-filter: url(#chroma);
+            transition: all 140ms ease;
+            opacity: 0;
+          }
+
+          &:hover {
+            &::before {
+              transform: translate(-6%, 0%);
+              opacity: 0.3;
+              filter: blur(3px);
+            }
+
+            .image__container {
+              &::before,
+              &::after {
+                opacity: 1;
+              }
+            }
+
+            figure {
+              transform: scale(1.05);
+            }
+
+            figcaption {
+              transform: translateY(0);
+              box-shadow: inset 0 0 0 1px #000;
+              clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+            }
+          }
+        }
+      }
+
+      @keyframes square1 {
+        0% {
+          --col-start: 1;
+          --col-end: 9;
+          --row-start: 12;
+          --row-end: 17;
+        }
+
+        10% {
+          --col-start: 5;
+          --col-end: 9;
+          --row-start: 3;
+          --row-end: 12;
+        }
+
+        20% {
+          --row-start: 8;
+          --row-end: 10;
+        }
+
+        40% {
+          --row-start: 1;
+          --row-end: 3;
+          --column-start: 2;
+          --column-end: 12;
+        }
+
+        50% {
+          --row-start: 10;
+          --row-end: 14;
+          --col-start: 1;
+          --col-end: 9;
+        }
+
+        30%,
+        60% {
+          --col-start: 9;
+          --col-end: 9;
+          --row-start: 9;
+          --row-end: 9;
+        }
+      }
+
+      @keyframes square2 {
+        0% {
+          --col-start: 5;
+          --col-end: 9;
+          --row-start: 2;
+          --row-end: 12;
+        }
+
+        10% {
+          --col-start: 1;
+          --col-end: 9;
+        }
+
+        20% {
+          --row-start: 8;
+          --row-end: 18;
+        }
+
+        40% {
+          --row-start: 1;
+          --row-end: 3;
+          --column-start: 2;
+          --column-end: 8;
+        }
+
+        50% {
+          --row-start: 10;
+          --row-end: 14;
+          --col-start: 1;
+          --col-end: 5;
+        }
+
+        30%,
+        60% {
+          --col-start: 9;
+          --col-end: 9;
+          --row-start: 9;
+          --row-end: 9;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg aria-hidden="true" width="0" height="0">
+      <filter id="pixelate" x="0" y="0">
+        <feFlood x="4" y="4" height="2" width="2" />
+        <feComposite width="10" height="10" />
+        <feTile result="a" />
+        <feComposite in="SourceGraphic" in2="a" operator="in" />
+        <feMorphology operator="dilate" radius="5" />
+      </filter>
+    </svg>
+    <main>
+      <ul class="gallery">
+        <li>
+          <figure>
+            <div class="image__container">
+              <img
+                src="../../img/IA/1759286283343.jpg"
+                alt="Photo by Goost Eight"
+              />
+            </div>
+            <figcaption>Bettaibi Chokri</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div class="image__container">
+              <img
+                src="https://unsplash.com/photos/u2fGikDVsk4/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzUyMDAwOTMzfA&force=true&w=640"
+                alt="Photo by Arie Oldman"
+              />
+            </div>
+            <figcaption>Photo by Arie Oldman</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div class="image__container">
+              <img
+                src="https://unsplash.com/photos/WqChxUvEt_M/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzUyMDAwOTQ5fA&force=true&w=640"
+                alt="Photo by Alex Kalinin"
+              />
+            </div>
+            <figcaption>Photo by Alex Kalinin</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div class="image__container">
+              <img
+                src="https://unsplash.com/photos/K9xWSAlDI4I/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzUyMDAwOTYxfA&force=true&w=640"
+                alt="Photo by Romeio Paul"
+              />
+            </div>
+            <figcaption>Photo by Romeio Paul</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div class="image__container">
+              <img
+                src="../../img/IA/IMG_20250926_232258.png"
+                alt="Photo by Romeio Paul"
+              />
+            </div>
+            <figcaption>Nasserdin</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

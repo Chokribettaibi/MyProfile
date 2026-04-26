@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesrc.css">
+</head>
+<body>
+    <div class="content">
+        <p>Css Cours</p>
+<h2 id="03-element-styling">03 - Element Styling</h2>
+<blockquote>
+<p>Target All Paragraphs</p>
+</blockquote>
+<pre><code class="lang-css"><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">color</span>: red
+}
+</code></pre>
+<blockquote>
+<p>Target Paragraph <code>&quot;class = special&quot;</code></p>
+</blockquote>
+<pre><code class="lang-css"><span class="hljs-selector-class">.special</span> {
+    <span class="hljs-attribute">color</span>: green
+}
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-id">#speclial</span> {
+    <span class="hljs-attribute">color</span>: blue
+}
+</code></pre>
+<!-- <font color="red">Exemple </font> : -->
+<p>Exemple</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>CSS<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- External Style --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Internal Style --&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-tag">p</span> {
+            <span class="hljs-attribute">color</span>: red
+        }
+     </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Inlin Style --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: purple"</span>&gt;</span>This Is Paragraph<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This Is Paragraph<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"special"</span>&gt;</span>This Is Paragraph<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This Is Paragraph<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h2 id="04-name-conventions-and-ruls">04 - Name Conventions And Ruls</h2>
+<h2 id="11-display-block-inline-block-inline">11 - Display: Block, inline Block, Inline</h2>
+<p>div display block Deffalt value;</p>
+<blockquote>
+<p><strong>Block:</strong></p>
+<blockquote>
+<ol>
+<li>Take Full Width If No Width.</li>
+<li>Add Line Break</li>
+<li>Respect Padding, Margin, Width, Height</li>
+</ol>
+</blockquote>
+<p><strong>Inline</strong></p>
+<blockquote>
+<ol>
+<li>Do Not Respect Width, Height</li>
+<li>Respect Padding And Margin [ Just Left + Right ]</li>
+<li>Do Not Add Line Break</li>
+<li>Allow Elements Before And After It.</li>
+</ol>
+</blockquote>
+</blockquote>
+<h2 id="05-background-color-image-repeat">05 - Background ... Color, Image, Repeat</h2>
+<pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">background-color</span>: red; <span class="hljs-comment">/* Color Name */</span>
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>( 255 0 0 / 50%); <span class="hljs-comment">/* Red Green Blue Alpha Channel */</span>
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ff0000</span>; <span class="hljs-comment">/* Color HEX Code */</span>
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"../imgs/learn-programming.png"</span>);
+    <span class="hljs-attribute">background-repeat</span>: repeat; <span class="hljs-comment">/* repeat &amp; no-repeat */</span> 
+    <span class="hljs-attribute">background-attachment</span>: fixed;
+    <span class="hljs-attribute">background-position</span>: left top;
+    <span class="hljs-attribute">background-size</span>: cover;
+}
+</code></pre>
+<h2 id="28-masreing-the-css-calculation">28 - Masreing The CSS Calculation</h2>
+<pre><code class="lang-CSS"><span class="hljs-selector-tag">html</span> {
+    <span class="hljs-attribute">scroll-behavior</span>: smooth;
+}
+</code></pre>
+<h2 id="30-position">30 - Position</h2>
+<blockquote>
+<p><strong>Position: Static;</strong> =&gt; Default Value.</p>
+<blockquote>
+<p>(left top ...) no effect</p>
+</blockquote>
+<p><strong>Relative</strong></p>
+<blockquote>
+<p>transforme keep  position. &quot;You can leave the page&quot;
+it does not affect the rest item.</p>
+</blockquote>
+<p><strong>Absolute</strong></p>
+<blockquote>
+<p>Quitte The worke flue
+(left top ...) keep page
+parent position relative &gt; (left top ...) keep parent</p>
+</blockquote>
+<p><strong>fixed</strong></p>
+<blockquote>
+<p>(left top ...) keep page Always.</p>
+</blockquote>
+<p><strong>Sticky</strong></p>
+<blockquote>
+<p>ok ok then fixed on position known</p>
+</blockquote>
+</blockquote>
+<h2 id="34-pseudo-classes">34 - Pseudo Classes</h2>
+<pre><code class="lang-CSS"><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">color</span>: red;
+}
+<span class="hljs-selector-tag">ch</span><span class="hljs-selector-pseudo">:checked</span> {
+    <span class="hljs-attribute">display</span>: none;
+}
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span> {
+    <span class="hljs-attribute">color</span>: blue;
+}
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:empty</span>{
+    <span class="hljs-attribute">background</span>: green;
+}
+<span class="hljs-selector-class">.in</span><span class="hljs-selector-pseudo">:focus</span>{
+    <span class="hljs-attribute">border</span>: blue;
+}
+</code></pre>
+<h2 id="35-pseudo-elements-first-letter-first-line">35 - Pseudo Elements: First Letter, First Line</h2>
+<pre><code class="lang-CSS"><span class="hljs-selector-class">.two</span><span class="hljs-selector-pseudo">::first-letter</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>
+}
+<span class="hljs-selector-class">.three</span><span class="hljs-selector-pseudo">::first-line</span> {
+    <span class="hljs-attribute">color</span>: green;
+}
+<span class="hljs-selector-class">.four</span><span class="hljs-selector-pseudo">::selection</span> {
+    <span class="hljs-attribute">background-color</span>: black;
+    <span class="hljs-attribute">color</span>: yellow;
+}
+</code></pre>
+<h2 id="34-pseudo-elements-before-after-content">34 - Pseudo Elements: Before, After, Content</h2>
+<h2 id="transition">Transition</h2>
+<blockquote>
+<p>Exemple:</p>
+</blockquote>
+<pre><code class="lang-css"><span class="hljs-selector-class">.div</span> {
+    <span class="hljs-attribute">transition-property</span>: width; <span class="hljs-comment">// Defalt value 'all'</span>
+    <span class="hljs-attribute">transition-duration</span>: <span class="hljs-number">2s</span>;
+    <span class="hljs-attribute">transition-timing-function</span>: ease;
+    <span class="hljs-attribute">transition-delay</span>: <span class="hljs-number">0s</span>;  
+}
+</code></pre>
+<h2 id="46-flex-box-parent-direction-wrap-flow">46 - Flex Box Parent - Direction, Wrap, Flow</h2>
+<p>Flexible Box For Parent:</p>
+<ul>
+<li>display: flex; =&gt; To Start Flexible Box.</li>
+<li>flex-direction: [row coloum] row =&gt; Default Value</li>
+<li>flex-wrap =&gt; nowrap; =&gt; Default Value</li>
+<li>flex-flow: [Flex-Direction] + [Flex-wrap]</li>
+<li>flex-content: flex-start; =&gt; Default Value</li>
+<li>align-items: stretch; =&gt; Default Value</li>
+<li>align-content: stretch; =&gt; Default Value</li>
+</ul>
+<h2 id="flex-box-child">Flex Box Child</h2>
+<p>Flexible Box For Child</p>
+<ul>
+<li>flex-grow: 0; =&gt; Default Value</li>
+<li>flex-shrink: 1; =&gt; Default Value</li>
+<li>order: 0; =&gt; Default Value</li>
+<li>flex-basis: auto; Default Value</li>
+<li>flex: [Flex Grow] [Flex Shrink] [Flex Basis]</li>
+<li>align-self: stretch; =&gt; Default Value</li>
+</ul>
+<p>Holy grail</p>
+<h2 id="60-grid-parent-complete-layout-with-templa">60 - Grid - Parent - Complete Layout With Templa</h2>
+<pre><code class="lang-css"><span class="hljs-selector-class">.page</span> {
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">100px</span> auto <span class="hljs-number">1</span>fr;
+    <span class="hljs-attribute">grid-template-areas</span>: 
+    <span class="hljs-string">"logo logo nav nav nav nav nav"</span> 
+    <span class="hljs-string">"cont cont cont cont cont side side"</span>
+    <span class="hljs-string">"foot foot foot foot foot foot foot"</span>
+}
+
+<span class="hljs-selector-tag">h2</span> {
+    <span class="hljs-attribute">grid-area</span>: logo;
+}
+<span class="hljs-selector-tag">nav</span> {
+    <span class="hljs-attribute">grid-area</span>: nav;
+}
+<span class="hljs-selector-tag">section</span> {
+    <span class="hljs-attribute">grid-area</span>: cont; 
+}
+<span class="hljs-selector-tag">aside</span> {
+    <span class="hljs-attribute">grid-area</span>: side;
+}
+<span class="hljs-selector-tag">footer</span> {
+    <span class="hljs-attribute">grid-area</span>: foot;
+}
+</code></pre>
+<h2 id="69-2d-transform-matrix">69 - 2D Transform: Matrix</h2>
+<blockquote>
+<p>Syntax =&gt; <code>matrix( scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())</code>
+Exemple:</p>
+</blockquote>
+<pre><code class="lang-css"><span class="hljs-selector-class">.shape</span> &gt; <span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">matrix</span>(1.2, 0.2679, 0, 1.2, 20; 20);
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">matrix</span>(translateX(), <span class="hljs-built_in">translateY</span>(), <span class="hljs-built_in">scaleX</span>(), <span class="hljs-built_in">skewY</span>(), <span class="hljs-built_in">skewX</span>(), <span class="hljs-built_in">scaleY</span>())
+}
+</code></pre>
+<h2 id="70-transform-origin">70 - Transform Origin</h2>
+<blockquote>
+<p>Defult value <code>transform-origin: 50% 50%;</code> = <code>transform-origin: center center;</code>.</p>
+</blockquote>
+<p>:joy:</p>
+<p>:exclamation:</p>
+<font color="red">This text is red!</font>
+
+<p>[center]Texte centré[/center]  </p>
+<p>[right]Texte algné à droite[/right]</p>
+<blockquote>
+<p>:warning: <strong>Warning:</strong> Do not push the big red button.</p>
+<p>:memo: <strong>Note:</strong> Sunrises are beautiful.</p>
+<p>:bulb: <strong>Tip:</strong> Remember to appreciate the little things in life.</p>
+</blockquote>
+
+    </div>
+</body>
+
+</html>

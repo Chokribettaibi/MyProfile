@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../stylesrc.css" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <head></head>
+    <main>
+      <div class="container">
+        <h1 class="text-center">React Js</h1>
+        <h2 class="text-center">Welcome to your React Course</h2>
+        <h3 class="text-center">Quick Start</h3>
+        <!-- How to create and nest components -->
+        <!-- exemple -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">How to create and nest components</h5>
+            <p class="card-text">
+              In React, you can create components as functions or classes. To
+              create a component, you can define a function that returns JSX (a
+              syntax extension for JavaScript). For example:
+            </p>
+            <pre class="p-3"><code>function Greeting(props) {
+  return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}</code></pre>
+            <p class="card-text">
+              You can then use this component in another component by nesting
+              it. For example:
+            </p>
+            <pre class="p-3"><code>
+function MyComponent() {
+  return (
+    &lt;div&gt;
+      &lt;button&gt;Click me&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+            <p class="card-text">
+              In this example, the App component nests two Greeting components,
+              passing different names as props. When rendered, it will display
+              "Hello, Alice!" and "Hello, Bob!" on the page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mysql">mysql</h1>
+<p>install tools</p>
+<pre><code class="lang-linux">sudo apt <span class="hljs-keyword">install</span> apache2 php libapache2-<span class="hljs-keyword">mod</span>-php mysql-<span class="hljs-keyword">server</span> php-mysql
+
+
+ sudo apt <span class="hljs-keyword">install</span> php-curl php-gd php-intl php-<span class="hljs-keyword">json</span> php-mbstring php-<span class="hljs-keyword">xml</span> php-zip
+
+  sudo apt <span class="hljs-keyword">install</span> phpmyadmin
+</code></pre>
+<p>SQL = Structured Query Language                                    &#39;The Language&#39;</p>
+<p>MySQL = Database System Same as [ MSSQL, Oracle ]  &#39;DB System Or Software&#39;</p>
+<p>RDBMS = Relational Database Management System</p>
+<p>MySQL Has Extensions To Connect To DB</p>
+<p>PDO : Extebsion Connect To Database</p>
+<blockquote>
+<p><strong>mysql</strong>: start</p>
+<p>show databases;</p>
+<p><code>mysql -u root -pP0sswi0ed</code>, <code>-u</code> : user, <code>-p</code> : Password</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">show</span> <span class="hljs-keyword">variables</span> <span class="hljs-keyword">where</span> variable_name = <span class="hljs-string">'datadir'</span>;
+</code></pre>
+<p>Lancer XAMPP</p>
+<pre><code class="lang-linux"><span class="hljs-symbol">sudo</span> /<span class="hljs-meta">opt</span>/lampp/lampp start
+</code></pre>
+<p>Pour arrêter XAMPP</p>
+<pre><code class="lang-linux">sudo /<span class="hljs-keyword">opt</span>/lampp/lampp <span class="hljs-keyword">stop</span>
+</code></pre>
+<blockquote>
+<p>localition
+exemple :</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Variabel</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datadir</td>
+<td>/var/lib/mysql</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> testdb;
+</code></pre>
+<blockquote>
+<p>create data New database <strong>testdb</strong></p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">use</span> <span class="hljs-title">testdb</span>;
+</code></pre>
+
+</body>
+</html>

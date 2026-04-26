@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/stayle.css" />
+    <script src="js/tex-svg.js"></script>
+
+    <!-- Petit style d'en-tête responsive pour l'image du cours -->
+    <style>
+      .course-header { display:flex; align-items:center; gap:12px; padding:12px 0; }
+      .course-header .bb-list { display:flex; gap:12px; list-style:none; margin:0; padding:0; align-items:center; }
+      .course-header #parol { margin-left:8px; color:#666; }
+      .course-header-img { max-width:260px; height:auto; border-radius:6px; display:block; }
+      @media (max-width:700px){ .course-header{flex-direction:column; align-items:flex-start;} .course-header-img{max-width:100%;} }
+    </style>
+  </head>
+  <body>
+    <!-- Stayle -->
+    <!--
+    <div class="titel-chapitre"></div>
+    <div class="premerRoméne"></div>
+    <div class="théorème"></div>
+    <div class="définition"></div>
+    <div class="prposition"></div>
+    <div class="propréter"></div>
+    <div class="lemme"></div>
+    <div class="preve"></div>
+    <div class="corollaire"></div>
+    <div class="exemple"></div>
+    -->
+    <!-- Header corrigé: liste d'éléments et image responsive -->
+    <header>
+      <div class="course-header bb">
+        <ul class="bb-list">
+          <li>bettaibi</li>
+          <li id="myName">Chokri</li>
+        </ul>
+        <div id="parol"></div>
+        <img class="course-header-img" src="img/2577127-main-sur-science-formule-et-equation-mathematiques-abstrait-tableau-noir-fond-mathematiques-ou-chimie-education-intelligence-artificielle-concept-photo.jpg" alt="Illustration algèbre">
+      </div>
+    </header>
+    <div class="chapitre1">
+      <div class="chapitre1-cotainer">
+        <div class="titel-chapitre">
+          espaces vectoriels, applications  <span data="bellahi">linéaires</span>
+        </div>
+        <div class="premerRoméne_container">
+          <div class="premerRoméne">I- Indépendance linéaire, bases</div>
+          <div class="définition_content box">
+            <div class="définition">définition 1.1.1</div>
+            <div class="définition-text text " id="espace_vectoriel">
+              un espace vectoriels \(E\) sur un corps \(K\) (on dit aussi un
+              \(K\)-espace vectoriel ) est un groupe abélien additif muni d'une
+              loi de composition externe \( ( \lambda , x) \mapsto \lambda.x \) de
+              \(K \times E \) dans \(E \) possédant les propriétés suivantes:
+              <br />
+              1 - \( (\lambda + \mu).x = \lambda.x + \mu.x \) avec \(\forall x \in
+              E, \forall\lambda \in K, \forall \mu \in K,\) <br />
+              2 -\( (\lambda + \mu).x = \lambda.x + \mu.x \) 
+              \(\forall x \in E, \forall\lambda \in K, \forall \mu \in K,\)
+              <br />
+              3 - \( \lambda.(\mu.x) = (\lambda\mu).x \) avec \( \forall x \in E,
+              \forall \lambda \in K, \forall \mu \in K \) <br />
+              4 - \(\lambda.(x + y) = \lambda.x + \lambda.y \) avec \( \forall x
+              \in E ,\forall y \in E , \forall \lambda \in K \) <br />
+              5 - \(1.x = x\) avece \(\forall x \in E\) <br />
+              On écrira \(\lambda x\) au lieu de \(\lambda.x\) si aucune confusion
+              n'est à crainde. On a l'importante notion de sous-espace vectoriel.
+  
+              <!-- \begin{array}{c|lcr}
+                  n & \text{Left} & \text{Center} & \text{Right} \\
+                  \hline
+                  1 & 0.24 & 1 & 125 \\
+                  2 & -1 & 189 & -8 \\
+                  3 & -20 & 2000 & 1+10i
+                  \end{array} -->
+            </div>
+
+          </div>
+          <div class="définition_content box">
+            <div class="définition">définition 1.1.2</div>
+            <p class="définition-text">
+              On dit qu'une partie non vide \(F\) d'un \(K\)-espace vectoriel
+              \(E\) <br />
+              1 - \( x + y \in F \) avec \(\forall x \in F, \forall y \in F\).
+              <br />
+              2 - \( \lambda x \in F \) avece \( \forall \lambda \in K \forall \in
+              F \) <br />
+              Il est clair que si \(F\) est un sous-espace vectoriel de \(E\)
+              alors \(F\) est lui-même un \(K\)-espace vectoriel pour la
+              restriction à \(F\) de l'addition de \(E\) et du produit d'un
+              élément de \(E\) par un élément de \(K\). De plus pour qu'une partie
+              non vide \(F\) de \(E\) soit un sous-espace vectoriel de \(E\) il
+              faut et il suffit que l'on ait: $$ (1.1) \lambda x + \mu y \in F
+              avec \forall \lambda \in K, \forall \mu \in K, x \in F y \in F $$ Un
+              récurrence immédiate montre que l'on a alors la propriété suivante:
+              $$ (1.2) \sum_{j=0}^{n} \lambda_j x_j \in F \forall n \ge 1, \forall
+              x_1,...,x_n \in F, \forall \lambda_1,...,\lambda_n \in K. $$ D'autre
+              part il est clair que l'on a la propriété suivante:
+            </p>
+          </div>
+          <div class="prposition_content box">
+            <div class="prposition">proposition 1.1.3</div>
+            <div class="prposition-text">
+              Soit \( (E_i)_{i \in I} \) une famille quelconque de sous-espaces
+              vectoriels d'un <a href="#espace_vectoriel" class="espace_vectoriel">espace vectoriel</a> \(E\). Alors \( \cap_{i\in I}E_i \)
+              est un sous-espace vectoriel de \(E\).
+            </div>
+          </div>
+          <div class="corollaire_content box">
+            <div class="corollaire">corollaire 1.1.4</div>
+            <div class="corollaire-text">
+              Soit \(E\) un espace vectoriel sur un corps \(K\) et soit \(A\) une
+              partie non vide de \(E\), Alors l'intersction de tous les
+              sous-espaces vectoriels de \(E\) contenant \(A\) est un sous-espace
+              vectoriel de \(E\) contenant \(A\), qui est appelé le sous- espace
+              vectoriel de \(E\) contenant \(A\), qui est appelé le sous-espace
+              vectoriel de \(E\) engendré par \(A\), et qui est noté \(Vect(A) \).
+            </div>
+          </div>
+          <div class="définition_content box">
+            <div class="définition">Définition 1.1.5</div>
+            <div class="définition-text">
+              1- On dit qu'une famille \( (e_1,...,e_k) \) déléments d'un
+              \(K\)-espace vectoriel \(E\) est libre (ou que les vecteur \(
+              e_1,...,e_k \) sont linéairement indépendants) si in a la condition
+              suivante; $$ (1.3) \lambda_{1}e_{1} + ...\lambda_{k}e_{k} = 0
+              \implies \lambda_i = 0, \forall i \le k. $$ <br />
+              2- On dit qu'une famille \( (e_1,...,e_k) \) déléments d'un
+              \(K\)-espace vectoriel \(E\) est génératrice si pour tout \(x \in
+              E\) il existe \(\lambda_1,...,\lambda_k \in K \) tels que \(x =
+              \lambda_1e_1 + ... + \lambda_ke_k\). <br />
+              3- On dit qu'une famille \( (e_1,...,e_k) \) d'éléments d'un
+              \(K\)-espace vectoriel \(E\) est une base de \(E\) si elle est à la
+              fois libre et génératrice. <br />
+              On dit qu'un \(K\)-espace vectoriel \(E \neq {0} \) est de dimension
+              finie s'il existe une famille finie d'éléments de \(E\) qui est une
+              base de \(E\). On a le résultat fondamental suivant.
+            </div>
+          </div>
+          <div class="théorème_content box">
+            <div class="théorème">théorème 1.1.6</div>
+            <div class="théorème-text">
+              1- pour qu'un \(K\)-espace vectoriel \(E \neq \{0\} \) soit de
+              dimension finie il faut et il suffit qu'il possède une famille
+              génératrice finie. Dans ce cas toutes les bases de \(E\) ont le même
+              nombre d'éléments, et ce nombre est appelé la dimension de \(E\).
+              <br />
+              2- si \(dim(E) = n\), et si \( (f_1, ..., f_k ) \) est une famille
+              génératrice d'éléments de \(E\) alors \( k \ge n \), si \( k = n \),
+              alors \( (f_1, ..., f_k) \) est une base de \(E\), si \( k > n \),
+              alors il existe une suite strictement croissante \(i_1,...,i_n\)
+              d'entiers inférieurs ou égaux é à \(k\) tels que \( (f_{i_1}, ...,
+              f_{i_n}) \) soit une base de \(E\). <br />
+              3- si \(dim(E)= n\). et si \( (e_1, ...,e_n ) \) est une famille
+              libre d'éléments de \(E\) alors \(p \le n \), si \(p = n \), alors
+              \( (e_1, ..., e_p ) \) est une base de \(E\), si \(p < n\), alors il
+              existe une famille \( (e_{p+1}, ..., e_n) \) de \( n - p\) éléments
+              de \(E\) telle que \( (e_1,...,e_p,e_{p+1},...,e_n ) \) soit une
+              base de \(E\) ("théorème de la base incompléte"). <br />
+              on dira par convention que l'espace vectoriel réduit à \( \{0\} \)
+              est de dimension nulle.
+            </div>
+          </div>
+          <div class="corollaire_content box">
+            <div class="corollaire">corollaire 1.1.7</div>
+            <div class="corollaire-text">
+              soit \(E\) un espace vectoriel de dimension finie, et soit \(F\) un
+              sous espace vectoriel de \(E\). Alors \(F\) est de dimension finie,
+              et \( dimF \le dimE \), si on a \(dim F = dim E \), alors \(E = F\).
+            </div>
+            <div class="corollaire-preve">
+              Démonstration: Si \(F = \{0\} \) il n'y arien à démontrer. Sinon
+              toute famille libre d'élèments de \(F\) possède au plus \(n\)
+              élèments, oû \(n = dim(E) \). soit \(p\) le plus grand entier pour
+              lequel il existe une famille libre \( (e_1, ..., e_p) \) de \(p\)
+              élèments de \(F\). On a \( p \le n\). Soit \(x \in F\). Comme la
+              famille (\(e_1, ..., e_p, x\)) n'est pas libre, il existe une
+              famille (\(\lambda_1, ...,\lambda_{p+1} \)) d'éléments non tous nuls
+              de \(K\) telle que \(\lambda_1e_1 + ...+ \lambda_pe_p +
+              \lambda_{p+1}x = 0\). On a \(\lambda_{p+1} \neq 0\), car sinon
+              \(\lambda_1, ...,\lambda_p\) seraient également tous nuls puisque
+              (\(e_1, ...,e_p\)) est libre. On obtient \[x = \sum_{j=1}^{p} -
+              \frac{\lambda_{p+1} }{\lambda_j} e_j \] Ceci montre que (\(e_1, ...,
+              e_p\)) est génératrice. C'est donc une base de \(F\). donc \(F\) est
+              de dimension finie, et \(dim(F) = p \le n = dim(E) \). <br />
+              Si \(dim(F) = dim(E)\), soit \(\mathfrak{B}\) une base de \(F\).
+              Alors \(\mathfrak{B}\) est une base de \(E\), donc \(E=F\).
+            </div>
+          </div>
+          <div class="exemple_content box">
+            <div class="exemple">Exelmple 1.1.8</div>
+            <div class="exemple-text">
+              1- Soit \(K\) un corps. On munit l'ensemble \(K^n\) des familles
+              (\(x_1, ...,x_n\)) de \(n\) éléments de \(K\) des opérations
+              suivantes - \( (x_1, ..., x_n) + (y_1, ..., y_n) = (x_1 + y_1, ...,
+              x_1 + y_1, ... , x_n + y_n) \), \( \forall (x_1, ..., x_n) \in k^n
+              \) <br />
+              - \(\lambda(x_1, ...,x_n) = (\lambda x_1, ..., \lambda x_n) \)
+              <br />
+              - Posons \(e_i = (\delta_{i,j})_{1\le i\le n}\). On vérifie
+              facilemnt qu \(K^n\) est un \(K\)-espace vectoriel de dimension
+              \(n\) et que (\(e_1, ..., e_n\)) est une base de \(K^n\). <br />
+              2- le plan vectoriel du lycée est un espace vectoriel réel de
+              deimension 2, et l'espace vectoriel du lycée est un eespace
+              vectoriel réel de dimension 3. <br />
+              3- muni des opérations usuelles, \(\Bbb{C}\) est un espace vectoriel
+              réel de dimension 2, et (\(1,i\)) est une base de \(\Bbb{C}\).
+              <br />
+              4- l'espace \(K[x]\) des polynômes sur un corps \(K\) est un
+              \(K\)-espace vectoriel pour les opérations usuelles. Il n'est pas de
+              dimension finie. <br />
+              5- pour \(n\ge 0\), l'espace \(K_{n}[x] \). <br />
+            </div>
+          </div>
+        </div>
+        <div class="premerRoméne-container">
+          <div class="premerRoméne">
+            II- Théorème de la dimension pour la somme de deux espaces vectoriels
+          </div>
+          <div class="définition_content box">
+            <div class="définition">Définition 1.2.1</div>
+            <div class="définition-text">
+              soient \(F\) et \(G\) deux sous-espaces vectoriels d'un espace
+              vectoriel \(E\). On pose \(F + G = \{x + y\}_{x\in F, y\in G} \ ).
+              <br />
+              On a alors la théorème suivant.
+            </div>
+          </div>
+          <div class="théorème_content box">
+            <div class="théorème">Théorème 1.2.2</div>
+            <div class="théorème-text">
+              soient \(F\) et \(G\) deux sous-espaces vectoriels de dimension
+              finie d'un espace vectoriel \(E\). Alors \(dim(F+G) = dim(F) +
+              dim(G) - dim(F\cap G) \) <br />
+              On dit que \(F\) et \(G\) sont en somme directe si \(F\cap G = \{0\}
+              \). Dans ce cas tout \(x\in F + G\) s'ecrit de manière unique sous
+              la forme \(x = y + z\), avec \(y\in F\), \(z\in G\). <br />
+              Dans cette situation on écrit \(F\oplus G\) au lieu de \(F + G\)
+            </div>
+          </div>
+          <div class="exemple_content box">
+            <div class="exemple">Exemple 1.2.3</div>
+            <div class="exemple-text">
+              on considère l'espace vectoriel \(\Bbb{R}_{2}[X]\) des polynômes à
+              coefficients réels de degré inférieur ou égal à 2. On pose \(E = \{p
+              \in \Bbb{R}_2[x] | p(2)=0 \} \) et \(F = \{p \in R_2[x] | p(1) =
+              p(-1) = 0 \} \). Alors \(E\) et \(F\) sont deux sous-espaces
+              vectoriels de \(\Bbb(R)_2[x]\), et \(\Bbb{R}_2[x] = E \oplus F \).
+              <br />
+              En effet pour \(p, q \in E, \lambda, \mu \in \Bbb{R} \) on a
+              \((\lambda p + \mu q)(2) = \lambda p (2) + \mu q (2) = 0 \), donc
+              \(F\) est un sous-espace vectoriel de \(R_2[X] \). <br />
+              Soit \(p\in E \cap F \). On a \(p(-1) = p(1) = p(2) = 0\). Comme un
+              polynôme non nul de degé inférieur ou égal à 2 posséde la somme
+              directe \( E \oplus F \). <br />
+              Poson \(u = x - 2, v = x(x - 2)\). On a \(u \in E\) et \(v \in E \).
+              Si \(\lambda\in \Bbb{R}, \mu\in \Bbb{R} \), et si \(\lambda u + \mu
+              v = 0 \) alors \((\lambda + \mu x)(x - 2)\), donc \(\lambda + \mu x
+              = 0\) et \(\lambda = \mu = 0\). Donc la famille \( \{u,v\} \) est
+              libre. <br />
+              si \(p \in E\), alors \(p\) est divisible par \(x-2\) et il existe
+              \(q\in \Bbb{R}[x]\) tel que \(p = q(x-2) \). on a
+              \(d°(q)+d°(x-2)=d°(p) \le 2 \) donc \(d°(q) \le 1 \), et \(q\) est
+              de la forme \(q= \lambda + \mu x\) avec \(\lambda,\mu \in \Bbb{R}
+              \). On a alors \(p=\lambda(x-2) + \mu x(x-2) = \lambda u + \mu v \)
+              et on voit que \( \{ u,v\} \) est une famille génératrice de \(E\).
+              Par conséquet \( \{u,v\} \) est une base de \(E\) et \(dim(E) = 2
+              \). <br />
+              Posons \(w = x^2 - 1 \in F\). si \(p\in F\) alors \(p\) est
+              divisible par \(x-1\) et \(x+1\) qui sont premiers entre eux.
+              D'après le théorème de Gauss, \(p\) est divisible par \( (x-1)(x+1)=
+              w \). On a donc \(p = qw\), avec \(w \in \Bbb{R}[x] \). On a \( 2\ge
+              d°(p) = d°(q)+d°(w) = d°(q) + 2 \) donc \(d°(q)= 0 \) ou \(q=0\), et
+              le polynôme \(q\) est constant. Donc \(p=\lambda w \), avec
+              \(\lambda\in \Bbb{R} \), et \(F\) est le sous-espace vectoriel de
+              dimension 1 de \(\Bbb{R}_2 [x] \) engendré par \(w\). <br />
+              On a \(E\oplus F \subset \Bbb{R}[x] \wp \), et \(dim(E\oplus F) =
+              dim(E+F) dim(E) + dim(F) - dim(E\cup F) = dim(E) + dim(F) = 3 =
+              dim(\Bbb{R}_2[x])\). Donc \(\Bbb{R}_2[x] = E\oplus F \ ).
+            </div>
+          </div>
+        </div>
+        <div class="premerRoméne-container">
+          <div class="premerRoméne">III - Applications linéaires</div>
+          <p>
+            On va maintenant introduire l'imporatante notion d'<b
+              >application linéaire</b
+            >.
+          </p>
+          <div class="définition_content box">
+            <div class="définition">Définition 1.3.1</div>
+            <div class="définition-text">
+              soient \(E\) et \(F\) deux espaces vectoriels sur un corps \(K\). On
+              dit qu'une application \(u: E\to F\) est
+              <span><b>linéaire</b></span> si les deux propriétés suivantes sont
+              vérifiées <br />
+              1- \(u(x+y) = u(x) + u(y) \), \(\forall x\in E, \forall y\in F\).
+              <br />
+              2- \((\lambda x) = \lambda u(x) \), \(\forall x\in E, \forall
+              \lambda \in K\). <br />
+              si \(u: E \to F\) est linéaire, on appelle
+              <span><b>noyau de</b></span> \(u\) l'ensemble \(Ker(u):= \{ x \in E
+              | u(x) = 0 \} \), et on appelle <span><b>image de</b></span> u
+              l'ensemble \(Im(u):= u(E) = \{u(x)\}_{x\in E} \). <br />
+              Une application linéaire \(u: E\to E\) est appellée un
+              <span><b>endomorphisme</b></span> de \(E\). <br />
+              Il est clair qu'une application \(u: E \to F\) est linéaire si et
+              seulement si la condition suivante est vérifiée \[(1.4) u(\lambda x
+              + \mu y ) = \lambda u(x) + \mu u(y) , \forall x,y\in E, \forall
+              \lambda,\mu \in K \]. Si \(A, B, C\) sont trois ensembles et si
+              \(\phi: A\to B\) et \(\psi : B\to C \) sont deux application, 
+              la composée \(\psi \circ \phi : A \to C\) est l'application définie par la 
+              formule 
+              \[(1.5)  (\psi \circ \phi)(x) = \psi(\phi (x)) \forall x\in A. \].
+              On a alors le résuktat évident suivant:
+            </div>
+          </div>
+          <div class="prposition_content box">
+            <div class="prposition">Proposition 1.3.2</div>
+            <div class="prposition-text">
+                Soient \(E_1,\dots,E_k\) des espaces vectoriels sur un corps \(K\),
+                avec \(k\ge 3\), et pour \(1\le i\le k-1\) soit \(u_i : E_{i+1} \to E_i \), une 
+                application linéaire. Alors l'application composée \(u_{k-1} \circ \ldots u_1 : E_k \to E_1 \)
+                est linéaire.
+            </div>
+          </div>
+          <div class="prposition_content box">
+            <div class="prposition">Propoqition 1.3.3</div>
+            <div class="prposition-text">
+                Soient \(E\) et \(F\) deux espaces vectoriels sur un corps \(K\) et 
+                soit \(u: E\to F\) une application linéaire. <br>
+                (i) \(Ker(u) \) est un sous-espace vectoriel de \(E\), et \(Im(u) \) est un 
+                sous-espace vectoriel de \(F\). <br>
+                (ii) si \(E\) est de dimension finie, et si \(\mathfrak{B} = (e_1,\ldots),e_n \)
+                est un base de \(E\), alors \(u(\mathfrak{B}):= (u(e_1),\dots , u(e_n)) \) est 
+                une famille génératrice de \(Im(u) \). De plus \(u(\mathfrak{B} ) \) est une 
+                base de \(Im(u) \) si \(Ker(u) = \{0\} \ ).
+            </div>
+          <div class="preve">Démonstration</div>
+          <div class="preve-prposition">
+            (i) si \(x_1,x_2\in Ker(u)\), \(\lambda_1,\lambda_2 \in K\), on a 
+            \(u(\lambda_1 x_1 + \lambda_2 x_2) = \lambda u(x_1) + \lambda_2 u(x_2) = 0 \), 
+            donc \( \lambda_1 x_1 + \lambda_2 x_2 \in Ker(u) \),  et \(Ker(u) \) est un
+            sous-espace vectoriel de \(E\). <br>
+            Soient maintenant \(y_1, y_2 \in Im(u) \) et \(\lambda_1,\lambda_2 \in K \). Il existe 
+            \(x_1,x_2\in E\) telque \(u(x_1) = y_1, u(x_2) = y_2 \), et on a \(\lambda_1 y_1 + \lambda_2 y_2 = \lambda_1 u(x_1)
+            + \lambda_2 u(x_2) = u(\lambda_1 x_1 + \lambda_2 x_2)\in Im(u) \). Donc \(Im(u) \)
+            est un sous-espace vectoriel de \(F\). <br>
+            (ii) Si \(E\) est de dimension finie, et si \(\mathfrak{B} = (e_1,\ldots,e_n) \) est un base de \(E\),
+            soit \(y\in Im(u) \). Il existe \(x\in E\) telque 
+            \(u(x) = y Im(u) \). Il existe \(x\in  E \) tel que 
+            \(u(x) = y \), et il exste \(\alpha_1, \ldots, \alpha_n \in K\)
+            tels que \(x = \sum-{k=1}{n} \alpha_{k}e_{k} \ ).
+            On a alors \(y = u(x) = u(\sum_{k=1}^{n} \alpha_k e_k) = \sum_{k=1}^{n} 
+            \alpha_k u(e_k)\). Donc \(u(\Bbb{B})\) est une famille
+            génératrice de \(Im(u)\). <br>
+            Si on suppose de plus que \(Ker(u) = \{0\} \), soient 
+            \(\lambda_1,\ldots,\lambda_n \in K \)  tels que 
+            \(\lambda_1 u(e_1) + \ldots + \lambda_n e_n = 0 \ ).
+            On a \(u(\lambda_1e_1+\ldots+\lambda_ne_n)=\lambda_1u(e_1)+
+            \ldots+\lambda_nu(e_n)=0 \), donc \(\lambda_1e_1+\ldots+\lambda_ne_n =0\). <br>
+            Comme \(Ker(u)= \{0\} \), on obtient \(\lambda_1e_1+\ldots+\lambda_ne_n =0\).
+            Comme \(\mathfrak{B} \) est libre, on a \(\lambda_k=0\) pour 
+            \(1\le k\le n\), ce que prouve que \(u(\mathfrak{B} ) \) est libre,
+            et \(u(\mathfrak{B} ) \) est dans ce cas une base de \(Im(u) \ ).
+          </div>
+          </div>
+          <div class="exemple_content box">
+            <div class="exemple">Exelmple 1.3.4</div>
+            <div class="exemple-text">
+              1- L'application \(D : p \to p' \) est un endomorphisme de 
+              \(\Bbb{C}_n[x]\) pour \(n\ge1\). Le noyau de \(D\) est l'espace 
+              vectoriel de dimension 1 formé des polynômes constants, et 
+              l'image de \(D\) est égale à \(\Bbb{C}_{n-1}[x] \ ). <br>
+              2- Les homothéties vectorielles et les symétries vectorielles 
+              sont des endomorphismes du plan vectoriel et de l'espace 
+              vectoriel de dimension 3 vus au Lycée. Les rotations 
+              vectorielles sont des endomorphismes du plan vectoriel 
+              euclidien. <br>
+              3- Soit \(E\) un espace vectoriel sur un corps \(K\) et 
+              soit \(\mathfrak{B} = (e_1,\ldots,e_p)  \) une famille finie 
+              d'éléments de \(E\). On note 
+              \(F_{\mathfrak{B} } = \{ \lambda_1e_1 +\ldots + \lambda_p e_p \}_{(\lambda_1,\ldots, \lambda_{p})\in K^p } \)
+              l’ensemble des combinaisons linéaires d’éléments de \(B\). Alors \(F_{\mathfrak{B} } \) est un sous-espace
+              vectoriel de \(E\), et \(F_{\mathfrak{B} } = Vect(\mathfrak{B} ) \) .
+            </div>
+
+          </div>
+
+      </div>
+            <div class="somaire">
+        <ul>
+          <li>
+            Espace vectoriels, application linéaires
+            <ol>
+              <li>Indépendance linéaire, bases</li>
+              <li>Théoréme de la dimension pour la somme de deux espace vectoriels</li>
+              <li>Applications linéaires</li>
+              <li>Théoréme de la dimension pour les application linéaires</li>
+              <li>Application réciproque d’une bijection</li>
+              <li>Les fonctions Arctg, Arccos et Arcsin</li>
+              <li>Exercices sur</li>
+            </ol>
+          </li>
+
+          <li>
+            Matrices, changements de base
+            <ol>
+              <li>Calcul matriciel</li>
+              <li>Matrice associée à une application linéaire</li>
+              <li>Formule de changement de base pour les coordonnées de vecteurs</li>
+              <li>Formule de changement de base pour les applications linéaires</li>
+              <li>Exercices sur</li>
+            </ol>
+          </li>
+
+          <li>
+            Déterminants, notations indicielles de la Physique
+            <ol>
+              <li>Propriétés des déterminants</li>
+              <li>Matrices carrées inversibles</li>
+              <li>Formules de Cramer</li>
+              <li>Formules de Cramer</li>
+              <li>Déterminant d’un endomorphisme et d’une famille de vecteurs</li>
+              <li>Rang d’une matrice</li>
+              <li>Rang d’une famille de vecteurs, rang d’une application linéaire</li>
+              <li>Introduction aux notations indicielles dela Physique</li>
+              <li>Exercices sur</li>
+            </ol>
+          </li>
+
+          <li>
+            Valeurs propres,vecteurs propres,diagonalisation
+            <ol>
+              <li>Introduction à la diagonalisation des matrices</li>
+              <li>Polynôme caractéristique d’une matrice</li>
+              <li>Matrices semblables</li>
+              <li>Dimension d’un sous-espace propre et ordre de multiplicité d’unevaleur propre</li>
+              <li>Matrices diagonalisables</li>
+              <li>Endomorphismes diagonalisables</li>
+            </ol>
+          </li>
+
+          <li>
+            Polynôme minimal, décomposition de Jordan
+            <ol>
+              <li>Théorème de Cayley-Hamilton</li>
+              <li>Polynôme minimal</li>
+              <li>Nouvelle caractérisation des matrices diagonalisables</li>
+              <li>Matrices nilpotentes</li>
+              <li>Théorème de décomposition de Jordan</li>
+              <li>Un algorithme de calcul rapide pour la décomposition de Jordan</li>
+            </ol>
+          </li>
+
+          <li>
+            Itération, systèmes différentiels linéaires
+            <ol>
+              <li>Calcul des puissances d’une matrice</li>
+              <li>Rappel sur les équations différentielles linéaires du premier ordre</li>
+              <li>Systèmes différentiels linéaires et exponentielles de matrices</li>
+            </ol>
+          </li>
+
+          <li>
+            Espaces vectoriels euclidiens
+            <ol>
+              <li>Produit scalaire, inégalité de Cauchy-Schwartz</li>
+              <li>Procédé d’orthonormalisation de Gram-Schmidt</li>
+              <li>Projections orthogonales</li>
+            </ol>
+          </li>
+
+          <li>
+            Matrices symétriques, matrices orthogonales
+            <ol>
+              <li>Matrices symétriques</li>
+              <li>Matrices orthogonales</li>
+              <li>Formes quadratiques</li>
+              <li>Matrices définies positives</li>
+              <li>Applications aux coniques et quadriques</li>
+            </ol>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

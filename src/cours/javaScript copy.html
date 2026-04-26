@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styleto.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">JavaScript Cours </div>
+      <nav></nav>
+    </header>
+    <main>
+      <section>
+        <article>
+          
+          <p>JavaScript is a powerful programming langue that 
+            brings interactivity and dynamic behavior to 
+            websutes</p>
+          <p>While HTML and CSS are markup languages used to 
+            structure content and style elements on a page, 
+            JavaScript goes beyond those by enabling more 
+            complex functionality, such as handling user input, 
+            animating elements, and even building full web 
+            applications, (freeCodeCamp)</p>
+        </article>
+      </section>
+      <section>
+        <article>
+          <h2>Variables and Strings</h2>
+          <p style="margin: 40px;">declartion d'un variable:</p>
+          <p>
+            Syntax:
+            <pre><code>let var1 [= valeur1] [, var2 [= valeur2]] [, …, varN [= valeurN]];</code></pre>
+          </p>
+          <p>L'instruction <code>let</code>: let permet de déclarer une variable dont la portée est celle du bloc courant, éventuellement en initialisant sa valeur. (mdn)</p>
+          <p>
+            Exemple:
+            <code>let x = value </code>
+            varable x pron la valeur 
+          </p>
+          <blockquote>
+          <pre><code> const var</code></pre>
+          </blockquote>
+        </article>
+
+        <article>
+          <h2>Numbers and Booleans</h2>
+
+        </article>
+
+        <h2>Functions</h2>
+        <h2>Arrays</h2>
+        <h2>Loops</h2>
+        <h2>Objects</h2>
+        <h2>Higher Order Functions</h2>
+        <h2>DOM Manipulation and Events</h2>
+      </section>
+    </main>
+    <footer></footer>
+    <script>
+      function multiplesOf3Or5(number) {
+        let x = 0;
+        let y = 0;
+        
+      for(let i= 0; i<number; i++){
+        if(i % 3 == 0){
+          x += i;
+        };
+        if(i % 5 == 0){
+          y += i;
+        }
+      }
+      console.log(x)
+      console.log(y)
+      console.log(x+y)
+      return true;
+    }
+    multiplesOf3Or5(8456)
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

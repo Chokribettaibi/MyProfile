@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercices et Problèmes de Mathématiques</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- MathJax for equations -->
+    <script
+      async
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+    ></script>
+    <script
+      async
+      id="MathJax-script"
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      :root {
+        --primary-blue: #3d4f7d;
+        --secondary-purple: #b8a3c9;
+        --accent-pink: #ff1493;
+        --light-bg: #f5f3f8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #ffffff;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container-main {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header Section */
+      .header-section {
+        background: linear-gradient(
+          90deg,
+          var(--primary-blue) 0%,
+          var(--secondary-purple) 100%
+        );
+        color: white;
+        padding: 30px 40px;
+        margin-bottom: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .header-section h1 {
+        font-size: 1.9rem;
+        font-weight: 700;
+        margin: 0;
+        letter-spacing: 0.5px;
+      }
+
+      /* Section Title (Appliquer/Maîtriser) */
+      .section-header {
+        background: linear-gradient(
+          90deg,
+          var(--primary-blue) 0%,
+          var(--secondary-purple) 100%
+        );
+        color: white;
+        padding: 12px 40px;
+        margin: 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        letter-spacing: 0.5px;
+      }
+
+      .section-header::before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 22px;
+        background: white;
+        border-radius: 2px;
+      }
+
+      /* Content Container */
+      .content-wrapper {
+        padding: 20px 40px;
+      }
+
+      /* Exercise Item */
+      .exercise {
+        background: white;
+        margin-bottom: 20px;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .exercise:last-child {
+        border-bottom: none;
+      }
+
+      .exercise-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 12px;
+        padding: 15px 0 0 0;
+      }
+
+      .exercise-number {
+        background: var(--primary-blue);
+        color: white;
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .exercise-title {
+        color: var(--accent-pink);
+        font-weight: 700;
+        font-size: 0.98rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .exercise-content {
+        margin-top: 10px;
+        padding-left: 47px;
+        padding-bottom: 15px;
+      }
+
+      .exercise-text {
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: #333;
+      }
+
+      .exercise-text strong {
+        color: var(--primary-blue);
+        font-weight: 600;
+      }
+
+      /* Lists */
+      .problem-list {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+      }
+
+      .problem-list li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .problem-list li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent-pink);
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .problem-sublist {
+        list-style: none;
+        padding: 8px 0 8px 30px;
+        margin: 8px 0;
+      }
+
+      .problem-sublist li {
+        position: relative;
+        padding-left: 18px;
+        margin-bottom: 6px;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: #444;
+      }
+
+      .problem-sublist li::before {
+        content: "◦";
+        position: absolute;
+        left: 0;
+        color: var(--secondary-purple);
+        font-size: 0.8rem;
+      }
+
+      /* Mathematical equations */
+      .math-expression {
+        background: #f5f5f5;
+        padding: 8px 12px;
+        border-radius: 3px;
+        margin: 8px 0;
+        font-family: "Courier New", monospace;
+        font-size: 0.85rem;
+        color: var(--primary-blue);
+        overflow-x: auto;
+        display: inline-block;
+      }
+
+      /* Concours section */
+      .concours-section {
+        background: var(--light-bg);
+        padding: 12px 15px;
+        margin: 15px 0;
+        border-left: 4px solid var(--secondary-purple);
+        border-radius: 3px;
+      }
+
+      .concours-title {
+        color: var(--primary-blue);
+        font-weight: 700;
+        font-size: 0.92rem;
+        margin-bottom: 6px;
+      }
+
+      .concours-text {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: #333;
+      }
+
+      /* Inline strong text styling */
+      .text-pink {
+        color: var(--accent-pink);
+        font-weight: 600;
+      }
+
+      .text-blue {
+        color: var(--primary-blue);
+        font-weight: 600;
+      }
+
+      /* Print styles */
+      @media print {
+        body {
+          background: white;
+        }
+        .exercise {
+          page-break-inside: avoid;
+        }
+        .section-header {
+          page-break-after: avoid;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container-main {
+          max-width: 100%;
+        }
+        .header-section,
+        .section-header,
+        .content-wrapper {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .exercise-content {
+          padding-left: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-main">
+      <!-- Header -->
+      <div class="header-section">
+        <h1>Exercices et problèmes</h1>
+      </div>
+
+      <!-- Section APPLIQUER -->
+      <div class="section-header">APPLIQUER</div>
+      <div class="content-wrapper">
+        <!-- Exercise 1 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">1</div>
+            <div class="exercise-title">
+              Le plan est muni d'un repère cartésien (O, I, J)
+            </div>
+          </div>
+          <div class="exercise-content">
+            <div class="exercise-text">
+              Soit les points A(-1, -3) ; B(1, 0) ; C(4, 1) et D(2, -4).
+            </div>
+            <ul class="problem-list">
+              <li>Montrer que ABCD est un parallélogramme.</li>
+              <li>
+                Sachant que E et F les points définis par:
+                <div class="math-expression">
+                  $$\vec{CE} = \vec{CD} + \vec{AF} = \frac{1}{5}\vec{AB}$$
+                </div>
+                <ul class="problem-sublist">
+                  <li>
+                    a) Calculer les coordonnées des points E et F, puis les
+                    coordonnées du milieu de [EF].
+                  </li>
+                  <li>b) Vérifier que [EF] et [AC] ont le même milieu.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">2</div>
+            <div class="exercise-title">
+              Soient A(-1, -3) ; B(2, -1) et C(-2, -2)
+            </div>
+          </div>
+          <div class="exercise-content">
+            <div class="exercise-text">
+              On désigne par G le centre de gravité du triangle ABC.
+            </div>
+            <ul class="problem-list">
+              <li>a) Déterminer les coordonnées du point G.</li>
+              <li>
+                b) Déterminer une équation cartésienne de chacune des médianes
+                du triangle ABC.
+              </li>
+              <li>
+                c) Déterminer une équation de chacune des hauteurs du triangle
+                ABC.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">3</div>
+            <div class="exercise-title">Soient A(3, 5) et B(-2, 1)</div>
+          </div>
+          <div class="exercise-content">
+            <ul class="problem-list">
+              <li>
+                a) Calculer le coefficient directeur de chacune des droites
+                (AB), (AC) et (BC).
+              </li>
+              <li>
+                b) Donner l'équation réduite de chacune des droites (AB), (AC)
+                et (BC).
+              </li>
+              <li>
+                c) Déterminer une équation de chacune des hauteurs du triangle
+                ABC.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">4</div>
+            <div class="exercise-title">
+              On considère les points A(3, 0), B(-4, -5) et C(-2, -1)
+            </div>
+          </div>
+          <div class="exercise-content">
+            <ul class="problem-list">
+              <li>
+                a) Calculer le coefficient directeur de chacune des droites
+                (AB), (AC) et (BC).
+              </li>
+              <li>
+                b) Donner l'équation réduite de chacune des droites (AB), (AC)
+                et (BC).
+              </li>
+              <li>
+                c) Déterminer une équation de chacune des hauteurs du triangle
+                ABC.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">5</div>
+            <div class="exercise-title">
+              Les droites d'équations y = ax et y = -x + b se coupent en un
+              unique point
+            </div>
+          </div>
+          <div class="exercise-content">
+            <div class="exercise-text">
+              dont les coordonnées sont strictement négatives. On en conclut
+              que:
+            </div>
+            <ul class="problem-list">
+              <li>• a > 0 et b > 0</li>
+              <li>• a > 0 et b < 0</li>
+              <li>• a < 0 et b > 0</li>
+              <li>• a < 0 et b < 1</li>
+              <li>• a < 1 et b < 0</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section MAÎTRISER -->
+      <div class="section-header">MAÎTRISER</div>
+      <div class="content-wrapper">
+        <!-- Exercise 6 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">6</div>
+            <div class="exercise-title">
+              Le plan est muni d'un repère orthonormé (O, I, J)
+            </div>
+          </div>
+          <div class="exercise-content">
+            <div class="exercise-text">
+              Déterminer une équation cartésienne du cercle C qui passe par les
+              points A(3, 2) et B(-1, -4) et dont le centre est sur la droite
+              d'équation y = -x.
+            </div>
+            <div class="concours-section">
+              <div class="concours-title">
+                Déterminer l'équation cartésienne du cercle qui passe en A et en
+                B, D' coupe (xx') en A et (yy') en B.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 7 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">7</div>
+            <div class="exercise-title">
+              Le plan est muni d'un repère orthonormé (O, I, J)
+            </div>
+          </div>
+          <div class="exercise-content">
+            <div class="exercise-text">
+              Soit D la droite d'équation 2x + 3y - 1 = 0 et A(-1, 2).
+            </div>
+            <ul class="problem-list">
+              <li>
+                Déterminer l'équation cartésienne du cercle de diamètre [AB].
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Exercise 8 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">8</div>
+            <div class="exercise-title">
+              Le plan est muni d'un repère orthonormé (O, I, J)
+            </div>
+          </div>
+          <div class="exercise-content">
+            <div class="exercise-text">
+              On considère la droite D d'équation $y = \frac{1}{3}x + 2$ et le
+              cercle C' d'équation $(x - 3)^2 + (y - 4)^2 = 25$.
+            </div>
+            <ul class="problem-list">
+              <li>Déterminer l'équation des tangentes à C issues de A.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Exercise 9 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">9</div>
+            <div class="exercise-title">
+              Le plan est muni d'un repère orthonormé (O, I, J)
+            </div>
+          </div>
+          <div class="exercise-content">
+            <div class="exercise-text">
+              On considère le cercle C de centre I(2, 1) et de rayon $\sqrt{2}$
+              et le point A(-2, 3).
+            </div>
+            <ul class="problem-list">
+              <li>Montrer que le point A est extérieur à C.</li>
+              <li>
+                b) Déterminer les équations des droites D₁ et D₂ parallèles à D
+                et tangentes à C.
+              </li>
+              <li>c) Tracer, dans le même repère, les droites D₁ et D₂.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Exercise 10 -->
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-number">10</div>
+            <div class="exercise-title">
+              Le plan est muni d'un repère orthonormé (O, I, J)
+            </div>
+          </div>
+          <div class="exercise-content">
+            <div class="exercise-text">
+              On considère les deux ensembles C et C' d'équations respectives:
+            </div>
+            <div class="math-expression">$$x^2 + y^2 - 6x - 4 = 0$$</div>
+            <div class="math-expression">$$x^2 + y^2 - 4x - 8y + 4 = 0$$</div>
+            <ul class="problem-list">
+              <li>
+                a) Montrer que C et C' sont deux cercles dont on précisera leurs
+                centres et leurs rayons.
+              </li>
+              <li>
+                b) Calculer les coordonnées des points d'intersection de C et
+                C'.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Concours Kangourou section -->
+        <div class="concours-section" style="margin-top: 30px">
+          <div class="concours-title"><strong>Concours Kangourou</strong></div>
+
+          <div style="margin-top: 15px">
+            <!-- Exercise 11 -->
+            <div class="exercise">
+              <div class="exercise-header">
+                <div class="exercise-number">11</div>
+                <div class="exercise-title">
+                  Déterminer et représenter l'ensemble des points M(x, y) du
+                  plan que 4x² - 9y² = 0
+                </div>
+              </div>
+            </div>
+
+            <!-- Exercise 12 -->
+            <div class="exercise">
+              <div class="exercise-header">
+                <div class="exercise-number">12</div>
+                <div class="exercise-title">
+                  Les équations 3x + b·y + c = 0 et x - 2y + 12 = 0, conduisent
+                  à la même représentation graphique
+                </div>
+              </div>
+              <div class="exercise-content">
+                <div class="exercise-text">
+                  Combien y a-t-il de couple (b, c) satisfaisant à cette
+                  condition?
+                </div>
+                <ul class="problem-list">
+                  <li>• 0</li>
+                  <li>• 1</li>
+                  <li>• 2</li>
+                  <li>• un nombre supérieur à 2</li>
+                  <li>• une infinité</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

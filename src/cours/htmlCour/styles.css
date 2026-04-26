@@ -1,0 +1,60 @@
+:root {
+  --bg: #0f0f10;
+  --card: #111214cc;
+  --muted: #bfc3c6;
+  ---accent: #d9a85b;
+  --glass: rgba(255, 255, 255, 0.04);
+  --progressBar-background: #9acbf1;
+  --activityWarningBadge-background: #cca700;
+  --max-width: 1100px;
+  --actionBar-toggledBackground: #383a49;
+  --activityBar-activeBorder: #0078d4;
+  --editorGutter-addedBackground: #2ea043;
+  --akther: #369432;
+  --editorGutter-deletedBackground: #f85149;
+  --chat-editedFileForeground: #e2c08d;
+  --errorForeground: #f85149;
+  --editorGutter-modifiedBackground: #0078d4;
+}
+html,
+body {
+  height: 100%;
+  background-color: #010120;
+  color: var(--muted);
+}
+pre {
+  background-color: #0a0a23;
+}
+pre,
+code {
+  font-family: "Merriweather" !important;
+}
+h1,
+h2 {
+  color: var(--accent);
+}
+.comment {
+  color: var(--editorGutter-addedBackground);
+}
+.number {
+  color: var(--chat-editedFileForeground) !important;
+}
+.symbol {
+  color: var(--actionBar-toggledBackground);
+}
+.atrube {
+  color: var(--progressBar-background);
+  /* background: #2d2d2d !important; */
+}
+.tag {
+  color: var(--progressBar-background) !important;
+}
+.value {
+  color: #ffb86c !important;
+}
+.keyword {
+  color: var(--activityBar-activeBorder) !important;
+}
+.token.symbol {
+  color: #ffff00;
+}

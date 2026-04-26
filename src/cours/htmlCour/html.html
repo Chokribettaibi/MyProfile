@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../stylesrc.css" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+  
+  </style>
+  <body>
+    <header>
+      <h1 class="text-center bg-dark text-primary p-3 "><i class="bi bi-filetype-html"></i> HTML Course </h1>
+    </header>
+    <main class="p-2">
+      <section>
+        <article>
+          <div class="container">
+            <h4 class="text-info">Introduction</h4>
+            <p>
+              <span class="token keyword fs-5"><i class="bi bi-filetype-html"></i> HTML</span>, or HyperText Markup Language, is the standard markup language
+              used to create web pages. It provides the structure and content of
+              a webpage, allowing developers to define elements such as headings,
+              paragraphs, images, links, and more. HTML uses tags to mark up
+              different parts of the content, making it possible for browsers to
+              interpret and display the webpage correctly.
+            </p>
+            <h5 class="text-info">Boilerplate and Encoding</h5>
+            <p>
+              <i class="bi bi-code"></i> HTML boilerplate: This is a boilerplate that includes the basic
+              structure and essential elements every HTML document needs.
+            </p>
+            <pre
+              class="language-html  m-2"
+            ><code><span class="token tag">
+  <span class="token symbol">&lt;!</span> <span class="token keyword">DOCTYPE</span> <span>html</span> <span class="token symbol">&gt;</span></span>
+      <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">html</span> <span class="atrube">lang =</span><span class="token value">"en"</span> <span class="token symbol">&gt;</span>
+          <span class="token symbol">&lt;</span> <span class="token keyword">head</span> <span class="token symbol">&gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">meta</span> <span class="token atrube">charset =</span><span class="token value">"UTF-8"</span> <span class="token symbol">&gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">meta</span> <span class="token atrube">name =</span><span class="token value">"viewport"</span> <span class="token atrube">content =</span><span class="token value">"width=device-width, initial-scale=1.0"</span> <span class="token symbol">&gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">title</span><span class="token symbol">&gt;</span></span>Document<span class="token tag"><span class="token symbol">&lt;&sol;</span> <span class="token keyword">title</span><span class="token symbol"> &gt;</span></span>
+              <span class="token tag"><span class="token symbol">&lt;</span> <span class="token keyword">link</span> <span class="token atrube">rel =</span><span class="token value">"stylesheet"</span> <span class="token atrube">href =</span><span class="token value">"styles.css"</span> <span class="token symbol">&gt;</span></span>
+          <span class="token symbol">&lt;&sol;</span> <span class="token keyword">head</span><span class="token symbol"> &gt;</span></span>
+          </span><span class="token tag"><span class="token tag"><span class="token symbol">&lt;</span> <span class="keyword">body</span></span> <span class="token symbol">&gt;</span>
+          <span class="token symbol">&lt;&sol;</span> <span class="token keyword">body</span><span class="token symbol"> &gt;</span></span>
+      <span class="token symbol">&lt;&sol;</spa> <span class="token keyword">html</span><span class="token symbol"> &gt;</span></span>
+  </span></code>
+  </pre>
+
+          </div>
+          <!-- <span class="placeholder col-6"></span> -->
+        </article>
+        <article>
+          
+          <div >
+            <ul>
+              <li>
+                <code class="keyword">DOCTYPE</code>: This is used to tell
+                browsers which version of HTML you're using.
+              </li>
+              <li>
+                <code class="keyword">html</code> Element: This represents the top level element
+                or the root of an HTML document. To specify the language for the
+                document, you should use the lang attribute.
+              </li>
+
+              <li>
+                <code class="keyword">head</code> Element: The head section contains important
+                meta data which is behind-the-scenes information needed for
+                browsers and search engines.
+              </li>
+              <li>
+                <code class="keyword">meta</code> Elements: These elements represent your site's
+                metadata. These element have details about things like character
+                encoding, and how websites like Twitter should preview your
+                page's link and more.
+              </li>
+              <li>
+                <code class="keyword">title</code> Element: This element is used to set the text
+                that appears in the browser tab or window.
+              </li>
+              <li>
+                <code class="keyword">UTF-8</code> character encoding: <code class="keyword">UTF-8</code>, or <code class="keyword">UCS</code> Transformation Format 8,
+                is a standardized character encoding widely used on the web.
+                Character encoding is the method computers use to store
+                characters as data. The charset attribute is used inside of a
+                meta element to set the character encoding to UTF-8.
+              </li>
+            </ul>
+          </div>
+        </article>
+        
+        <article>
+          <div class="container">
+            <h4>Link states</h4>
+            <p>
+                
+              
+            </p>
+            <ul>
+              <li><code><span class="keyword">:link</span></code>: This is the default state. This state
+              represents a link which the user has not visited, clicked, or
+              interacted with yet. You can think of this state as providing the
+              base styles for all links on your page. The other states build on
+              top of it.</li>
+              <li><code class="keyword">:visited</code>: This applies when a user has already visited
+              the page being linked to. By default, this turns the link purple -
+              but you can leverage CSS to provide a different visual indication
+              to the user.</li>
+              <li><code class="keyword">:hover</code>: This state applies when a user is hovering
+              their cursor over a link. This state is helpful for providing
+              extra attention to a link, to ensure a user actually intends to
+              click it.</li>
+              <li><code class="keyword">:focus</code>: This state applies when we focus on a link.</li>
+              <li><code class="keyword">:active</code>: This state applies to links that are being activated by
+              the user. This typically means clicking on the link with the
+              primary mouse button by left clicking, in most cases.</li>
+            </ul>
+          </div>
+        </article>
+        <article>
+          <div class="container">
+            <h4 class="text-info">HTML Accessibility</h4>
+            <h5 class="token keyword">Introduction to Accessibility</h5>
+            <ul>
+              <li><strong>Web Content Accessibility Guidelines:</strong>The Web Content Accessibility Guidelines (WCAG) are a set of guidelines for making web content more accessible to people with disabilities. The four principles of WCAG are POUR which stands for Perceivable, Operable, Understandable, and Robust.</li>
+            </ul>
+            <h5 class="token keyword">Assistive Technology for Accessibility</h5>
+            <ul>
+              <li><strong>Screen readers:</strong>Software programs that read the content of a computer screen out loud. They are used by people who are blind or visually impaired to access the web.</li>
+              <li><strong>Large text or braille keyboards:</strong> Used by people with visual impairments to access the web.</li>
+              <li><strong>Screen magnifiers:</strong>Software programs that enlarge the content of a computer screen. They are used by people with low vision to access the web.</li>
+              <li><strong>Alternative pointing devices:</strong>Used by people with mobility impairments to access the web. This includes devices such as joysticks, trackballs, and touchpads.</li>
+              <li><strong>Voice recognition: </strong>Used by people with mobility impairments to access the web. It allows users to control a computer using their voice.</li>
+            </ul>
+            <h5 class="token keyword">WAI-ARIA, Roles, and Attributes</h5>
+            <ul>
+              <li><strong>WAI-ARIA:</strong> It stands for Web Accessibility Initiative - Accessible Rich Internet Applications. It is a set of attributes that can be added to HTML elements to improve accessibility. It provides additional information to assistive technologies about the purpose and structure of the content.</li>
+              <li><strong>ARIA roles:</strong>  A set of predefined roles that can be added to HTML elements to define their purpose. This helps people using assistive technologies understand the content of the website. Examples include role="tab", role="menu", and role="alert".</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+   <footer></footer> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+  </body>
+</html>
