@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linuxe</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <a class="logo" href="#linuxe">
+                <span class="logo-mark">&gt;_</span>
+                <span>Linuxe</span>
+            </a>
+            <nav>
+                <a href="#histoire">Histoire</a>
+                <a href="#commandes">Commandes</a>
+                <a href="#fonctionnement">Fonctionnement</a>
+                <a href="#avantages">Avantages</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-card">
+                    <span class="eyebrow">Cours Linux moderne</span>
+                    <h1 id="linuxe">Découvrir Linuxe avec une interface plus actuelle</h1>
+                    <div class="hero-copy">
+                        <p>Linuxe est un système d'exploitation libre et open-source basé sur le noyau Linux. Il est apprécié pour sa stabilité, sa sécurité, sa flexibilité et sa grande présence dans les serveurs, le cloud, le développement et les environnements techniques.</p>
+                        <p>Cette page présente les bases essentielles: origine, distributions, installation, commandes, terminal, shell et bonnes pratiques pour bien démarrer.</p>
+                    </div>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="#commandes">Voir les commandes</a>
+                        <a class="btn secondary" href="#avantages">Pourquoi Linuxe</a>
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <strong>1991</strong>
+                            <span>Création par Linus Torvalds</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Open Source</strong>
+                            <span>Code libre et personnalisable</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Multi-usage</strong>
+                            <span>PC, serveurs, cloud et embarqué</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="terminal-card" aria-label="Exemples de commandes Linux">
+                    <div class="terminal-head">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code><span class="prompt">$</span> pwd
+/home/user/projects
+
+<span class="prompt">$</span> ls -la
+drwxr-xr-x  6 user user 4096 .
+-rw-r--r--  1 user user  128 README.md
+
+<span class="prompt">$</span> chmod +x deploy.sh
+<span class="prompt">$</span> echo $HOME
+/home/user
+
+<span class="prompt">$</span> grep "error" app.log</code></pre>
+                </aside>
+            </section>
+
+            <section class="quick-grid">
+                <div class="panel">
+                    <h3>Flexible</h3>
+                    <p>Linuxe s'adapte aussi bien au poste personnel qu'aux infrastructures avancées.</p>
+                </div>
+                <div class="panel">
+                    <h3>Securise</h3>
+                    <p>Son modele de permissions et son ecosysteme en font un choix solide pour les serveurs.</p>
+                </div>
+                <div class="panel">
+                    <h3>Personnalisable</h3>
+                    <p>Vous pouvez choisir votre distribution, votre shell et votre environnement graphique.</p>
+                </div>
+                <div class="panel">
+                    <h3>Communautaire</h3>
+                    <p>Une grande communaute partage outils, documentations, correctifs et bonnes pratiques.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="histoire" class="section-title">Histoire et distributions</h2>
+                <p class="section-copy">Comprendre Linuxe, c'est aussi comprendre son evolution, son esprit Unix et la diversite des distributions qui ont emerge pour repondre a des besoins differents.</p>
+                <div class="content-grid">
+                    <article class="article-card">
+                        <h2>Histoire de Linuxe</h2>
+                        <p>Linuxe a ete cree en 1991 par Linus Torvalds comme projet personnel. Publie sous licence GNU GPL, le noyau a rapidement attire une communaute de developpeurs qui ont contribue a son evolution.</p>
+                        <p>Au fil des annees, Linuxe est devenu un pilier des serveurs, des superordinateurs et de nombreux outils de developpement. Son succes repose sur sa stabilite, sa transparence et sa capacite d'adaptation.</p>
+                        <ul class="list">
+                            <li><span class="bullet">1</span><span><strong>Naissance:</strong> un projet personnel devenu mondial.</span></li>
+                            <li><span class="bullet">2</span><span><strong>Ouverture:</strong> chacun peut etudier, modifier et redistribuer le code.</span></li>
+                            <li><span class="bullet">3</span><span><strong>Evolution:</strong> une progression constante grace a la communaute.</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="article-card">
+                        <h2>Distributions Linux</h2>
+                        <p>Une distribution regroupe le noyau Linux, les utilitaires, le gestionnaire de paquets et souvent une interface graphique. Chaque distribution cible un type d'utilisateur ou un usage particulier.</p>
+                        <ul class="list">
+                            <li><span class="bullet">U</span><span><strong>Ubuntu:</strong> conviviale et ideale pour debuter.</span></li>
+                            <li><span class="bullet">F</span><span><strong>Fedora:</strong> orientee innovations et developpement.</span></li>
+                            <li><span class="bullet">D</span><span><strong>Debian:</strong> reputee pour sa stabilite.</span></li>
+                            <li><span class="bullet">A</span><span><strong>Arch Linux:</strong> legere, puissante et tres personnalisable.</span></li>
+                            <li><span class="bullet">M</span><span><strong>Linux Mint:</strong> confortable pour un usage quotidien.</span></li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Installation et fondamentaux</h2>
+                <p class="section-copy">Avant d'utiliser Linuxe au quotidien, il est utile de connaitre les grandes etapes d'installation ainsi que les premiers reperes pour naviguer dans le systeme.</p>
+                <div class="content-grid">
+                    <article class="steps-card">
+                        <h2>Installation de Linuxe</h2>
+                        <p>Le processus varie selon la distribution, mais la logique reste generalement la meme. Une fois le support cree, l'installation est guidee et accessible.</p>
+                        <ol class="steps-list">
+                            <li><span class="bullet">1</span><span>Telecharger l'image ISO de la distribution choisie.</span></li>
+                            <li><span class="bullet">2</span><span>Creer une cle USB bootable ou un support d'installation.</span></li>
+                            <li><span class="bullet">3</span><span>Demarrer la machine depuis ce support.</span></li>
+                            <li><span class="bullet">4</span><span>Suivre les etapes d'installation et configurer le systeme.</span></li>
+                        </ol>
+                    </article>
+
+                    <article class="article-card" id="fonctionnement">
+                        <h2>Fonctionnement de Linuxe</h2>
+                        <p>Linuxe repose sur un noyau qui gere la memoire, les processus, les peripheriques et la communication avec le materiel. Autour du noyau gravitent le shell, les outils systeme et, selon les cas, une interface graphique.</p>
+                        <p>Le systeme de fichiers est hierarchique et les utilisateurs interagissent avec Linuxe via des commandes ou des applications graphiques. Cette structure rend le systeme a la fois rigoureux et tres souple.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="commandes">
+                <h2 class="section-title">Commandes, terminal et shell</h2>
+                <p class="section-copy">Le terminal est l'un des grands atouts de Linuxe. Avec quelques commandes bien choisies, on navigue, on edite, on automatise et on administre efficacement son environnement.</p>
+                <div >
+                    <article class="article-card">
+                        <h2>Commandes de base</h2>
+                        <div class="command-list">
+                            <div class="command-item">
+                                <code>ls</code>
+                                <span>Liste les fichiers et dossiers du repertoire courant.</span>
+                            </div>
+                            <div class="command-item">
+                                <code>cd</code>
+                                <span>Change le repertoire courant.</span>
+                            </div>
+                            <div class="command-item">
+                                <code>pwd</code>
+                                <span>Affiche le chemin complet du repertoire actuel.</span>
+                            </div>
+                            <div class="command-item">
+                                <code>mkdir</code>
+                                <span>Cree un nouveau dossier.</span>
+                            </div>
+                            <div class="command-item">
+                                <code>rm</code>
+                                <span>Supprime un fichier ou un repertoire avec prudence.</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <h2>Fichiers texte et permissions</h2>
+                        <p>Les permissions controlent qui peut lire, modifier ou executer un fichier. C'est l'une des bases de la securite sous Linuxe.</p>
+                        <ul class="list">
+                            <li><span class="bullet">C</span><span><strong>cat:</strong> affiche le contenu d'un fichier texte.</span></li>
+                            <li><span class="bullet">N</span><span><strong>nano:</strong> permet d'editer rapidement un fichier dans le terminal.</span></li>
+                            <li><span class="bullet">M</span><span><strong>chmod:</strong> change les permissions d'un fichier ou d'un dossier.</span></li>
+                            <li><span class="bullet">O</span><span><strong>chown:</strong> change le proprietaire d'un fichier ou d'un dossier.</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="article-card">
+                        <h2>Terminal vs shell</h2>
+                        <p>Le terminal est l'interface qui affiche et recoit les commandes. Le shell est le programme qui interprete ces commandes puis les execute.</p>
+                        <p>Bash, Zsh et Fish sont des shells populaires. Ils partagent des principes communs mais offrent des experiences et des outils differents.</p>
+                    </article>
+
+                    <article class="article-card">
+                        <h2>Expansion et variables</h2>
+                        <p>Le shell transforme souvent ce que vous tapez avant l'execution: variables, chemins, substitutions de commandes ou caracteres generiques.</p>
+                        <ul class="list">
+                            <li><span class="bullet">$</span><span><strong>$HOME:</strong> repertoire personnel de l'utilisateur.</span></li>
+                            <li><span class="bullet">P</span><span><strong>$PATH:</strong> liste des dossiers ou chercher les executables.</span></li>
+                            <li><span class="bullet">U</span><span><strong>$USER:</strong> nom de l'utilisateur courant.</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="article-card">
+                        <h2>Pipes, Filters et Redirections</h2>
+                        <p>Le shell permet de connecter des commandes entre elles pour creer des flux de travail puissants et flexibles.</p>
+                        <ul class="list">
+                            <li><span class="bullet">|</span><span><strong>Pipe:</strong> envoie la sortie d'une commande vers une autre.</span></li>
+                            <li><span class="bullet">&gt;</span><span><strong>Redirection:</strong> envoie la sortie d'une commande vers un fichier ou une entree depuis un fichier.</span></li>
+                            <li><span class="bullet">&amp;</span><span><strong>Background:</strong> execute une commande en arriere-plan.</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="article-card">
+                        <h2>Filters</h2>
+                        <p>Les filters sont des commandes qui traitent les donnees en entrée et produisent des resultats en sortie.</p>
+                        <ul class="list">
+                            <li><span class="bullet">grep</span><span><strong>Grep:</strong> recherche de motifs dans les fichiers.</span></li>
+                            <li><span class="bullet">sed</span><span><strong>Sed:</strong> edition de texte.</span></li>
+                            <li><span class="bullet">awk</span><span><strong>Awk:</strong> traitement de donnees structurées.</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="article-card">
+                        <h2>Grep command</h2>
+                        <p>Grep est un outil de recherche de texte qui utilise des expressions régulières pour trouver des correspondances dans les fichiers ou les flux de données.</p>
+                        <p>Exemple d'utilisation:</p>
+                        <pre><code><span class="prompt">$</span> grep "erreur" journal.log
+[2024-06-01 14:32:10] ERREUR: Echec de la connexion à la base de données
+[2024-06-01 14:35:45] ERREUR: Timeout lors de la requête API</code></pre>
+                        <p>Grep est très puissant pour analyser les logs, filtrer les résultats de commandes ou extraire des informations spécifiques d'un fichier texte.</p>
+                    </article>
+
+                    <article class="article-card">
+                        <h2>Automatisation avec le shell</h2>
+                        <p>Le shell permet d'automatiser des tâches répétitives grâce à des scripts. Un script est un fichier texte contenant une série de commandes qui peuvent être exécutées ensemble.</p>
+                        <p>Exemple de script simple:</p>
+                        <pre><code><span class="prompt">#!/bin/bash</span>
+<span class="prompt"># Script de sauvegarde</span>
+<span class="prompt">SOURCE="/home/user/documents"</span>
+<span class="prompt">DEST="/home/user/backup"</span>
+<span class="prompt">tar -czf $DEST/backup-$(date +%Y-%m-%d).tar.gz $SOURCE</code></pre>
+                        <p>Ce script crée une archive compressée du dossier "documents" et la place dans le dossier "backup" avec un nom incluant la date du jour.</p> 
+                        <p>L'automatisation avec le shell est un moyen efficace de gagner du temps et d'assurer la régularité des tâches administratives ou de maintenance.</p> 
+                        </article>
+
+                        <article class="article-card">
+                            <h2>Bonnes pratiques pour le terminal</h2>
+                            <p>Pour tirer le meilleur parti du terminal, il est important de suivre quelques bonnes pratiques:</p>
+                            <ul class="list">
+                                <li><span class="bullet">1</span><span><strong>Utiliser les alias:</strong> créez des raccourcis pour les commandes fréquemment utilisées.</span></li>
+                                <li><span class="bullet">2</span><span><strong>Lire la documentation:</strong> utilisez "man" pour comprendre les options des commandes.</span></li>
+                                <li><span class="bullet">3</span><span><strong>Tester les commandes:</strong> essayez les commandes avec des options de test avant de les exécuter sur des données importantes.</span></li>
+                                <li><span class="bullet">4</span><span><strong>Organiser les scripts:</strong> gardez vos scripts dans un dossier dédié et utilisez un système de versionnement si possible.</span></li>
+                            </ul>
+
+                        </article>
+
+                        <article class="article-card">
+                            <h2>tr et cut commands</h2>
+                            <p>Les commandes <code>tr</code> et <code>cut</code> sont utiles pour manipuler le texte dans le terminal.</p>
+                            <p><strong>tr:</strong> permet de remplacer ou supprimer des caractères dans un flux de données.</p>
+                            <p><strong>cut:</strong> permet de découper les lignes d'un fichier en utilisant un délimiteur.</p>
+                            <p>Exemple d'utilisation de <code>tr</code> pour convertir des minuscules en majuscules:</p>
+                            <pre><code><span class="prompt">$</span> echo "hello world" | tr '[:lower:]' '[:upper:]'
+HELLO WORLD</code></pre>
+                            <p>Exemple d'utilisation de <code>cut</code> pour extraire la première colonne d'un fichier CSV:</p>
+                            <pre><code><span class="prompt">$</span> cut -d ',' -f 1 data.csv
+John
+Jane
+Doe</code></pre>
+                            <p>Ces commandes sont très puissantes pour le traitement de texte et peuvent être combinées avec d'autres outils pour créer des flux de travail complexes dans le terminal.</p> 
+                        </article>
+
+                        <article class="article-card">
+                            <h2>User et Group Management</h2>
+                            <p>La gestion des utilisateurs et des groupes est essentielle pour assurer la sécurité et la gestion des ressources sur un système Linux.</p>
+
+                        </article>
+
+                        <article class="article-card">
+                            <h2>Files System Hierarchy Specification (FHS)</h2>
+                            <p>La hiérarchie des systèmes de fichiers (FHS) définit la structure standard des répertoires et fichiers sur un système Linux.</p>
+                        </article>
+                </div>
+                
+
+            </section>
+
+            <section>
+                <h2 class="section-title">Philosophie Unix et avantages</h2>
+                <p class="section-copy">Au-dela des commandes, Linuxe s'appuie sur une culture technique forte: faire simple, composer les outils et garder le controle de son environnement.</p>
+                <div class="content-grid">
+                    <article class="article-card">
+                        <h2>Philosophie Unix</h2>
+                        <ul class="list">
+                            <li><span class="bullet">1</span><span><strong>Faire une chose bien:</strong> chaque outil vise une mission claire.</span></li>
+                            <li><span class="bullet">2</span><span><strong>Utiliser le texte:</strong> les donnees textuelles sont faciles a lire et a traiter.</span></li>
+                            <li><span class="bullet">3</span><span><strong>Composer:</strong> plusieurs petits outils peuvent travailler ensemble.</span></li>
+                            <li><span class="bullet">4</span><span><strong>Rester simple:</strong> des commandes petites mais efficaces.</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="article-card" id="avantages">
+                        <h2>Avantages de Linuxe</h2>
+                        <ul class="list">
+                            <li><span class="bullet">G</span><span><strong>Gratuit et open-source:</strong> accessible et modifiable librement.</span></li>
+                            <li><span class="bullet">S</span><span><strong>Stable et securise:</strong> tres apprecie dans les environnements critiques.</span></li>
+                            <li><span class="bullet">L</span><span><strong>Large ecosysteme:</strong> beaucoup d'outils pour le dev, l'admin et le quotidien.</span></li>
+                            <li><span class="bullet">C</span><span><strong>Communaute active:</strong> tutoriels, forums et documentation abondants.</span></li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section>
+                <article class="article-card">
+                    <h2>Pourquoi choisir Linuxe?</h2>
+                    <p>Linuxe est un choix de confiance pour les developpeurs, les administrateurs systeme et les utilisateurs qui veulent un controle total sur leur environnement. Sa flexibilité, sa securite et son esprit communautaire en font une plateforme ideale pour apprendre, creer et evoluer dans le monde de l'informatique.</p>
+                    <p>Que vous soyez un debutant curieux ou un professionnel chevronne, Linuxe offre un terrain de jeu riche et stimulant pour explorer les possibilites de l'informatique moderne.</p>
+                </article>
+            </section>
+                    <h3>Shell</h3>
+                    <p>Ideal pour automatiser des taches, executer des scripts et travailler efficacement.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">/</div>
+                    <h3>Fichiers</h3>
+                    <p>Une organisation claire en arborescence pour mieux gerer donnees et configurations.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">*</div>
+                    <h3>Modules</h3>
+                    <p>Un systeme capable d'evoluer selon vos besoins, du bureau au serveur.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">&gt;</div>
+                    <h3>Performance</h3>
+                    <p>Un environnement leger et robuste, adapte aux usages intensifs et techniques.</p>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 cours Linuxe by Bettaibi Chokri. Tous droits reserves.</p>
+        </footer>
+    </div>
+</body>
+</html>
