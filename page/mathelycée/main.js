@@ -342,8 +342,12 @@ let output = function () {
 
 // output events, binding to LMS
 
-board3.on('up', function (e) {
-    document.getElementById('outputID').innerHTML = output();
+board3.on('up', function () {
+    var outputNode = document.getElementById('outputID');
+    if (!outputNode) {
+        return;
+    }
+    outputNode.innerHTML = output();
 });
 
 //=========================================================
@@ -397,8 +401,8 @@ var dFx = () => Fdx(A.X(), A.Y()),
     // Tangent plane
     plane1 = view4.create("plane3d", [A, dFx_vec, dFy_vec, [-.5, .5], [-.5, .5]], { fillOpacity: .8, fillColor: "red" }),
     // Tangent vectors of length 1
-    a4 = view.create("line3d", [A, dFx_vec, [0, 1]]),
-    b4 = view.create("line3d", [A, dFy_vec, [0, 1]]);
+    a4 = view4.create("line3d", [A, dFx_vec, [0, 1]]),
+    b4 = view4.create("line3d", [A, dFy_vec, [0, 1]]);
 
 
     //text 3d
@@ -454,3 +458,58 @@ var pt3dd = viewpt3d.create('point3d', [1, 1, 2], {size: 5, name:'A'});
 viewpt3d.create('line3d', [pt3dd, [1, 0, 0],  [0, () => -pt3dd.X() - 5]], {dash: 1});
 viewpt3d.create('line3d', [pt3dd, [0, 1, 0],  [0, () => -pt3dd.Y() - 5]], {dash: 1});
 viewpt3d.create('line3d', [pt3dd, [0, 0, 1],  [0, () => -pt3dd.Z() - 5]], {dash: 1});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var sliderBindings = [
+        {
+            id: 'c1',
+            update: function (value) {
+                c1 = value * 0.01;
+                board1.update();
+            }
+        },
+        {
+            id: 'f1',
+            update: function (value) {
+                f1 = value;
+                board1.update();
+            }
+        },
+        {
+            id: 'c2',
+            update: function (value) {
+                c2 = value * 0.01;
+                board1.updateQuality = board1.BOARD_QUALITY_HIGH;
+                board1.update();
+            }
+        },
+        {
+            id: 'f2',
+            update: function (value) {
+                f2 = value;
+                board1.update();
+            }
+        }
+    ];
+
+    sliderBindings.forEach(function (binding) {
+        var element = document.getElementById(binding.id);
+        if (!element) {
+            return;
+        }
+        element.addEventListener('input', function () {
+            binding.update(Number(element.value));
+        });
+    });
+
+    var runButton = document.getElementById('runButton');
+    var clearButton = document.getElementById('clearButton');
+
+    if (runButton) {
+        runButton.addEventListener('click', run);
+    }
+
+    if (clearButton) {
+        clearButton.addEventListener('click', clearturtle);
+    }
+});

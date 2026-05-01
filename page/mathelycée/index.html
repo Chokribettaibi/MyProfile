@@ -1,480 +1,412 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+    <meta
+      name="description"
+      content="Cours de geometríe analytique avec rappels théoriques, graphes interactifs et visualisations 2D/3D."
+    />
+    <title>Géométrie Analytique | MathéLycée</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Merienda:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
-      type="text/css"
       href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Main Google Fonts CDN link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Merienda:wght@300..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
   </head>
   <body>
-    <div class="container">
-      <div class="box m-2 p-2">
-        <h2 class="text-center ">GÉOMÉTRIE ANALYTIQUE</h2>
-
-        <p style="position: relative" class="m-6 p-2">
-          La géométrie analytique est l’art de résoudre les problémes de
-          géométrie par le calcul. <br />
-          <span
-            style="
-              font-weight: bold;
-              text-align: left;
-              left: 30%;
-              position: absolute;
-            "
-            >René Descartes (1596-1650)</span
-          >
-        </p>
-        <div class="m-2 p-2 border border-dark rounded">
-          <p class="m-2 p-2 introd" lang="ar">
-            في أحد الأيام، بينما كان ديكارت يفكر في الرياضيات، لاحظ ذبابة تتحرك
-            على سقف غرفته. كان السقف مُغطى ببلاطات مربعة تُشكل شبكة طبيعية.
-            وبينما كان يُراقب الذبابة وهي تهبط في أماكن مختلفة، بدأ يتساءل: كيف
-            يُمكنني وصف موقع الذبابة بدقة باستخدام الأرقام？ قاده هذا السؤال
-            البسيط إلى فكرة ثورية. تخيّل ديكارت السقف كشبكة، حيث تُمثل إحدى
-            زواياها نقطة مرجعية - الأصل - حيث يلتقي خطان (محوران). يُمثل أحد
-            الجدران المحور السيني، والآخر المحور الصادي. ومن خلال حساب المسافة
-            التي قطعتها الذبابة على طول كل اتجاه، استطاع أن يُخصص لها زوجًا من
-            الأرقام - ما نُسميه اليوم بالإحداثيات. بهذه الفكرة، ابتكر ديكارت
-            نظامًا يُمكن من خلاله وصف كل نقطة باستخدام الأرقام. هذا الابتكار،
-            المستوى الديكارتي، ربط الجبر والهندسة بطريقة جديدة تمامًا، وأصبح أحد
-            أسس الرياضيات الحديثة. يصادف اليوم ذكرى ميلاد رينيه ديكارت، الذي
-            أحدث ثورة في عالم الرياضيات والفلسفة. في هذا اليوم المميز، نستذكر
-            رينيه ديكارت، ليس فقط لنظرياته، بل لأنه أظهر لنا أن حتى أبسط فضول قد
-            يقود إلى أفكار تُغير العالم.
+    <div class="page-shell">
+      <header class="site-header">
+        <section class="hero" aria-labelledby="page-title">
+          <span class="eyebrow">MathéLycée • Géométrie analytique</span>
+          <h1 class="hero__title" id="page-title">Comprendre la géométrie par le calcul.</h1>
+          <p class="hero__lead">
+            Un parcours clair pour relier repère cartésien, vecteurs, droites,
+            barycentres et visualisations interactives en 2D comme en 3D.
           </p>
-          <img
-            src="./../../img/mathimg/WhatsApp Image 2026-04-02 at 01.10.22.jpeg"
-            alt="rene descartes"
-            class="img-fluid rounded"
-          />
-        </div>
-        <!-- <div class="card border-primary-subtle mb-3 position-relative  opacity-50" style="max-width: 18rem">
-          <div class="card-header bg-dark text-white text-end d-flex justify-content-between"> <span>historique</span> (1596-1650)</div>
-          <div class="card-body">
-            <h5 class="card-title">René Descartes <br></h5>
-            <p class="card-text text-primary">
-              La géométrie analytique est l’art de résoudre les problémes de
+
+          <blockquote class="hero__quote">
+            <p>
+              La géométrie analytique est l’art de résoudre les problèmes de
               géométrie par le calcul.
             </p>
-          </div>
-        </div> -->
+            <cite class="quote-signature">René Descartes (1596–1650)</cite>
+          </blockquote>
 
-        <!-- <p class="m-2 bg-primary-subtle p-2">
-          <span class="text-danger text-end"></span>
-        </p>
-         -->
-        <div class="box m-2 p-2">
-          <article class="m-2">
-            <!-- <h5 class="text-primary">Coordonnées du barycentre</h5> -->
-            <p>
-              Le plan est muni d’un repère cartésien \( (O, \vec{i}, \vec{j})
-              \).
-            </p>
-            <p class="mt-2">
-              Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \) deux points du plan et
-              \( I \) le milieu du segment \([AB]\). Alor: \( I\left(\frac{x_A +
-              x_B}{2}, \frac{y_A + y_B}{2}\right) \)
-            </p>
-            <div
-              class="p-2 m-2"
-              id="box"
-              style="
-                width: 250px;
-                background-color: rgb(114, 167, 212);
-                height: 300px;
-              "
-            ></div>
-            <p class="">
-              Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \), et \( \alpha, \beta
-              \in \mathbb{R} \) tels que \( \alpha + \beta \neq 0 \).
-            </p>
-            <p>
-              Le barycentre \( G \) des points \( (A,\alpha) \) et \( (B,\beta)
-              \) a pour coordonnées :
-            </p>
-            <div class="formula">
-              \[ G\left( \frac{\alpha x_A + \beta x_B}{\alpha + \beta},
-              \frac{\alpha y_A + \beta y_B}{\alpha + \beta} \right) \]
+          <div class="hero-story story-card">
+            <article class="story-card__text story-card__text--arabic">
+              <p>
+                في أحد الأيام، بينما كان ديكارت يفكر في الرياضيات، لاحظ ذبابة
+                تتحرك على سقف غرفته. كان السقف مُغطى ببلاطات مربعة تُشكل شبكة
+                طبيعية. وبينما كان يُراقب الذبابة وهي تهبط في أماكن مختلفة، بدأ
+                يتساءل: كيف يُمكنني وصف موقع الذبابة بدقة باستخدام الأرقام؟
+                قاده هذا السؤال البسيط إلى فكرة ثورية. تخيّل ديكارت السقف
+                كشبكة، حيث تُمثل إحدى زواياها نقطة مرجعية هي الأصل، ويلتقي فيها
+                محوران. ومن خلال قياس المسافة على كل اتجاه، أصبح ممكناً تمثيل
+                كل نقطة بزوج من الأعداد. هكذا وُلد المستوى الديكارتي، وارتبط
+                الجبر بالهندسة بطريقة غيّرت الرياضيات الحديثة.
+              </p>
+            </article>
+            <figure class="story-card__figure">
+              <img
+                class="story-card__image"
+                src="./../../img/mathimg/WhatsApp Image 2026-04-02 at 01.10.22.jpeg"
+                alt="Portrait de René Descartes"
+              />
+              <figcaption class="story-card__caption">
+                René Descartes et la naissance du repère cartésien.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </header>
+
+      <main class="content-grid">
+        <div class="content-main">
+          <section class="content-card prose" aria-labelledby="fondamentaux-title">
+            <h2 class="section-title" id="fondamentaux-title">Fondamentaux du repère et des barycentres</h2>
+
+            <div class="stack-lg">
+              <article class="article-card">
+                <h3 class="subsection-title">Milieu d’un segment</h3>
+                <p>Le plan est muni d’un repère cartésien \( (O, \vec{i}, \vec{j}) \).</p>
+                <p>
+                  Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \) deux points du
+                  plan et \( I \) le milieu du segment \([AB]\). Alors :
+                </p>
+                <div class="formula">
+                  \[ I\left(\frac{x_A + x_B}{2}, \frac{y_A + y_B}{2}\right) \]
+                </div>
+                <div class="board-shell board-shell--md">
+                  <div class="jxgbox" id="box" aria-label="Construction interactive du milieu d'un segment"></div>
+                </div>
+              </article>
+
+              <article class="article-card">
+                <h3 class="subsection-title">Barycentre de deux points</h3>
+                <p>
+                  Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \), et
+                  \( \alpha, \beta \in \mathbb{R} \) tels que
+                  \( \alpha + \beta \neq 0 \).
+                </p>
+                <p>Le barycentre \( G \) des points \( (A,\alpha) \) et \( (B,\beta) \) a pour coordonnées :</p>
+                <div class="formula">
+                  \[ G\left( \frac{\alpha x_A + \beta x_B}{\alpha + \beta},
+                  \frac{\alpha y_A + \beta y_B}{\alpha + \beta} \right) \]
+                </div>
+              </article>
+
+              <article class="article-card">
+                <h3 class="subsection-title">Barycentre de trois points</h3>
+                <p>
+                  Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \), \( C(x_C, y_C) \)
+                  et \( \alpha, \beta, \gamma \in \mathbb{R} \) tels que
+                  \( \alpha+\beta+\gamma \neq 0 \).
+                </p>
+                <p>Le barycentre \( G \) des points \( (A,\alpha), (B,\beta), (C,\gamma) \) a pour coordonnées :</p>
+                <div class="formula">
+                  \[ G\left( \frac{\alpha x_A + \beta x_B + \gamma x_C}{\alpha +
+                  \beta + \gamma}, \frac{\alpha y_A + \beta y_B + \gamma y_C}{\alpha
+                  + \beta + \gamma} \right) \]
+                </div>
+              </article>
             </div>
-            <p>
-              Soient \( A(x_A, y_A) \), \( B(x_B, y_B) \), \( C(x_C, y_C) \) et
-              \( \alpha, \beta, \gamma \in \mathbb{R} \) tels que \(
-              \alpha+\beta+\gamma \neq 0 \).
-            </p>
-            <p>
-              Le barycentre \( G \) des points \( (A,\alpha), (B,\beta),
-              (C,\gamma) \) a pour coordonnées :
-            </p>
-            <div class="formula">
-              \[ G\left( \frac{\alpha x_A + \beta x_B + \gamma x_C}{\alpha +
-              \beta + \gamma}, \frac{\alpha y_A + \beta y_B + \gamma y_C}{\alpha
-              + \beta + \gamma} \right) \]
+          </section>
+
+          <section class="content-card prose" aria-labelledby="droites-title">
+            <h2 class="section-title" id="droites-title">Droites, directions et perpendicularité</h2>
+
+            <div class="stack-lg">
+              <article class="article-card">
+                <h3 class="subsection-title">Équation cartésienne d’une droite</h3>
+                <p>Le plan est muni d’un repère cartésien \( (O, \vec{i}, \vec{j}) \).</p>
+                <p>Toute droite admet une équation cartésienne de la forme :</p>
+                <div class="formula">
+                  \[ ax + by + c = 0 \quad \text{avec} \quad (a,b) \neq (0,0) \]
+                </div>
+                <p>L’équation \( ax + by + c = 0 \) est celle d’une droite.</p>
+              </article>
+
+              <article class="article-card">
+                <h3 class="subsection-title">Vecteur directeur et droites parallèles</h3>
+                <p>
+                  Si \( D \) a pour équation \( ax + by + c = 0 \), alors un
+                  vecteur directeur est :
+                </p>
+                <div class="formula">\[ \vec{u}(-b, a) \]</div>
+                <p>
+                  Deux droites \( D: ax+by+c=0 \) et \( D': a'x + b'y + c' = 0 \)
+                  sont parallèles si :
+                </p>
+                <div class="formula">\[ ab' - a'b = 0 \]</div>
+              </article>
+
+              <article class="article-card">
+                <h3 class="subsection-title">Repères utiles</h3>
+                <p><strong class="utility-accent">Collinear</strong> : points situés sur une même droite.</p>
+                <p>
+                  <strong class="utility-accent">Vector</strong> : grandeur
+                  possédant une direction et une norme, utile pour décrire une
+                  position ou un déplacement dans l’espace.
+                </p>
+              </article>
             </div>
-          </article>
+          </section>
 
-          <article>
-            <h5 class="text-primary">Equation cartésienne d’une droite</h5>
-            <p>
-              Le plan est muni d’un repère cartésien \( (O, \vec{i}, \vec{j})
-              \).
-            </p>
-            <p>Toute droite admet une équation cartésienne de la forme :</p>
+          <section class="content-card prose" aria-labelledby="espace-title">
+            <h2 class="section-title" id="espace-title">Droites et plans de l’espace</h2>
 
-            <div class="formula">
-              \[ ax + by + c = 0 \quad \text{avec} \quad (a,b) \neq (0,0) \]
+            <div class="definition-card">
+              <span class="definition-card__label">Les axiomes de base</span>
+              <ul class="list">
+                <li><span class="utility-success">Axiome 1</span> : par trois points non alignés, il passe un et un seul plan.</li>
+                <li><span class="utility-success">Axiome 2</span> : si un plan contient deux points d’une droite, alors cette droite est contenue dans ce plan.</li>
+                <li><span class="utility-success">Axiome 3</span> : si deux plans distincts ont un point commun, alors ils sont sécants suivant une droite passant par ce point.</li>
+                <li><span class="utility-success">Axiome 4</span> : tous les résultats de la géométrie plane restent valables dans l’espace.</li>
+              </ul>
             </div>
 
-            <p>L’équation \( ax + by + c = 0 \) est celle d’une droite.</p>
-          </article>
+            <div class="stack-md">
+              <article class="activity-card">
+                <h3 class="subsection-title">Activité 1</h3>
+                <p>Soit \(A\) un point et \(D\) une droite de l’espace. Construire un plan passant par \(A\) et parallèle à \(D\).</p>
+              </article>
 
-          <article>
-            <h5 class="text-primary">Vecteur directeur - Droites parallèles</h5>
-            <p>
-              Le plan est muni d’un repère cartésien \( (O, \vec{i}, \vec{j})
-              \).
+              <article class="activity-card">
+                <h3 class="subsection-title">Activité 2</h3>
+                <p>
+                  Soit \(ABCD\) un tétraèdre, \(I\) un point de l’arête \([AB]\),
+                  \(J\) un point de l’arête \([CD]\) et \(K\) un point du plan
+                  \( (BCD) \).
+                </p>
+                <ol class="list">
+                  <li>Les droites \( (IJ) \) et \( (JK) \) sont-elles coplanaires ? Même question pour \( (IK) \) et \( (JL) \) ?</li>
+                  <li>Les points \(I\), \(J\), \(A\) et \(K\) sont-ils coplanaires ? Même question pour \(I\), \(A\), \(B\) et \(D\) ?</li>
+                </ol>
+              </article>
+
+              <div class="definition-card">
+                <span class="definition-card__label">Coplanarité</span>
+                <ul class="list">
+                  <li><span class="utility-success">Points coplanaires</span> : ils appartiennent à un même plan.</li>
+                  <li><span class="utility-success">Droites coplanaires</span> : elles sont contenues dans un même plan.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="content-card prose" aria-labelledby="analyse-title">
+            <h2 class="section-title" id="analyse-title">Analyse, fonctions et rappel différentiel</h2>
+
+            <div class="definition-card">
+              <span class="definition-card__label">Définition</span>
+              <p>
+                Soit \(f\) une fonction définie sur une partie \(D\) de \(R\) et
+                \(T\) un réel non nul. On dit que \(f\) est périodique de période
+                \(T\), si pour tout \(x \in D\), \(x + T\) appartient à \(D\) et
+                \(f(x + T) = f(x)\).
+              </p>
+            </div>
+
+            <div class="article-card">
+              <p>\( lim_{x \to \infty} \frac{1}{x} = 0 \)</p>
+              <p>\( \int_{a}^{b} f(x) \, dx \)</p>
+              <p>\( \frac{df}{dx} \)</p>
+              <p>\( \sum_{i=1}^{n} i \)</p>
+              <p>\( \sqrt{x} \sqrt[3]{x} \)</p>
+            </div>
+
+            <div class="note-card">
+              <p>
+                Une fonction \(f\) définie sur un intervalle ouvert \(I\) est
+                dérivable en un réel \(a\) de \(I\) s’il existe un réel, noté
+                \(f'(a)\), tel que
+                \(\lim_{ x\to a} \frac{f(x)-f(a)}{x - a} = f'(a)\).
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="content-rail">
+          <section class="mini-card prose" aria-labelledby="cube-title">
+            <h2 class="card-title" id="cube-title">Atelier interactif 3D</h2>
+            <p class="interactive-note">
+              Manipulez les modèles pour visualiser points, repères, rotations et
+              surfaces dans l’espace.
             </p>
+
+            <div class="stack-md">
+              <div class="board-shell board-shell--tall">
+                <div id="BOARDIDtext3d" class="jxgbox" aria-label="Texte 3D interactif"></div>
+              </div>
+
+              <div class="board-shell board-shell--lg">
+                <div id="BOARDID" class="jxgbox" aria-label="Cube 3D avec rotations"></div>
+              </div>
+
+              <div class="controls-card">
+                <p class="formula">
+                  \( [0, 2\pi] \longrightarrow \mathbb{R}^2,\quad t \longmapsto
+                  \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix} + c_1
+                  \begin{pmatrix} \cos(f_1 t) \\ \sin(f_1 t) \end{pmatrix} + c_2
+                  \begin{pmatrix} \cos(f_2 t) \\ \sin(f_2 t) \end{pmatrix} \)
+                </p>
+
+                <div class="controls-grid">
+                  <div class="control-row">
+                    <label for="c1">c1</label>
+                    <input type="range" id="c1" min="0" max="100" value="60" />
+                  </div>
+                  <div class="control-row">
+                    <label for="f1">f1</label>
+                    <input type="range" id="f1" min="1" max="100" value="7" />
+                  </div>
+                  <div class="control-row">
+                    <label for="c2">c2</label>
+                    <input type="range" id="c2" min="0" max="100" value="0" />
+                  </div>
+                  <div class="control-row">
+                    <label for="f2">f2</label>
+                    <input type="range" id="f2" min="1" max="100" value="17" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="board-shell board-shell--md">
+                <div id="BOARDID1" class="jxgbox" aria-label="Courbe paramétrique interactive"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mini-card prose" aria-labelledby="point3d-title">
+            <h2 class="card-title" id="point3d-title">Point et repère dans l’espace</h2>
             <p>
-              Si \( D \) a pour équation \( ax + by + c = 0 \), alors un vecteur
-              directeur est :
+              Tout point \(A\) de l’espace est déterminé par ses coordonnées dans
+              un repère \((O, \vec{i}, \vec{j}, \vec{k})\). On note
+              \(A(x_A, y_A, z_A)\).
             </p>
+            <div class="board-shell board-shell--tall">
+              <div id="BOARDIDtpt3d" class="jxgbox" aria-label="Visualisation d'un point dans l'espace"></div>
+            </div>
+          </section>
 
-            <div class="formula">\[ \vec{u}(-b, a) \]</div>
+          <section class="mini-card prose" aria-labelledby="functions-title">
+            <h2 class="card-title" id="functions-title">Fonctions et surfaces</h2>
+            <div class="stack-md">
+              <div class="board-shell board-shell--lg">
+                <div id="BOARDID3" class="jxgbox" aria-label="Courbe 3D de la fonction cosinus"></div>
+              </div>
+              <div class="board-shell board-shell--lg">
+                <div id="BOARDIDExp" class="jxgbox" aria-label="Fonction exponentielle avec curseur"></div>
+              </div>
+              <div class="board-shell board-shell--md">
+                <div id="BOARDID4" class="jxgbox" aria-label="Exemple 3D supplémentaire"></div>
+              </div>
+              <div class="board-shell board-shell--sm">
+                <div id="BOARDID2" class="jxgbox" aria-label="Exemple d'hyperbole"></div>
+              </div>
+            </div>
+          </section>
 
-            <p>
-              Deux droites \( D: ax+by+c=0 \) et \( D': a'x + b'y + c' = 0 \)
-              sont parallèles si :
-            </p>
-
-            <div class="formula">\[ ab' - a'b = 0 \]</div>
-          </article>
-
-          <article>
-            <h5 class="text-primary">
-              Vecteur normal à une droite - Droites perpendiculaires
-            </h5>
-          </article>
-
-          <article>
-            <p>\( lim_{x \to \infty} \frac{1}{x} = 0 \)</p>
-            <p>\( \int_{a}^{b} f(x) \, dx\)</p>
-            <p>\( \frac{df}{dx} \)</p>
-            <p>\( \sum_{i=1}^{n} i \)</p>
-            <p>\( \sqrt{x} \sqrt[3]{x} \)</p>
-          </article>
-
-          <article>
-            <a href="thales.html">Schéma Théorème de Thalès</a>
-          </article>
-        </div>
-      </div>
-      <div class="box m-2">
-        <h4>3D point</h4>
-        <p>Tout point \(A\) de l'espace est déterminé par ses coordonnées dans un repère \((O, \vec{i}, \vec{j}, \vec{k})\). on note \(A(x_A, y_A, z_A)\).</p>
-        <div
-          id="BOARDIDtpt3d"
-          class="jxgbox"
-          style="width: 300px; height: 400px; aspect-ratio: 1/2"
-        ></div>
-      </div>
-      <div class="box m-2">
-        <div
-          id="BOARDIDtext3d"
-          class="jxgbox"
-          style="width: 300px; height: 400px; aspect-ratio: 1/2"
-        ></div>
-        <h2 class="text-center mt-4">3D cube transformations</h2>
-        <div class="jsgboxS">
-          <div id="BOARDID" class="jxgbox" style="aspect-ratio: 1/1"></div>
-        </div>
-        <div class="One">
-          <p class="text-danger m-2 formula">
-            \( [0, 2\pi] \longrightarrow \mathbb{R}^2,\quad t \longmapsto
-            \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix} + c_1
-            \begin{pmatrix} \cos(f_1 t) \\ \sin(f_1 t) \end{pmatrix} + c_2
-            \begin{pmatrix} \cos(f_2 t) \\ \sin(f_2 t) \end{pmatrix} \)
-          </p>
-          <p class="m2">
-            <label for="c1">c1:</label>
-            <input
-              type="range"
-              id="c1"
-              style="border: 0; color: #f6931f; font-weight: bold"
-              min="0"
-              max="100"
-              value="60"
-              oninput="
-                c1 = this.value * 0.01;
-                board1.update();
-              "
-            /><br />
-            <label for="f1">f1:</label>
-            <input
-              type="range"
-              id="f1"
-              style="border: 0; color: #f6931f; font-weight: bold"
-              min="1"
-              max="100"
-              value="7"
-              oninput="
-                f1 = this.value;
-                board1.update();
-              "
-            /><br />
-            <label for="c2">c2:</label>
-            <input
-              type="range"
-              id="c2"
-              style="border: 0; color: #f6931f; font-weight: bold"
-              min="0"
-              max="100"
-              value="0"
-              oninput="
-                c2 = this.value * 0.01;
-                board1.updateQuality = board1.BOARD_QUALITY_HIGH;
-                board1.update();
-              "
-            /><br />
-            <label for="f2">f2:</label>
-            <input
-              type="range"
-              id="f2"
-              style="border: 0; color: #f6931f; font-weight: bold"
-              min="1"
-              max="100"
-              value="17"
-              oninput="
-                f2 = this.value;
-                board1.update();
-              "
-            />
-          </p>
-        </div>
-        <div class="box m-2">
-          <div
-            id="BOARDID1"
-            class="jxgbox"
-            style="width: 300px; background-color: rgba(212, 142, 114, 0.479); aspect-ratio: 1/1"
-          ></div>
-        </div>
-      </div>
-      <div class="box m-2 p-2">
-        <p>
-          <span class="text-primary">Collinear:</span> (of point) lying in the
-          same straight line.
-        </p>
-        <p>
-          <span class="text-primary">Vector:</span> a quantity having direction
-          as well as magnitude, especially as determining the position of one
-          point in space relative to another.
-        </p>
-      </div>
-      <div class="box m-2">
-        <div class="definition">
-          <div class="definionTitel text-primary">Définition</div>
-          <div class="definionBody">
-            Soit \(f\) une fonction définie sur une partie \(D\) de\(R\) et
-            \(T\) un réel non nul. On dit que \(f\) est périodique de période T,
-            si pour tout \(x \in D, (x + T)\), appartient à \(D\) et \(f(x + T)
-            = f(x) \).
-          </div>
-        </div>
-        <h4 class="text-primary">
-          courbe de la fonction "\(f(x)=cos(x) \)" en 3D
-        </h4>
-        <div
-          id="BOARDID3"
-          class="jxgbox"
-          style="
-            width: 250px;
-            background-color: rgb(114, 167, 212);
-            height: 300px;
-          "
-        ></div>
-
-        <iframe
-          src="cosine/index.html"
-          width="300"
-          height="800"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
-      </div>
-      <div class="box m-2">
-        <h2>Droites Et Plans de l'Espace </h2>
-
-        <div class="definition">
-          <div class="definionTitel text-primary">Les axiomes de base</div>
-          <div class="definionBody">
-            <ul>
-              <li><span class="text-success">Axiome 1</span>: Par trois points non alignés, il passe un et un seul plan.</li>
-              <li><span class="text-success">Axiome 2</span>: Si un plan contient deux points d'une droite, alors cette droite est contenue dans le plan.</li>
-              <li><span class="text-success">Axiome 3</span>: Si deux plans distincts ont un point commun, alors ils sont sécants un droite passant par ce point.</li>
-              <li><span class="text-success">Axiome 4</span>: Toute les résultats de la géométrie plane sont valables dans l'espace.</li>
-            </ul>
-          </div>
-        </div>
-        <h5>Activités</h5>
-        <div class="activite">
-          <h6 class="text-primary">Activité 1</h6>
-          <div class="activiteBody">
-            Soit \(A\) un point et \(D\) une droite de l'espace. Construire un
-            plan passant par \(A\) et parallèle à \(D\).
-          </div>
-        </div>
-        <div class="activite">
-          <h6 class="text-primary">Activité 2</h6>
-          <div class="activiteBody">
-            Soit \(ABCD\) une tétraèdre, \(I\) un point de l'arête \([AB]\) distinct de \(A\) et de \(B\). \(J\) un point de l'arête \([CD]\) distinct de \(C\) et de \(D\).
-            et \(K\) un point de plan \( (BCD) \).
-            <ol>
-              <li>Les droites \( (IJ) \) et \( (JK) \) sont coplanaires ? Même question pour les droites \( (IK) \) et \( (JL) \) ?</li>
-              <li>Les points \(I\), \(J\), \(A\) et \(K\) sont-ils coplanaires ? Même question pour les points \(I\), \(A\), \(B\) et \(D\) ?</li>
-            </ol>
-          </div>
-        </div>
-        <div class="definition">
-          <div class="definionTitel text-primary">Points et Droites Coplanaires</div>
-          <div class="definionBody">
-            <ul>
-              <li><span class="text-success">Des points coplanaires</span>: Des points sont dits coplanaires si ils sont contenues dans un même plan.</li>
-              <li><span class="text-success">Des droites coplanaires</span>: Des droites sont dites coplanaires si elles sont contenues dans un même plan.</li>
-            </ul>
-          </div>
-        </div>
-        <!-- <div
-          id="BOARDID5"
-          class="jxgbox"
-          style="
-            width: 250px;
-            background-color: rgb(114, 167, 212);
-            height: 300px;
-          "
-        ></div> -->
-      </div>
-      <div class="box m-2">
-        <h2>Exemple</h2>
-
-        <div
-          id="BOARDIDExp"
-          class="jxgbox"
-          style="
-            width: 300px;
-            background-color: rgb(114, 167, 212);
-            height: 350px;
-          "
-        ></div>
-        <div
-          id="BOARDID4"
-          class="jxgbox"
-          style="width: 300px; aspect-ratio: 1/2"
-        ></div>
-      </div>
-      <div class="box m-2">
-        <h2>Hyperbole Exemple</h2>
-        <div
-          id="BOARDID2"
-          class="jxgbox"
-          style="width: 200px; height: 200px; aspect-ratio: 1/2"
-        ></div>
-      </div>
-      <div class="box m-2">
-        <div
-          id="BOARDIDAnim"
-          class="jxgbox"
-          style="
-            width: 250px;
-            background-color: rgb(114, 167, 212);
-            height: 300px;
-          "
-        ></div>
-        <textarea
-          id="inputtext"
-          rows="3"
-          cols="30"
-          wrap="true"
-          style="width: 300px; display: none; overflow: auto"
-        >
-speed=25;
+          <section class="mini-card prose" aria-labelledby="turtle-title">
+            <h2 class="card-title" id="turtle-title">Animation turtle</h2>
+            <div class="board-shell board-shell--md">
+              <div id="BOARDIDAnim" class="jxgbox" aria-label="Animation turtle"></div>
+            </div>
+            <textarea id="inputtext" class="code-input" rows="4">speed=25;
 t.cs().hideTurtle().setProperty({strokeWidth:4,strokeOpacity:0.6,fillOpacity:0.3});
-ngon(10,60);
-</textarea
-        >
+ngon(10,60);</textarea>
+            <div class="button-row">
+              <button class="button" id="runButton" type="button">Run</button>
+              <button class="button button--ghost" id="clearButton" type="button">Clear</button>
+            </div>
+          </section>
+        </aside>
+      </main>
 
-        <input type="button" value="run" onClick="run()" />
-        <input type="button" value="clear" onClick="clearturtle()" />
-      </div>
-      <iframe
-        src="centroidOfTriangle/index.html"
-        width="300"
-        height="600"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-      <p>
-        <!-- Definition foction dervable -->
-        Une fonction \(f\) définie sur un intervalle ouvert \(I\) est dérivable
-        en un réel \(a\) de \(I\) s'il existe une réel, noté \(f'(a)\) tel que
-        \(\lim_{ x\to a} \frac{f(x)-f(a)}{x - a} = f'(a) \)
-      </p>
-      <iframe
-        src="secantAndTangentOnFunctionGraph/index.html"
-        width="300"
-        height="300"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-      <iframe
-        src="complexNumbersArithmetics/index.html"
-        width="300"
-        height="600"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-      <iframe
-        src="continuity/index.html"
-        width="300"
-        height="300"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-      <iframe
-        src="inverseCompositionRules/index.html"
-        width="300"
-        height="600"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
+      <section class="content-card prose" aria-labelledby="resources-title">
+        <h2 class="section-title" id="resources-title">Ressources complémentaires et modules embarqués</h2>
+        <div class="board-grid">
+          <article class="mini-card">
+            <h3 class="subsection-title">Théorème de Thalès</h3>
+            <a class="link-card" href="thales.html">Ouvrir le schéma interactif</a>
+          </article>
+        </div>
+
+        <div class="embed-grid">
+          <article class="embed-card embed-card--tall">
+            <h3 class="subsection-title">Cosine en contexte</h3>
+            <iframe
+              src="cosine/index.html"
+              title="Visualisation du cosinus"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </article>
+
+          <article class="embed-card embed-card--tall">
+            <h3 class="subsection-title">Barycentre d’un triangle</h3>
+            <iframe
+              src="centroidOfTriangle/index.html"
+              title="Barycentre d'un triangle"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </article>
+
+          <article class="embed-card embed-card--medium">
+            <h3 class="subsection-title">Sécante et tangente</h3>
+            <iframe
+              src="secantAndTangentOnFunctionGraph/index.html"
+              title="Sécante et tangente sur une courbe"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </article>
+
+          <article class="embed-card embed-card--tall">
+            <h3 class="subsection-title">Nombres complexes</h3>
+            <iframe
+              src="complexNumbersArithmetics/index.html"
+              title="Arithmétique des nombres complexes"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </article>
+
+          <article class="embed-card embed-card--medium">
+            <h3 class="subsection-title">Continuité</h3>
+            <iframe
+              src="continuity/index.html"
+              title="Continuité d'une fonction"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </article>
+
+          <article class="embed-card embed-card--tall">
+            <h3 class="subsection-title">Règles d’inversion et de composition</h3>
+            <iframe
+              src="inverseCompositionRules/index.html"
+              title="Règles d'inversion et de composition"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </article>
+        </div>
+      </section>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
     <script src="main.js"></script>
     <script src="mainGraph.js"></script>
