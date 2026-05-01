@@ -1,1809 +1,611 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="Cours JavaScript moderne : nombres, tableaux, DOM, classes, JSON, asynchronisme et référence JavaScript."
+    />
+    <title>JavaScript | Cours Moderne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="../stylesrc.css" />
+    <link rel="stylesheet" href="./javaScript.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
   </head>
   <body>
-    <div class="container">
-      <!-- Secend Nav Barr -->
-      <nav class="navbar bg-body-tertiary fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand text-secondary" href="#"
-            ><i class="bi bi-filetype-js text-primary"></i> JavaScript Course </a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="offcanvas offcanvas-end w-75"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                JavaScript
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >Number Methods</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Math Object</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">String Methods</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Arry Introduction
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Exercice</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Number et dates
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Number</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">BigInt</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Math</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Date</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Temporal</a>
-                    </li>
-
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Exercice</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <!-- Forme Serche -->
-              <!-- <form class="d-flex mt-3" role="search">
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form> -->
-              <!-- End Serche Forme -->
-            </div>
+    <div class="page-shell">
+      <header class="site-header" id="top">
+        <nav class="topbar" aria-label="Navigation principale">
+          <a class="brand" href="#top">
+            <span class="brand__mark">JS</span>
+            <span class="brand__text">JavaScript Course</span>
+          </a>
+          <div class="topbar__links">
+            <a href="#numbers">Numbers</a>
+            <a href="#arrays">Arrays</a>
+            <a href="#dom">DOM</a>
+            <a href="#oop">OOP</a>
+            <a href="#async">Async</a>
           </div>
-        </div>
-      </nav>
-      <!-- End Secend Nav Barr -->
-
-      <main class="pt-4 mt-4">
-        <h1 id="learn-javascript">Learn JavaScript</h1>
-        <div class="box23 border border-primary p-2">
-          <h2 id="023-number">023 - Number</h2>
-          <p><strong>Number</strong></p>
-          <p>
-            Double Precision (recherche internet) Syntactic Sugar &quot;_&quot;
-            .
-          </p>
-          <blockquote>
-            <blockquote>
-              <pre><code class="lang-javaScript"><span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1000000); <span class="hljs-comment">// "1000000"</span>
-    <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1_000_000);  <span class="hljs-comment">// "1000000"</span>
-    <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1<span class="hljs-selector-tag">e6</span>);  <span class="hljs-comment">// "9007199254740991"</span>
-    <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(10 ** 6);  <span class="hljs-comment">// "9007199254740991"</span>
-    <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(1000000<span class="hljs-selector-class">.0</span>); 
-    </code></pre>
-              <p>e ** With Decimal Number Min Value</p>
-              <pre><code class="lang-javaScript">Number<span class="hljs-selector-class">.MAX_SAFE_INTEGER</span> <span class="hljs-comment">// "9007199254740991"</span>
-    </code></pre>
-              <p>Number Max Value</p>
-            </blockquote>
-          </blockquote>
-          <pre><code class="hljs-selector-tag">Number<span class="hljs-selector-class">.MAX_VALUE</span> <span class="hljs-comment">// "1.7976931348623157e+308";</span>
-    Number<span class="hljs-selector-class">.MAX_VALUE</span> + <span class="hljs-number">2035</span> = Number<span class="hljs-selector-class">.MAX_VALUE</span> <span class="hljs-comment">// "Number.MAX_VALUE"</span>
-    </code></pre>
-        </div>
-        <div class="box24 border border-primary p-2">
-          <h2 id="024-number-methodes">024 - Number Methodes</h2>
-        </div>
-        <div class="box25 border border-primary p-2">
-          <h2 id="025-math-object">025 Math Object</h2>
-          <p>Les méthodes du objet Math</p>
-          <ul class="p-1 m-2 gap-4 d-flex flex-column">
-            <li class="row border-bottom   text-center">
-              <div class="row">
-                <code class="col"
-                  ><span class="hljs-selector-tag">Math</span>.abs()</code
-                >
-                <span class="col text-primary">\(|x|\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary-emphasis"
-                  >retourne la valeur absolue d'un nombre.</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom text-center">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.acos()</code
-                >
-                <span class="col-2 text-primary">\(\arccos(x)\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne l'arc cosinus d'un nombre.</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom text-center">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.acosh()</code
-                >
-                <span class="col-2 text-primary"
-                  >\(\operatorname{arcosh}(x)\)</span
-                >
-              </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne l'arc cosinus hyperbolique d'un nombre.</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom text-center">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.acot()</code
-                >
-                <span class="col-2 text-primary"
-                  >\(\operatorname{arccot}(x)\)</span
-                >
-              </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne l'arc cotangente d'un nombre.</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom text-center">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.acoth()</code
-                >
-                <span class="col-2 text-primary"
-                  >\(\operatorname{arccoth}(x)\)</span
-                >
-              </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne l'arc cotangente hyperbolique d'un nombre.</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom text-center">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.atan()</code
-                >
-                <span class="col-2 text-primary">\(\arctan(x)\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne l'arc tangente d'un nombre.</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom text-center">
-              <div class="row">
-                <code class="col-5 col-lg-2"><span class="hljs-selector-tag">Math</span>.atan2()</code
-                  >
-                  <span class="col-2 text-primary">\(\arctan2(y, x)\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne l'arc tangente d'un nombre.</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.atanh()</code
-                >
-                <span class="col-2 text-primary"
-                  >\(\operatorname{artanh}(x)\)</span
-                >
-              </div>
-              <div class="row">
-                <span class="text-primary-emphasis"
-                  >retourne l'arc tangente hyperbolique d'un nombre.</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.cosh()</code
-                >
-                <span class="col-2 text-primary"
-                  >\(\operatorname{cosh}(x)\)</span
-                >
-                </div>
-                <div class="row">
-                  <span class="text-primary"
-                  >retourne le cosinus hyperbolique d'un nombre.</span
-                  >
-                </div>
-              
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.max()</code
-                >
-                <span class="col-2 text-primary"
-                  >\(\max(x_1, x_2, \ldots, x_n)\)</span
-                >
-              </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne le plus grand des nombres fournis.
-                </span>
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.min()</code
-                >
-                <span class="col-2 text-primary"
-                  >\(\min(x_1, x_2, \ldots, x_n)\)</span
-                >
-              </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne le plus petit des nombres fournis.
-                </span>
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.pow()</code
-                >
-                <span class="col-2 text-primary">\((x^y)\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne un nombre élevé à la puissance d'un autre nombre.
-                </span>
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.random()</code
-                >
-                <span class="col-2 text-primary"
-                  >\(\operatorname{random}()\)</span
-                >
-                </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne un nombre pseudo-aléatoire entre 0 et 1.
-                </span>
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.round()</code
-                >
-                <span class="col-2 text-primary"
-                  >\(\operatorname{round}(x)\)</span
-                >
-                </div>
-              <div class="row">
-                <span class="text-primary"
-                  >retourne le nombre arrondi à l'entier le plus proche.
-                </span>
-              </div>
-            </li>
-
-            
-
-            <li class="row border-bottom">
-              <div class="row">
-                <code class="col-5 col-lg-2"
-                  ><span class="hljs-selector-tag">Math</span>.sign()</code
-                >
-                <span class="col-2 text-primary">\(\operatorname{sign}(x)\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary-emphasis"
-                  >retourne le signe d'un nombre, indiquant s'il est positif,
-                  négatif ou zéro.</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-              <code class="col-5 col-lg-2"
-                ><span class="hljs-selector-tag">Math</span>.sinh()</code
-              >
-              <span class="col-2 text-primary">\(\operatorname{sinh}(x)\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary-emphasis"
-                  >retourne le sinus hyperbolique d'un nombre.
-                </span>
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-              <code class="col-5 col-lg-2"
-                ><span class="hljs-selector-tag">Math</span>.sqrt()</code
-              >
-              <span class="col-2 text-primary">\(\sqrt{x}\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary">retourne la racine carrée d'un nombre.
-                </span>
-              </div>
-            </li>
-              
-            <li class="row border-bottom">
-              <div class="row">
-              <code class="col-5 col-lg-2"
-                ><span class="hljs-selector-tag">Math</span>.tan()</code
-              >
-              <span class="col-2 text-primary">\(\tan(x)\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary-emphasis"
-                  >retourne la tangente d'un nombre. \(\tan(x)\)</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-              <code class="col-5 col-lg-2"
-                ><span class="hljs-selector-tag">Math</span>.tanh()</code
-              >
-              <span class="col-2 text-primary">\(\operatorname{tanh}(x)\)</span>
-              </div>
-              <div class="row">
-                <span class="text-primary-emphasis"
-                  >retourne la tangente hyperbolique d'un nombre.
-                  \(\operatorname{tanh}(x)\)</span
-                >
-              </div>
-            </li>
-
-            <li class="row border-bottom">
-              <div class="row">
-              <code class="col-5 col-lg-2"
-                ><span class="hljs-selector-tag">Math</span>.trunc()</code
-              >
-              <span class="col-2 text-primary"
-                >\(\operatorname{trunc}(x)\)</span
-              >
-              </div>
-              <div class="row">
-              <span class="text-primary-emphasis"
-                >retourne la partie entière d'un nombre.
-                </span
-              >
-              </div>
-            </li>
-          </ul>
-
-          <pre><code class="lang-javaScript">Math.round(<span class="hljs-number">99.2</span>); <span class="hljs-comment">// 99</span>
-Math.round(<span class="hljs-number">99.5</span>); <span class="hljs-comment">// 100</span>
-
-Math.ceil(<span class="hljs-number">99.2</span>); <span class="hljs-comment">// 100 </span>
-Math.floor(<span class="hljs-number">99.9</span>); <span class="hljs-comment">// 99</span>
-
-
-Math.min(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">100</span>, <span class="hljs-number">-100</span>, <span class="hljs-number">90</span>); <span class="hljs-comment">// -100</span>
-Math.max(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">100</span>, <span class="hljs-number">-100</span>, <span class="hljs-number">90</span>); <span class="hljs-comment">// 100</span>
-
-
-Math.random(); <span class="hljs-comment">// aliatoire</span>
-
-Math.trunc(<span class="hljs-number">99.5</span>); <span class="hljs-comment">// 99</span>
-Math.trunc(<span class="hljs-number">99.99</span>); <span class="hljs-comment">// 99</span>
-</code></pre>
-        </div>
-        <div class="box26 border border-primary p-2"></div>
-        <div class="box27 border border-primary p-2">
-                <h2 id="27-string-methods">27 - String Methods</h2>
-      <blockquote>
-        <p>
-          Access With Index Access With <code>charAt()</code> length trim() =&gt; remove
-          espace <code>toUpperCase()</code> <code>toLowerCase()</code> Chain Methods
-        </p>
-      </blockquote>
-      <pre><code class="lang-javascript">let theName = <span class="hljs-string">"  Ahmed  "</span>;
-
-theName; <span class="hljs-comment">// "  Ahmed  "</span>
-theName[<span class="hljs-number">5</span>]; <span class="hljs-comment">// m</span>
-
-theName.trim(); <span class="hljs-comment">// Ahmed</span>
-<span class="hljs-comment">// Chain Methods</span>
-theName.trim().charAt(<span class="hljs-number">5</span>).toUpperCase()
-</code></pre>
-      <blockquote>
-        <p>String Methods</p>
-        <blockquote>
-          <p>indexOf(Value [Mand], Start[Opt] 0)</p>
-        </blockquote>
-      </blockquote>
-      <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> a = <span class="hljs-string">"Elzero Web School"</span>;
-
-a.indexOf(<span class="hljs-string">"Web"</span>) <span class="hljs-comment">// 7</span>
-a.indexOf(<span class="hljs-string">"Web"</span>, <span class="hljs-number">8</span>) <span class="hljs-comment">// -1</span>
-</code></pre>
-      <blockquote>
-        <blockquote>
-          <p>
-            lastIndexOf(Value [Mand], Start [Opt] length) slice(Start [MAnd],
-            End [Opt] Not Include End) repeat(Times) [ES6] split(Separator
-            [Opt], limit [Opt])
-          </p>
-        </blockquote>
-      </blockquote>
-        </div>
-        <div class="box28 border border-primary p-2"></div>
-        <div class="box29 border border-primary p-2"></div>
-        <div class="box30 border border-primary p-2"></div>
-        <div class="box31 border border-primary p-2"></div>
-        <div class="box32 border border-primary p-2">
-        </div>
-        <div class="box33 border border-primary p-2"></div>
-        <div class="box34 border border-primary p-2"></div>
-        <div class="box40 border border-primary p-2">
-                <h2 id="040-array-big-introduction">040 - Array Big Introduction</h2>
-        <p><strong>Arrays</strong></p>
-        <blockquote>
-          <p>Create Arrys [To w Methods] new Array()</p>
-          <pre><code class="lang-javaScript"><span class="hljs-attribute">let myFriends</span> = [<span class="hljs-string">"Ahmed"</span>, <span class="hljs-string">"Mohamed"</span>, <span class="hljs-string">"Sayed"</span>];
-</code></pre>
-        </blockquote>
-        </div>
-        <div class="box42 border border-primary p-2">
-      <h2 id="042-add-and-remove-from-array">
-        042 - Add And Remove From Array
-      </h2>
-      <blockquote>
-        <p>Array Methods [Adding And Removing]</p>
-        <blockquote>
-          <p>
-            unshift(&quot;&quot;, &quot;&quot;, ...) Add Element To The First
-            push(&quot;&quot;, &quot;&quot;, ...) Add Element To The End shift()
-            Relove First Element From Array pop() Remove Last Element From Array
-          </p>
-        </div>
-        <div class="box44 border border-primary p-2"></div>
-        <div class="box66 border border-primary p-2">
-<h2 id="066-arrow-function-syntax">066 - Arrow Function Syntax</h2>
-      <p>Arrow Function</p>
-      <blockquote>
-        <ul>
-          <li>Regular vs Arrow [Param + No Param ]</li>
-          <li>Multiple Lines</li>
-        </ul>
-      </blockquote>
-        </div>
-        <div class="box71 border border-primary p-2">
-
-      <h2 id="071-higher-order-functions-map">
-        071 - Higher Order Functions - Map
-      </h2>
-      <p>Higher Order Function</p>
-      <blockquote>
-        <p>
-          is a function that accepts functions as parameters and/or returns a
-          function.
-        </p>
-        <p>Map</p>
-        <blockquote>
-          <p>
-            method creates a new array populated with the resultes of calling a
-            provided function on every element. in the calling array. Syntax
-            map(callBackFunction(Element, Index, Array){}, thisArg) Element
-            =&gt; The current element beig processed in the array. Index =&gt;
-            The index of the current element being processed in the array. Array
-            =&gt; The Current Array Notes Map Return A New Array Examples
-            Anonymous Function Named Function
-          </p>
-        </blockquote>
-      </blockquote>
-      <pre><code class="lang-javaScript"><span class="hljs-keyword">let</span> Arry = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
-
-<span class="hljs-built_in">console</span>.log(Arry);
-
-<span class="hljs-keyword">let</span> NewArry = [];
-
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; Arry.length; i++){
-    NewArry.push(Arry[i] + Arry[i] )
-};
-
-<span class="hljs-built_in">console</span>.log(NewArry);
-
-<span class="hljs-keyword">let</span> addSelf = myNums.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element, index, arr</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Current Element =&gt; <span class="hljs-subst">${element}</span>`</span>);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Current Index =&gt; <span class="hljs-subst">${index}</span>`</span>);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Array =&gt; <span class="hljs-subst">${arr}</span>`</span>);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`This =&gt; <span class="hljs-subst">${<span class="hljs-keyword">this</span>}</span>`</span>);
-    <span class="hljs-comment">// return element + element;</span>
-}, <span class="hljs-number">10</span>);
-
-<span class="hljs-keyword">let</span> addSelf = myNums.map(<span class="hljs-function">(<span class="hljs-params">e</span>)=&gt;</span> e + e)
-<span class="hljs-built_in">console</span>.log(addSelf);
-
-funxtion   addition(ele) {
-    <span class="hljs-keyword">return</span> ele + ele;
-}
-
-<span class="hljs-keyword">let</span> add = myNums.map(addition);
-
-<span class="hljs-built_in">console</span>.log(add);
-</code></pre>
-        </div>
-        <div class="box74 border border-primary p-2">
-          <h2 id="074-higher-order-functions-filter">
-        074 Higher Order Functions - Filter
-      </h2>
-      <p>Filter</p>
-      <blockquote>
-        <p>Filter Longest Word By Number</p>
-      </blockquote>
-      <pre><code class="lang-javaScript"><span class="hljs-keyword">let</span> sentence = <span class="hljs-string">"I Love Food Code Too Playing Much"</span>;
-
-<span class="hljs-keyword">let</span> smallWords = sentence.split(<span class="hljs-string">" "</span>).filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ele</span>)</span>{
-    <span class="hljs-keyword">return</span> ele.length &lt;= <span class="hljs-number">4</span>;
-}).join(<span class="hljs-string">" "</span>);
-
-<span class="hljs-comment">// Ignore Numbers</span>
-<span class="hljs-keyword">let</span> ignoreNumbers = <span class="hljs-string">"Elz123er4o"</span>;
-
-<span class="hljs-keyword">let</span> ign = ignoreNumbers
-</code></pre>
-        </div>
-        <div class="box90 border border-primary p-2">
-        </div>
-        <div class="box93 border border-primary p-2">
-           <h2 id="093-validate-form-and-prevent-default">
-        093 - Validate Form And Prevent Default
-      </h2>
-      <p>DOM [Events]</p>
-      <ul>
-        <li>Validate Form Practice</li>
-        <li>
-          <p>Prevent Default</p>
-          <pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.links[O].onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
-  event.preventDefault();
-};
-</code></pre>
-        </li>
-      </ul>
-      <pre><code class="lang-javascript"> <span class="hljs-keyword">let</span> <span class="hljs-attr">userInput</span> = document.querySelector(<span class="hljs-string">"[name='username']"</span>);
- <span class="hljs-keyword">let</span> <span class="hljs-attr">ageInput</span> = document.querySelector(<span class="hljs-string">"[name='age']"</span>);
-
- document.forms[<span class="hljs-number">0</span>].<span class="hljs-attr">onsubmt</span> = function (e) {
-    <span class="hljs-keyword">let</span> <span class="hljs-attr">userValid</span> = <span class="hljs-literal">false</span>;
-    <span class="hljs-keyword">let</span> <span class="hljs-attr">ageValid</span> = <span class="hljs-literal">false</span>;
-
-    <span class="hljs-keyword">if</span>(userInput.value !== <span class="hljs-string">""</span> &amp;&amp; userInput.value.length &lt;= <span class="hljs-number">10</span>){
-        <span class="hljs-attr">userValid</span> = <span class="hljs-literal">true</span>;
-    };
-
-    <span class="hljs-keyword">if</span>(ageInput.value !== <span class="hljs-string">""</span>){
-        <span class="hljs-attr">ageValid</span> = <span class="hljs-literal">true</span>;
-    }
-    <span class="hljs-keyword">if</span> (<span class="hljs-attr">userValid</span> === <span class="hljs-literal">false</span> || <span class="hljs-attr">ageValid</span> === <span class="hljs-literal">false</span>){
-        e.preventDefault();
-    }
- }
-</code></pre>
-        </div>
-        <div class="box94 border border-primary p-2">
-                <h2 id="094-event-simulation-click-focus-blur">
-        094 - Event Simulation Click Focus Blur
-      </h2>
-      <p>DOM [Events Simulation]</p>
-      <ul>
-        <li>click</li>
-        <li>focus</li>
-        <li>blur</li>
-      </ul>
-      <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> two = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".two"</span>);
-
-<span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
-    tow.focus();
-};
-</code></pre>
-      <p>cersur sorte input</p>
-      <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> one = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".one"</span>);
-
-one.onblur = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
-    <span class="hljs-built_in">document</span>.links[<span class="hljs-number">0</span>].click();
-}
-</code></pre>
-        </div>
-        <div class="box95 border border-primary p-2">
-                <h2 id="095-class-list-object-and-methods">
-        095 - Class List Object And Methods
-      </h2>
-      <p>DOM [Class List]</p>
-      <blockquote>
-        <p>classList -length -contains -item(index) -add -remove -toggle</p>
-      </blockquote>
-      <p>HTML</p>
-      <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"my-div"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"one two show test"</span>&gt;Div With Many Classes&lt;/<span class="hljs-keyword">div</span>&gt;
-</code></pre>
-      <p>JavaScrept:</p>
-      <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> <span class="hljs-literal">element</span> = document.getElementById(<span class="hljs-string">"my-div"</span>);
-
-<span class="hljs-literal">element</span>.classList //  DOMTokenlist(<span class="hljs-number">4</span>)[<span class="hljs-string">"one"</span>, <span class="hljs-string">"two"</span>, <span class="hljs-string">"show"</span>, <span class="hljs-string">"test"</span>, value: <span class="hljs-string">"one two shw test"</span>]
-typeof <span class="hljs-literal">element</span>.classList // Object
-<span class="hljs-literal">element</span>.classList.contains(<span class="hljs-string">"osama"</span>); // <span class="hljs-literal">false</span>
-<span class="hljs-literal">element</span>.classList.contains(<span class="hljs-string">"two"</span>); // <span class="hljs-literal">true</span>
-<span class="hljs-literal">element</span>.classList.<span class="hljs-literal">item</span>(<span class="hljs-string">"3"</span>); // shw
-</code></pre>
-      
-        </div>
-        <div class="box115 border border-primary p-2">
-          <h2 id="115-destructuring-arrays">115 - Destructuring Arrays</h2>
-      <p>
-        Destructuring: is a JavaScript experession that allows us to extract
-        data from arrays, objects, and maps and set them into new, distinct
-        variables.
-      </p>
-      <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;
-<span class="hljs-keyword">let</span> b = <span class="hljs-number">2</span>;
-<span class="hljs-keyword">let</span> c = <span class="hljs-number">3</span>;
-
-<span class="hljs-keyword">let</span> myFriends = [<span class="hljs-string">"Ahmed"</span>, <span class="hljs-string">"Sayed"</span>, <span class="hljs-string">"Ali"</span>];
-
-[a = <span class="hljs-string">"A"</span>, b, c] = myFriend;
-
-console.<span class="hljs-built_in">log</span>(a) <span class="hljs-comment">// Ahmed</span>
-console.<span class="hljs-built_in">log</span>(b) <span class="hljs-comment">// Sayed</span>
-console.<span class="hljs-built_in">log</span>(c) <span class="hljs-comment">// Ali</span>
-
-<span class="hljs-keyword">let</span> [x, y, z] = myFriend;
-
-console.<span class="hljs-built_in">log</span>(x) <span class="hljs-comment">// Ahmed</span>
-console.<span class="hljs-built_in">log</span>(y) <span class="hljs-comment">// Sayed</span>
-console.<span class="hljs-built_in">log</span>(z) <span class="hljs-comment">// Ali</span>
-
-<span class="hljs-keyword">let</span> [, k,];
-
-console.<span class="hljs-built_in">log</span>(k) <span class="hljs-comment">// Sayed</span>
-</code></pre>
-      <p>Advanced Examples</p>
-      <pre><code class="lang-javascript">let myFriends = [<span class="hljs-string">"Ahmed"</span>, <span class="hljs-string">"Sayed"</span>, <span class="hljs-string">"Ali"</span>, [<span class="hljs-string">"Shady"</span>, <span class="hljs-string">"Amr"</span>, [<span class="hljs-string">"Mohamed"</span>, <span class="hljs-string">"Gamal"</span>]]];
-
-myFriends[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]; // <span class="hljs-symbol">Gamal</span>
-
-let [, , , [a, , [, b]]] = myFriends;
-
-console.log(a); // <span class="hljs-symbol">Shady</span>
-console.log(b); // <span class="hljs-symbol">Gamal</span>
-</code></pre>
-      <p>Destructuring Array =&gt; Swapping Variables</p>
-      <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> book = <span class="hljs-string">"video"</span>;
-<span class="hljs-keyword">let</span> video = <span class="hljs-string">"Book"</span>;
-
-[book, video] = [video, book];
-
-console.<span class="hljs-built_in">log</span>(book); <span class="hljs-comment">// Book</span>
-console.<span class="hljs-built_in">log</span>(video); <span class="hljs-comment">// Video</span>
-</code></pre>
-      <p>Destructuring Object</p>
-      <pre><code class="lang-javascript">const user = {
-<span class="hljs-symbol">    theName:</span> <span class="hljs-string">"Osama"</span>,
-<span class="hljs-symbol">    theAge:</span> <span class="hljs-number">39</span>,
-<span class="hljs-symbol">    theTitle:</span> <span class="hljs-string">"Developer"</span>,
-<span class="hljs-symbol">    theCountry:</span> <span class="hljs-string">"Egypt"</span>
-};
-</code></pre>
-        </div>
-        <div class="box118 border border-primary p-2">
-           <h2 id="118-destructuring-objects">118 - Destructuring Objects</h2>
-      <pre><code class="lang-javascript">const user = {
-<span class="hljs-symbol">    theName:</span> <span class="hljs-string">"Osama"</span>,
-<span class="hljs-symbol">    theAge:</span> <span class="hljs-number">39</span>,
-<span class="hljs-symbol">    theTitle:</span> <span class="hljs-string">"Developer"</span>,
-<span class="hljs-symbol">    theCountry:</span> <span class="hljs-string">"Egypt"</span>,
-<span class="hljs-symbol">    skills:</span> {
-<span class="hljs-symbol">        html:</span> <span class="hljs-number">70</span>,
-<span class="hljs-symbol">        css:</span> <span class="hljs-number">80</span>,
-    }
-};
-
-console.log(user.theName); <span class="hljs-comment">// Osama </span>
-
-({theName, theAge, theTitle, theContry } = user);
-<span class="hljs-comment">//_____________</span>
-<span class="hljs-class">const </span>{
-<span class="hljs-symbol">    theName:</span> x, 
-<span class="hljs-symbol">    theAge:</span> a, 
-    theTitle = <span class="hljs-string">"undif"</span>, 
-<span class="hljs-symbol">    theContry:</span> k = <span class="hljs-string">"tunis"</span>,
-<span class="hljs-symbol">    skills:</span> {html: h, css}
-} = user;
-
-console.log(x); <span class="hljs-comment">// Osama</span>
-console.log(k); <span class="hljs-comment">// Egypt</span>
-console.log(h); <span class="hljs-comment">// 70</span>
-console.log(css): <span class="hljs-comment">// 80</span>
-
-
-<span class="hljs-class">const </span>{html: skillOne, css: skillTwo} = user.skills;
-</code></pre>
-        </div>
-        <div class="box123 border border-primary p-2">
-          <h2 id="123-set-data-types-and-methods">
-        123 Set Data Types And Methods
-      </h2>
-      <p>Set Data Type</p>
-      <blockquote>
-        <p>Santax: new Set(Iterable).</p>
-        <blockquote>
-          <p>
-            Object To Store Unique Values. Cannot Access Elements By Index
-            Properties: siez Methods add delete
-          </p>
-        </blockquote>
-      </blockquote>
-      <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> myData = [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]; <span class="hljs-comment">// [1, 1, 1, 2, 3]</span>
-<span class="hljs-keyword">let</span> myUniqueData = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]); <span class="hljs-comment">// {1, 1, 1, 2, 3}</span>
-<span class="hljs-keyword">let</span> myUniqueData = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(myData);
-<span class="hljs-keyword">let</span> myUniqueData = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(myData);
-</code></pre>
-        </div>
-        <div class="box124 border border-primary p-2">
-          <h2 id="124-set-vs-weakset-and-garbage-collecto">
-        124 - Set vs WeakSet And Garbage Collecto
-      </h2>
-      <blockquote>
-        <p>Set vs WeakSet</p>
-        <blockquote>
-          <p>
-            The WeakSet is weak, meaning references to objects in a WeakSet are
-            held weakly. If no other references to an object stored in the
-            WeakSet exist, those objects can be garbage collected.
-          </p>
-        </blockquote>
-      </blockquote>
-      <ul>
-        <li>set =&gt; Can Store Any Data Values</li>
-        <li>WeakSet =&gt; Collection Of Objects Only</li>
-        <li>set =&gt; Have Size Property</li>
-        <li>WeakSet =&gt; Does Not Have Size Property</li>
-        <li>set =&gt; Have Keys, Values, Entries</li>
-        <li>WeakSet =&gt; Does Not Have clear, keys, Value And Entries</li>
-        <li>set =&gt; Can Use forEach</li>
-        <li>WeakSet =&gt; Cannot Use forEach</li>
-      </ul>
-        </div>
-        <div class="box129 border border-primary p-2">
-          <h2 id="129-array-copywithin-method">129 - Array.copyWithin Method</h2>
-      <p>Array Methods</p>
-      <blockquote>
-        <p>
-          Array.copyWithin(Target, Start =&gt; Optional, End =&gt; Optional)
-          &quot;Copy Part Of An Array To Another Location in The Same
-          Array&quot;
-        </p>
-        <blockquote>
-          <p>Any Negative Value Will Count From The End Target</p>
-          <blockquote>
-            <p>
-              Index To Copy Part To If At Or Greater Than Array Length Nothing
-              Will Be Copied Start Index To Start copying From If Ommited =
-              Start From Index 0 End Index To End Copyinf From Not Including End
-              If Ommited = Reach The End
+        </nav>
+
+        <section class="hero">
+          <div class="hero__content">
+            <p class="eyebrow">Cours frontend moderne</p>
+            <h1 class="hero__title">Apprendre JavaScript avec une structure claire, pratique et maintenable.</h1>
+            <p class="hero__lead">
+              Une version refondue du cours pour mieux naviguer entre syntaxe,
+              structures de données, DOM, programmation orientée objet et
+              asynchronisme, avec une mise en page pensée pour l’étude et la
+              relecture.
             </p>
-          </blockquote>
-        </blockquote>
-      </blockquote>
-        </div>
-        <div class="box128 border border-primary p-2">
-          <h2>Array Methods</h2>
-          <ul>
-            <li><code>Array.from(Iterable, MapFunc, This)</code></li>
-            <li>
-              <ul>
-                <li>Variable</li>
-                <li>String Numbers</li>
-                <li>Set</li>
-                <li>Using The Map Function</li>
-                <li>Arrow Function</li>
-                <li>Shorten The Method + Use arguments</li>
-              </ul>
-            </li>
-          </ul>
-          <p>Exemple</p>
-          <per>
-            <span>Array</span><span>.from</span>("Bettaibi");
-            <span>Array</span><span>.from</span>
-          </per>
-        </div>
-        <div class="box148 border border-primary p-2">
-          <h2 id="148-constructor-function-introduction">
-        148 - Constructor Function Introduction
-      </h2>
-      <p>syntaxe: exempl</p>
-      <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">User</span>(<span class="hljs-params">id, username, salary</span>)</span>{
-    <span class="hljs-keyword">this</span>.id = id;
-    <span class="hljs-keyword">this</span>.u = username;
-    <span class="hljs-keyword">this</span>.s = salary + <span class="hljs-number">1000</span>;
+            <div class="hero__actions">
+              <a class="button button--primary" href="#numbers">Explorer le cours</a>
+              <a class="button button--secondary" href="#reference">Voir la référence</a>
+            </div>
+          </div>
+
+          <aside class="hero__panel" aria-label="Résumé du cours">
+            <article class="stat-card">
+              <span class="stat-card__label">Contenu</span>
+              <strong class="stat-card__value">Syntaxe, DOM, OOP, JSON, AJAX</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card__label">Approche</span>
+              <strong class="stat-card__value">Exemples lisibles + rappels clés</strong>
+            </article>
+            <article class="stat-card">
+              <span class="stat-card__label">Objectif</span>
+              <strong class="stat-card__value">Comprendre puis réutiliser vite</strong>
+            </article>
+          </aside>
+        </section>
+      </header>
+
+      <main class="main-layout">
+        <aside class="sidebar" aria-label="Sommaire">
+          <div class="sidebar__card">
+            <p class="sidebar__title">Sommaire</p>
+            <a class="sidebar__link" href="#numbers">023–025 Number & Math</a>
+            <a class="sidebar__link" href="#strings">027 String Methods</a>
+            <a class="sidebar__link" href="#arrays">040–074 Arrays & HOF</a>
+            <a class="sidebar__link" href="#dom">093–095 DOM Events</a>
+            <a class="sidebar__link" href="#destructuring">115–129 Structures</a>
+            <a class="sidebar__link" href="#oop">148–155 Classes & Prototype</a>
+            <a class="sidebar__link" href="#modules">167 Modules</a>
+            <a class="sidebar__link" href="#async">169–177 JSON & Async</a>
+            <a class="sidebar__link" href="#reference">Référence</a>
+          </div>
+        </aside>
+
+        <div class="content">
+          <section class="section" id="numbers">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Nombres</p>
+              <h2>023–025 • Number, Number Methods et objet Math</h2>
+              <p>
+                Comprendre la représentation numérique, les limites de précision
+                et les outils standards fournis par l’objet `Math`.
+              </p>
+            </div>
+
+            <div class="card-grid">
+              <article class="content-card">
+                <h3>Formats numériques</h3>
+                <p>
+                  JavaScript utilise des nombres en double précision. On peut
+                  écrire de grands nombres avec `_`, la notation exponentielle
+                  ou les puissances.
+                </p>
+                <pre class="code-block"><code>console.log(1000000);
+console.log(1_000_000);
+console.log(1e6);
+console.log(10 ** 6);
+console.log(Number.MAX_SAFE_INTEGER);</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3>Valeurs limites</h3>
+                <p>
+                  `Number.MAX_SAFE_INTEGER` définit la borne des entiers exacts.
+                  `Number.MAX_VALUE` représente la plus grande valeur finie.
+                </p>
+                <pre class="code-block"><code>Number.MAX_VALUE; 
+Number.MAX_VALUE + 2035; // reste MAX_VALUE</code></pre>
+              </article>
+            </div>
+
+            <article class="panel-card">
+              <h3 id="025-math-object">025 • Math Object</h3>
+              <p>Quelques méthodes importantes de l’objet `Math`.</p>
+              <div class="method-list">
+                <div class="method-item"><code>Math.abs()</code><span>\(|x|\)</span><p>Retourne la valeur absolue.</p></div>
+                <div class="method-item"><code>Math.acos()</code><span>\(\arccos(x)\)</span><p>Retourne l’arc cosinus.</p></div>
+                <div class="method-item"><code>Math.atan2()</code><span>\(\arctan2(y, x)\)</span><p>Calcule l’angle à partir de deux coordonnées.</p></div>
+                <div class="method-item"><code>Math.max()</code><span>\(\max(x_1, \dots, x_n)\)</span><p>Retourne le plus grand nombre.</p></div>
+                <div class="method-item"><code>Math.min()</code><span>\(\min(x_1, \dots, x_n)\)</span><p>Retourne le plus petit nombre.</p></div>
+                <div class="method-item"><code>Math.random()</code><span>\(\operatorname{random}()\)</span><p>Retourne un nombre pseudo-aléatoire entre 0 et 1.</p></div>
+                <div class="method-item"><code>Math.round()</code><span>\(\operatorname{round}(x)\)</span><p>Arrondit à l’entier le plus proche.</p></div>
+                <div class="method-item"><code>Math.sqrt()</code><span>\(\sqrt{x}\)</span><p>Retourne la racine carrée.</p></div>
+              </div>
+              <pre class="code-block"><code>Math.round(99.2); // 99
+Math.round(99.5); // 100
+Math.ceil(99.2);  // 100
+Math.floor(99.9); // 99
+Math.min(10, 20, 100, -100, 90); // -100
+Math.max(10, 20, 100, -100, 90); // 100
+Math.trunc(99.99); // 99</code></pre>
+            </article>
+          </section>
+
+          <section class="section" id="strings">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Strings</p>
+              <h2 id="27-string-methods">027 • String Methods</h2>
+              <p>
+                Manipuler les chaînes est indispensable pour le DOM, les APIs et
+                la validation de données.
+              </p>
+            </div>
+
+            <div class="card-grid">
+              <article class="content-card">
+                <h3>Méthodes de base</h3>
+                <p>
+                  Accès par index, `charAt()`, `trim()`, `toUpperCase()` et
+                  `toLowerCase()` sont parmi les premières à maîtriser.
+                </p>
+                <pre class="code-block"><code>let theName = "  Ahmed  ";
+
+theName[5]; // m
+theName.trim(); // Ahmed
+theName.trim().charAt(0).toUpperCase();</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3>Recherche et découpe</h3>
+                <p>
+                  `indexOf`, `lastIndexOf`, `slice`, `repeat` et `split`
+                  permettent de chercher, découper et transformer du texte.
+                </p>
+                <pre class="code-block"><code>let text = "Elzero Web School";
+
+text.indexOf("Web"); // 7
+text.indexOf("Web", 8); // -1
+text.split(" ");</code></pre>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="arrays">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Arrays</p>
+              <h2>040–074 • Tableaux, ajout/retrait et higher-order functions</h2>
+            </div>
+
+            <div class="content-stack">
+              <article class="content-card">
+                <h3 id="040-array-big-introduction">040 • Array Big Introduction</h3>
+                <p>Les tableaux permettent de stocker plusieurs valeurs dans un ordre précis.</p>
+                <pre class="code-block"><code>let myFriends = ["Ahmed", "Mohamed", "Sayed"];</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3 id="042-add-and-remove-from-array">042 • Add And Remove From Array</h3>
+                <p>
+                  Les méthodes `unshift`, `push`, `shift` et `pop` servent à
+                  ajouter ou retirer des éléments au début ou à la fin.
+                </p>
+              </article>
+
+              <article class="content-card">
+                <h3 id="066-arrow-function-syntax">066 • Arrow Function Syntax</h3>
+                <p>
+                  Les fonctions fléchées raccourcissent la syntaxe, surtout avec
+                  les callbacks et transformations de tableaux.
+                </p>
+              </article>
+
+              <article class="content-card">
+                <h3 id="071-higher-order-functions-map">071 • Higher Order Functions - Map</h3>
+                <p>
+                  `map()` crée un nouveau tableau en transformant chaque élément
+                  de l’original.
+                </p>
+                <pre class="code-block"><code>let array = [1, 2, 3, 4];
+let doubled = array.map((element) =&gt; element + element);
+
+console.log(doubled);</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3 id="074-higher-order-functions-filter">074 • Higher Order Functions - Filter</h3>
+                <p>
+                  `filter()` conserve seulement les éléments répondant à une
+                  condition.
+                </p>
+                <pre class="code-block"><code>let sentence = "I Love Food Code Too Playing Much";
+let smallWords = sentence
+  .split(" ")
+  .filter((word) =&gt; word.length &lt;= 4)
+  .join(" ");</code></pre>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="dom">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">DOM</p>
+              <h2>093–095 • Validation, événements et classList</h2>
+            </div>
+
+            <div class="card-grid">
+              <article class="content-card">
+                <h3 id="093-validate-form-and-prevent-default">093 • Validate Form And Prevent Default</h3>
+                <p>
+                  On bloque l’action par défaut pour valider les données avant
+                  l’envoi.
+                </p>
+                <pre class="code-block"><code>document.links[0].onclick = function (event) {
+  event.preventDefault();
+};</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3 id="094-event-simulation-click-focus-blur">094 • Event Simulation</h3>
+                <p>
+                  `click`, `focus` et `blur` permettent de guider ou simuler des
+                  interactions utilisateur.
+                </p>
+                <pre class="code-block"><code>window.onload = function () {
+  two.focus();
 };
 
-<span class="hljs-keyword">let</span> userOne = <span class="hljs-keyword">new</span> User(<span class="hljs-number">100</span>, <span class="hljs-string">"Hassan"</span>, <span class="hljs-number">5000</span>);
-<span class="hljs-keyword">let</span> userTwo = <span class="hljs-keyword">new</span> User(<span class="hljs-number">100</span>, <span class="hljs-string">"Hassan"</span>, <span class="hljs-number">5000</span>);
-<span class="hljs-keyword">let</span> userThree7  = <span class="hljs-keyword">new</span> User(<span class="hljs-number">100</span>, <span class="hljs-string">"Hassan"</span>, <span class="hljs-number">5000</span>);
+one.onblur = function () {
+  document.links[0].click();
+};</code></pre>
+              </article>
 
-userOne.id <span class="hljs-comment">// 100 </span>
-userOne.u <span class="hljs-comment">// Hassan</span>
-</code></pre>
-      <p>ES 2015</p>
-      <pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-keyword">constructor</span>(id, username, salary){
-        <span class="hljs-keyword">this</span>.i = id;
-        <span class="hljs-keyword">this</span>.u = username;
-        <span class="hljs-keyword">this</span>.s = salary;
-    }
-}
-</code></pre>
-      <p>instanceof</p>
-      <pre><code class="lang-javascript">userOne = new User(<span class="hljs-number">100</span>, <span class="hljs-string">"Elzero"</span>, <span class="hljs-number">5000</span>);
+              <article class="content-card">
+                <h3 id="095-class-list-object-and-methods">095 • classList</h3>
+                <p>
+                  `classList` expose les méthodes `contains`, `add`, `remove` et
+                  `toggle` pour manipuler les classes proprement.
+                </p>
+                <pre class="code-block"><code>let element = document.getElementById("my-div");
 
-userOne instanceof <span class="hljs-keyword">User</span> <span class="hljs-title">// true</span>
-userOne.constructor === <span class="hljs-keyword">User</span> <span class="hljs-title">// true</span>
-</code></pre>
-        </div>
-        <div class="box150 border border-primary p-2">
-          <h2 id="150-deal-with-properties-and-methods">
-        150 - Deal With Properties And Methods
-      </h2>
-      <p>exemple:</p>
-      <pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-keyword">constructor</span>(id, username, salary){
-        <span class="hljs-comment">// Propreties</span>
-        <span class="hljs-keyword">this</span>.i = id;
-        <span class="hljs-keyword">this</span>.u = username || <span class="hljs-string">"Unknown"</span>;
-        <span class="hljs-keyword">this</span>.s = salary &lt; <span class="hljs-number">6000</span> ? salary + <span class="hljs-number">500</span> : salary;
-        <span class="hljs-keyword">this</span>.msg = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-            <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello <span class="hljs-subst">${<span class="hljs-keyword">this</span>.u}</span> Your Salary Is <span class="hljs-subst">${<span class="hljs-keyword">this</span>.s}</span>`</span>;
-        };
-    }
-    <span class="hljs-comment">// Methods</span>
-    writeMsg(){
-        <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello <span class="hljs-subst">${<span class="hljs-keyword">this</span>.u}</span> Your Salary Is <span class="hljs-subst">${<span class="hljs-keyword">this</span>.s}</span>`</span>;
-    }
-}
+element.classList.contains("two");
+element.classList.item(3);</code></pre>
+              </article>
+            </div>
+          </section>
 
-<span class="hljs-keyword">let</span> userOne = <span class="hljs-keyword">new</span> User(<span class="hljs-number">100</span>, <span class="hljs-string">"Elzero"</span>, <span class="hljs-number">500</span>);
-<span class="hljs-keyword">let</span> userTwo = <span class="hljs-keyword">new</span> User(<span class="hljs-number">101</span>, <span class="hljs-string">"Ahmed"</span>, <span class="hljs-number">6000</span>);
+          <section class="section" id="destructuring">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Structures</p>
+              <h2>115–129 • Destructuring, Set et méthodes avancées de tableau</h2>
+            </div>
 
-userOne.u <span class="hljs-comment">//</span>
-userOne.s <span class="hljs-comment">//</span>
+            <div class="content-stack">
+              <article class="content-card">
+                <h3 id="115-destructuring-arrays">115 • Destructuring Arrays</h3>
+                <p>
+                  Le destructuring permet d’extraire rapidement des valeurs d’un
+                  tableau et même de faire des permutations.
+                </p>
+                <pre class="code-block"><code>let myFriends = ["Ahmed", "Sayed", "Ali"];
+let [x, y, z] = myFriends;
 
-userTwo.u <span class="hljs-comment">//</span>
-userTwo.s <span class="hljs-comment">//</span>
-</code></pre>
-        </div>
-        <div class="box151 border border-primary p-2">
-           <h2 id="151-update-properties-and-built-in-cons">
-        151 - Update Properties And Built In Cons
-      </h2>
-      <p>constructor Function</p>
-      <ul>
-        <li>Update Properties</li>
-        <li>Built In Constructors</li>
-      </ul>
-      <pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-keyword">constructor</span>(id, username, salary){
-        <span class="hljs-keyword">this</span>.i = id;
-        <span class="hljs-keyword">this</span>.u = username;
-        <span class="hljs-keyword">this</span>.s = salary;
-    }
-    updateName(newName){
-        <span class="hljs-keyword">this</span>.u = newName;
-    }
-}
+[x, y] = [y, x];</code></pre>
+              </article>
 
-<span class="hljs-keyword">let</span> userOne = <span class="hljs-keyword">new</span> User(<span class="hljs-number">100</span>, <span class="hljs-string">"Elzero"</span>, <span class="hljs-number">5000</span>);
+              <article class="content-card">
+                <h3 id="118-destructuring-objects">118 • Destructuring Objects</h3>
+                <p>
+                  Très utile pour lire des propriétés profondes et renommer des
+                  variables localement.
+                </p>
+                <pre class="code-block"><code>const user = {
+  theName: "Osama",
+  theAge: 39,
+  skills: { html: 70, css: 80 }
+};
 
-userOne.u <span class="hljs-comment">// Elzero</span>
-userOne.updateName(<span class="hljs-string">"Osama"</span>);
-userOne.u <span class="hljs-comment">// Osama</span>
+const {
+  theName: name,
+  skills: { html, css }
+} = user;</code></pre>
+              </article>
 
-<span class="hljs-keyword">let</span> strOne = <span class="hljs-string">"Elzero"</span>;
-<span class="hljs-keyword">let</span> strTwo = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>(<span class="hljs-string">"Elzero"</span>);
+              <article class="content-card">
+                <h3 id="123-set-data-types-and-methods">123 • Set Data Types And Methods</h3>
+                <p>
+                  `Set` stocke des valeurs uniques et supprime naturellement les
+                  doublons.
+                </p>
+                <pre class="code-block"><code>let myData = [1, 1, 1, 2, 3];
+let myUniqueData = new Set(myData);</code></pre>
+              </article>
 
-<span class="hljs-keyword">typeof</span> strOne <span class="hljs-comment">// String</span>
-<span class="hljs-keyword">typeof</span> strTwp <span class="hljs-comment">// Object</span>
+              <article class="content-card">
+                <h3 id="124-set-vs-weakset-and-garbage-collecto">124 • Set vs WeakSet</h3>
+                <ul class="feature-list">
+                  <li>`Set` peut stocker tout type de valeur.</li>
+                  <li>`WeakSet` ne stocke que des objets.</li>
+                  <li>`WeakSet` n’a pas de propriété `size`.</li>
+                </ul>
+              </article>
 
-strOne <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">String</span> <span class="hljs-comment">// fauls</span>
-strTwo <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">String</span> <span class="hljs-comment">// true</span>
+              <article class="content-card">
+                <h3 id="129-array-copywithin-method">129 • Array.copyWithin Method</h3>
+                <p>
+                  Copie une portion d’un tableau vers une autre position du même
+                  tableau, sans changer sa longueur.
+                </p>
+              </article>
+            </div>
+          </section>
 
-strOne.constructor === <span class="hljs-built_in">String</span> <span class="hljs-comment">// true</span>
-strTwo.constructor === <span class="hljs-built_in">String</span> <span class="hljs-comment">// true</span>
-</code></pre>
-        </div>
-        <div class="box152 border border-primary p-2">
-                <h2 id="152-class-static-properties-and-methods">
-        152 - Class Static Properties And Methods
-      </h2>
-      <p>Class</p>
-      <blockquote>
-        <p>static Properties And Methods</p>
-      </blockquote>
-      <pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-comment">// Static Property</span>
-    <span class="hljs-keyword">static</span> cont = <span class="hljs-number">0</span>;
+          <section class="section" id="oop">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">OOP</p>
+              <h2>148–155 • Constructeurs, classes, héritage et prototype</h2>
+            </div>
 
-    <span class="hljs-keyword">constructor</span>(id, username, salary){
-        <span class="hljs-keyword">this</span>.i = id;
-        <span class="hljs-keyword">this</span>.u = username;
-        <span class="hljs-keyword">this</span>.s = salary;
-        User.cont++;
-    }
-    <span class="hljs-comment">// Static Methods</span>
-    <span class="hljs-keyword">static</span> syHello(){
-        <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello From Class`</span>;
-    }
-    <span class="hljs-keyword">static</span> contMembers(){
-        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.cont}</span>`</span>
-    }
-}
-</code></pre>
-      <h2 id="153-class-inheritance">153 - Class Inheritance</h2>
-      <p>Class</p>
-      <blockquote>
-        <p>Inheritance</p>
-      </blockquote>
-      <pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span>  <span class="hljs-title">User</span> </span>{
-    constructor(id, username){
-        <span class="hljs-keyword">this</span>.i = id;
-        <span class="hljs-keyword">this</span>.u = username;
-    };
-    sayHello(){
-        <span class="hljs-keyword">return</span> `<span class="hljs-type">Hello</span> ${<span class="hljs-keyword">this</span>.u}`;
-    }
+            <div class="content-stack">
+              <article class="content-card">
+                <h3 id="148-constructor-function-introduction">148 • Constructor Function Introduction</h3>
+                <pre class="code-block"><code>function User(id, username, salary) {
+  this.id = id;
+  this.u = username;
+  this.s = salary + 1000;
 }
 
-<span class="hljs-comment">// Derived Class</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Admin</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">User</span> </span>{
-    constructor(id, username, permissions){
-        <span class="hljs-keyword">super</span>(id, username);
-        <span class="hljs-keyword">this</span>.p = permissions;
-    }
-}
+let userOne = new User(100, "Hassan", 5000);</code></pre>
+              </article>
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Superman</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Admin</span> </span>{
-    constructor(id, username, permisson, ability){
-        <span class="hljs-keyword">super</span>(id, username, permissions);
-        <span class="hljs-keyword">this</span>.a = ability
-    }
-}
-</code></pre>
-      <h2 id="154-class-encapsulation">154 - Class Encapsulation</h2>
-      <p>Encapsulation</p>
-      <ul>
-        <li>Class Fields Are Public Default</li>
-        <li>Guards The Data Against Illegal Access.</li>
-        <li>
-          Helps To Achieve The Target Without Revealing Its Complex Details.
-        </li>
-        <li>Will reduce Human Errors.</li>
-        <li>simplifies The App</li>
-      </ul>
-      <pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-comment">// Provate Property</span>
-    #e;
-    <span class="hljs-keyword">constructor</span>(id, username, eSalary){
-        <span class="hljs-keyword">this</span>.i = id;
-        <span class="hljs-keyword">this</span>.u = username;
-        <span class="hljs-keyword">this</span>.#e = eSalaey;
-    }
-    getSalary(){
-        <span class="hljs-keyword">return</span> parseInt(<span class="hljs-keyword">this</span>.#e);
-    }
-}
-
-let userOne = new User(<span class="hljs-number">100</span>, <span class="hljs-string">"Elzero"</span>, <span class="hljs-string">"5OO dt"</span>);
-
-userOne.u <span class="hljs-comment">// </span>
-userOne.getSalary() * <span class="hljs-number">0.3</span> <span class="hljs-comment">//</span>
-</code></pre>
-        </div>
-        <div class="box155 border border-primary p-2">
-          <h2 id="155-prototype-introduction">155 - Prototype Introduction</h2>
-      <p>Prototype</p>
-      <ul>
-        <li>Introduction</li>
-        <li>Prototypes are the mechanism by which JavaScript objects</li>
-        <li>inherit features from another</li>
-      </ul>
-      <pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-keyword">constructor</span>(id, username){
-        <span class="hljs-keyword">this</span>.i = id;
-        <span class="hljs-keyword">this</span>.u = username;
-    }
-    sayHello(){
-        <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello <span class="hljs-subst">${<span class="hljs-keyword">this</span>.u}</span>`</span>;
-    }
-}
-<span class="hljs-keyword">let</span> userOne = <span class="hljs-keyword">new</span> User(<span class="hljs-number">100</span>, <span class="hljs-string">"Elziro"</span>);
-
-userOne.u <span class="hljs-comment">// Elziro</span>
-
-User.prototype;
-
-<span class="hljs-keyword">let</span> strOne = <span class="hljs-string">"Elzero"</span>;
-
-<span class="hljs-built_in">String</span>.prototype;
-</code></pre>
-        </div>
-        <div class="box164 border border-primary p-2">
-          <h2>Generator Function</h2>
-          <div>
-            <p>Generators</p>
-            <ul>
-              <li>Generator Function Run Its Code When Required</li>
-              <li>Generator Function Return Special Object [Generator Object]</li>
-              <li>Generator Are Iterable</li>
-            </ul>
-            <p>Syntax</p>
-            <pre>
-<span>function*</span> <span>generateNumbers()</span> {
-  <span>yield</span> 1;
-  <span>yield</span> 2;
+              <article class="content-card">
+                <h3 id="150-deal-with-properties-and-methods">150 • Properties And Methods</h3>
+                <pre class="code-block"><code>class User {
+  constructor(id, username, salary) {
+    this.i = id;
+    this.u = username || "Unknown";
+    this.s = salary &lt; 6000 ? salary + 500 : salary;
   }
-<code><span>type of</span><span>generator</span></code>
-<code><span>generator</span><span>.next</span>()</code>; // {value: 1, done: false}
-<code><span>generator</span><span>.next</span>()</code>; // {value: 2, done: false}
-<code><span>generator</span><span>.next</span>()</code>;
-<code><span>generator</span><span>.next</span>()</code>;
-            </pre>
-          </div>
-        </div>
-        <div class="box167 border border-primary p-2">
-          <h2 id="167-modules-import-and-export">
-        167 - Modules Import And Export
-      </h2>
-      <pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/ymain.js"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/app.js"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-      <p>main.js</p>
-      <p>Export Methode 1</p>
-      <pre><code class="lang-Javascript">    <span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> a = <span class="hljs-number">10</span>;
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
 
-    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">saySomething</span>(<span class="hljs-params"></span>)</span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-string">`Something`</span>;
-    }
-</code></pre>
-      <p>Export Methode 2</p>
-      <pre><code class="lang-JavaScript">    <span class="hljs-keyword">let</span> a = <span class="hljs-number">10</span>;
-    <span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+  writeMsg() {
+    return `Hello ${this.u} Your Salary Is ${this.s}`;
+  }
+}</code></pre>
+              </article>
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">saySomething</span>(<span class="hljs-params"></span>)</span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-string">`Something`</span>;
-    }
+              <article class="content-card">
+                <h3 id="151-update-properties-and-built-in-cons">151 • Update Properties</h3>
+                <pre class="code-block"><code>class User {
+  constructor(id, username, salary) {
+    this.i = id;
+    this.u = username;
+    this.s = salary;
+  }
 
-    <span class="hljs-keyword">export</span> { a, arr, saySomething };
-</code></pre>
-      <p>app.js</p>
-      <pre><code class="lang-JavaScript">    <span class="hljs-keyword">import</span> {a, arr, saySomething <span class="hljs-keyword">as</span> s} <span class="hljs-keyword">from</span> <span class="hljs-string">"js/main.js"</span>;
+  updateName(newName) {
+    this.u = newName;
+  }
+}</code></pre>
+              </article>
 
-    <span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 10</span>
-    <span class="hljs-built_in">console</span>.log(arr); <span class="hljs-comment">// [1, 2, 3, 4]</span>
-    <span class="hljs-built_in">console</span>.log(s()); <span class="hljs-comment">// Something</span>
-</code></pre>
-      <p>Export Alias Named Export Import All</p>
-      <p>main.js</p>
-      <pre><code class="lang-JavaScript">    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>)</span>{
-         <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello`</span>;
-    }
-</code></pre>
-      <p>app.js</p>
-      <pre><code class="lang-JavaScript">    <span class="hljs-keyword">import</span> elzero, { a, arr, saySomething } <span class="hljs-keyword">from</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"js/main.js"</span>;
+              <article class="content-card">
+                <h3 id="152-class-static-properties-and-methods">152–154 • Static, Inheritance, Encapsulation</h3>
+                <p>
+                  Les `static` appartiennent à la classe, `extends` permet
+                  l’héritage, et les champs privés encapsulent les données.
+                </p>
+              </article>
 
-    <span class="hljs-built_in">console</span>.log(elzero()); <span class="hljs-comment">//  Hello</span>
-</code></pre>
-      <p>Export Methode 2</p>
-      <pre><code class="lang-JavaScript">    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-         <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello`</span>;
-    }
-</code></pre>
-      <p>Impore All</p>
-      <pre><code class="lang-JavaScript">    <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> all <span class="hljs-keyword">from</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"js/main.js"</span>;
-
-    <span class="hljs-built_in">console</span>.log(all.arr); <span class="hljs-comment">// [1, 2, 3, 4]</span>
-    <span class="hljs-built_in">console</span>.log(all.saySomething); <span class="hljs-comment">// Something</span>
-</code></pre>
-        </div>
-        <div class="box169 border border-primary p-2">
-           <h2 id="169-what-is-json">169 - What Is JSON</h2>
-      <p>Whate Is JSON ?</p>
-      <ul>
-        <li>JavaScript Object Notation</li>
-        <li>Format For Sharing Data Between Server And Client</li>
-        <li>JSON Derived From JavaScript</li>
-        <li>Alternative To XML</li>
-        <li>Fille Extension IS .json</li>
-      </ul>
-      <p>Why JSON ?</p>
-      <ul>
-        <li>Easy To Use And Read</li>
-        <li>Used By Most Programmng Languages And Its Frameworks</li>
-        <li>You Can Convert JSON Object To JS Object And Vice Versa</li>
-      </ul>
-      <table>
-        <thead>
-          <tr>
-            <th>JSON vs XML</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Text Based Format = Markup Lang</td>
-            <td>age</td>
-          </tr>
-          <tr>
-            <td>Lightweight</td>
-            <td>Heavier</td>
-          </tr>
-          <tr>
-            <td>Does Not Use Tags</td>
-            <td>Using Tags</td>
-          </tr>
-          <tr>
-            <td>Shorter</td>
-            <td>Not Short</td>
-          </tr>
-          <tr>
-            <td>Can Use Arrays</td>
-            <td>Cannot Use Arrays</td>
-          </tr>
-          <tr>
-            <td>Not Support Comments</td>
-            <td>Support Comments</td>
-          </tr>
-        </tbody>
-      </table>
-        </div>
-        <div class="box170 border border-primary p-2">
-          <h2 id="170-json-syntax-and-compare-with-js-object">
-        170 - JSON Syntax And Compare With Js Object
-      </h2>
-      <p>JSON Syntax</p>
-      <ul>
-        <li>Data Added Inside Curly Braces { }</li>
-        <li>Data Added With Key : Value</li>
-        <li>Key Should Be String Wrapped In Double Quotes</li>
-        <li>Data Separated By Comma</li>
-        <li>Square Brackets [] For Arrays</li>
-        <li>Curly Braces {} For Objects</li>
-      </ul>
-      <p>Available Data Types</p>
-      <ul>
-        <li>String</li>
-        <li>Number</li>
-        <li>Object</li>
-        <li>Array</li>
-        <li>Boolean Values</li>
-        <li>null</li>
-      </ul>
-      <p>Exemple :</p>
-      <pre><code class="lang-JSON">{
-    <span class="hljs-attr">"string"</span>: <span class="hljs-string">"Elzero"</span>,
-    <span class="hljs-attr">"number"</span>: <span class="hljs-number">100</span>,
-    <span class="hljs-attr">"object"</span>: {
-        <span class="hljs-attr">"EG"</span>: <span class="hljs-string">"Giza"</span>,
-        <span class="hljs-attr">"KSA"</span>: <span class="hljs-string">"Riyadh"</span>
-    },
-    <span class="hljs-attr">"array"</span>: [<span class="hljs-string">"HTML"</span>, <span class="hljs-string">"CSS"</span>, <span class="hljs-string">"JS"</span>],
-    <span class="hljs-attr">"Boolean"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"null"</span>: <span class="hljs-literal">null</span>
-}
-</code></pre>
-        </div>
-        <div class="box172 border border-primary p-2">
-          <h2 id="172-parse-and-stringify">172 - Parse And Stringify</h2>
-      <ul>
-        <li>JSON.parse =&gt; Convert Text Data To JS Object</li>
-        <li>JSON.stringify =&gt; Convert JS Object To JSON</li>
-      </ul>
-      <pre><code class="lang-javaScript"><span class="hljs-keyword">const</span> myJsonObjectFromServer = '{<span class="hljs-string">"Username"</span>: <span class="hljs-string">"Osama"</span>, <span class="hljs-string">"Age"</span>: 39}';
-console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">typeof</span> myJsonObjectFromServer); <span class="hljs-comment">// string</span>
-console.<span class="hljs-built_in">log</span>(myJsonObjectFromServer); <span class="hljs-comment">// {"Username": "Osama", "Age": 39}</span>
-
-<span class="hljs-keyword">const</span> myJsObject = JSON.<span class="hljs-keyword">parse</span>(myJsonObjectFromServer);
-console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">typeof</span> myJsObject); <span class="hljs-comment">// object</span>
-console.<span class="hljs-built_in">log</span>(myJsObject); <span class="hljs-comment">// -&gt; {Username: 'Osama', Age: 39} </span>
-
-myJsObject[<span class="hljs-string">"Username"</span>] = <span class="hljs-string">"Elzero"</span>;
-myJsObject[<span class="hljs-string">"Age"</span>] = 40;
-
-<span class="hljs-keyword">const</span> myJsonObjectToServer = JSON.stringify(myJsObject);
-console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">typeof</span> myJsonObjectToServer); <span class="hljs-comment">// string</span>
-console.<span class="hljs-built_in">log</span>(myJsonObjectToServer); <span class="hljs-comment">// -&gt; {Username: 'Elzero', Age: 40}</span>
-</code></pre>
-        </div>
-        <div class="box173 border border-primary p-2">
-          <h2 id="173-asynchronous">173 - Asynchronous</h2>
-      <p>To Understand Ajax, Fetch, Promises</p>
-      <p>Asynchronous VS Synchronous Programming</p>
-      <ul>
-        <li>Meaning</li>
-      </ul>
-      <p>Synchronous</p>
-      <ul>
-        <li>Operation Runs in Sequence</li>
-        <li>Each Operation Must Wait For The Previous One To Complete</li>
-        <li>Story From Real Life</li>
-      </ul>
-      <p>Asynchronous</p>
-      <ul>
-        <li>Operation Runs In Parallel</li>
-        <li>
-          This Means That An Operation Can Occur while Another One Is Still
-          Being Processed
-        </li>
-        <li>Story From Real Life</li>
-        <li>Facebook As Example</li>
-        <li>Simulation</li>
-      </ul>
-      <p>Search</p>
-      <ul>
-        <li>JavaScript Is A Single-Threaded</li>
-        <li>Multi Threaded Languages</li>
-      </ul>
-        </div>
-        <div class="box174 border border-primary p-2">
-                <h2 id="174-call-stack-and-web-api">174 - Call Stack And Web API</h2>
-      <p>To Understand Ajax, Fetch, Promises</p>
-      <p>Call Stack || Stack Trace</p>
-      <ul>
-        <li>
-          JavaScript Engine Uses A Call Stack To Manage Execution Contexts
-        </li>
-        <li>Mechanism To Make The Interpreter Track Your Calls</li>
-        <li>When Function Called It Added To The Stack</li>
-        <li>When Function Executed It Removed From The Stack</li>
-        <li>
-          After Function Is Finished Executing The Interpreter Continue From The
-          Last Point
-        </li>
-        <li>Work Using LIFO Principle =&gt; Last In First Out</li>
-        <li>Code Execution Is Synchronous.</li>
-        <li>
-          Call Stack Detect Web API Methods And Leave It To The Browser To
-          Handle It
-        </li>
-      </ul>
-      <p>Web API</p>
-      <ul>
-        <li>Methods Available From The Environment =&gt; Browser</li>
-      </ul>
-      <pre><code class="lang-javaScript">
-setTimeout(<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Web API"</span>)
-}, <span class="hljs-number">0</span>);
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">one</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"One"</span>);
-}
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">two</span>(<span class="hljs-params"></span>)</span>{
-    one();
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Two"</span>);
-}
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">three</span>(<span class="hljs-params"></span>)</span>{
-    tow();
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Three"</span>)
+              <article class="content-card">
+                <h3 id="155-prototype-introduction">155 • Prototype Introduction</h3>
+                <p>
+                  Les prototypes permettent aux objets JavaScript d’hériter de
+                  comportements communs.
+                </p>
+                <pre class="code-block"><code>class User {
+  constructor(id, username) {
+    this.i = id;
+    this.u = username;
+  }
 }
 
-three()
-<span class="hljs-comment">/* 
-One
-Two
-Three
-Web API
-*/</span>
-</code></pre>
-        </div>
-        <div class="box176 border border-primary p-2">
-          <h2 id="176-what-is-ajax-and-network-informatio">
-        176 - What Is AJAX And Network Informatio
-      </h2>
-      <p>AJAX</p>
-      <ul>
-        <li>Asynchronous JavaScript And XML</li>
-        <li>Approach To Use Many Technologies Together [HTML, CSS, JS, DOM]</li>
-        <li>
-          It Use &quot;XMLHttpRequest&quot; Object To Interact With The Server
-        </li>
-        <li>You Can Fetch Data Or Send Data Without Page Refresh</li>
-        <li>
-          Examples -- Youtube Studio -- Google Drive -- Upload Article Photo --
-          Form Check Name
-        </li>
-      </ul>
-      <p>Test new XMLHttpRequest(); Request And Response Status Code</p>
-      <pre><code class="lang-javaScript"><span class="hljs-keyword">let</span> req = <span class="hljs-function"><span class="hljs-keyword">new</span> <span class="hljs-title">XMLHtpRequest</span>();
-<span class="hljs-title">console</span>.<span class="hljs-title">log</span>(req);</span>
-</code></pre>
-        </div>
-        <div class="box177 border border-primary p-2">
-          <h2 id="177-request-and-response-from-real-api">
-        177 - Request And Response From Real API
-      </h2>
-      <p>Ajax Ready State =&gt; Status Of The Request</p>
-      <ul>
-        <li>Reqest Not Initialized</li>
-        <li>Server Connection Established</li>
-        <li>Request Received</li>
-        <li>Processing Request</li>
-        <li>
-          <p>Request Is Finished And Response Is Ready</p>
-          <p>Status [200] Response Is Successful [404] Not Found</p>
-        </li>
-      </ul>
-      <pre><code class="lang-JavaScript">consol.<span class="hljs-built_in">log</span>(<span class="hljs-string">'hello'</span>)<span class="hljs-comment">;</span>
-</code></pre>
-        </div>
-        <div class="said">
-           <div class="reference">
-            <h3>Objets natifs</h3>
-            <h4>Propriétés de valeur</h4>
-            <ul>
-              <li>globalThis</li>
-              <li>Infinity</li>
-              <li>NaN</li>
-              <li>undefined</li>
-            </ul>
-            <h4>Propriétés de fonction</h4>
-            <ul>
-              <li>eval()</li>
-              <li>isFinite()</li>
-              <li>isNaN()</li>
-            </ul>
-            <h4>Propriétés de fonction</h4>
-            <ul>
-              <li>parseFloat()</li>
-              <li>parseInt()</li>
-              <li>decodeURI()</li>
-              <li>decodeURIComponent()</li>
-              <li>encodeURI()</li>
-              <li>encodeURIComponent()</li>
-              <li>escape() Obsolète</li>
-              <li>unescape() Obsolète</li>
-            </ul>
-            <h4>Objets fondamentaux</h4>
-            <ul>
-              <li>Object</li>
-              <li>Function</li>
-              <li>Boolean</li>
-              <li>Symbol</li>
-            </ul>
-            <h4>Objets d'erreur</h4>
-            <ul>
-              <li>Error</li>
-              <li>AggregateError</li>
-              <li>EvalError</li>
-              <li>RangeError</li>
-              <li>ReferenceError</li>
-              <li>SuppressedError</li>
-              <li>SyntaxError</li>
-              <li>TypeError</li>
-              <li>URIError</li>
-              <li>InternalError Non standard</li>
-            </ul>
-            <h4>Nombres et dates</h4>
-            <ul>
-              <li>Number</li>
-              <li>BigInt</li>
-              <li>Math</li>
-              <li>Date</li>
-              <li>Temporal</li>
-            </ul>
-            <h4>Traitement du texte</h4>
-            <ul>
-              <li>String</li>
-              <li>RegExp</li>
-            </ul>
-            <h4>Collections indexées</h4>
-            <ul>
-              <li>Array</li>
-              <li>Int8Array</li>
-              <li>Uint8Array</li>
-              <li>Uint8ClampedArray</li>
-              <li>Int16Array</li>
-              <li>Uint16Array</li>
-              <li>Int32Array</li>
-              <li>Uint32Array</li>
-              <li>BigInt64Array</li>
-              <li>BigUint64Array</li>
-              <li>Float16Array</li>
-              <li>Float32Array</li>
-              <li>Float64Array</li>
-            </ul>
-            <h4>Collections avec clés</h4>
-            <ul>
-              <li>Map</li>
-              <li>Set</li>
-              <li>WeakMap</li>
-              <li>WeakSet</li>
-            </ul>
-            <h4>Données structurées</h4>
-            <ul>
-              <li>ArrayBuffer</li>
-              <li>SharedArrayBuffer</li>
-              <li>DataView</li>
-              <li>Atomics</li>
-            </ul>
-            <h4>JSON</h4>
-            <ul>
-              <li>JSON</li>
-            </ul>
-            <h4>Gestion de la mémoire</h4>
-            <ul>
-              <li>WeakRef</li>
-              <li>FinalizationRegistry</li>
-            </ul>
-            <h4>Abstraction du contrôle</h4>
-            <ul>
-              <li>Iterator</li>
-              <li>AsyncIterator</li>
-              <li>Promise</li>
-              <li>GeneratorFunction</li>
-              <li>AsyncGeneratorFunction</li>
-              <li>Generator</li>
-              <li>AsyncGenerator</li>
-              <li>AsyncFunction</li>
-              <li>DisposableStack</li>
-              <li>AsyncDisposableStack</li>
-              <li>Réflexion</li>
-              <li>Reflect</li>
-              <li>Proxy</li>
-              <li>Internationalisation</li>
-              <li>Intl</li>
-              <li>Intl.Collator</li>
-              <li>Intl.DateTimeFormat</li>
-              <li>Intl.DisplayNames</li>
-              <li>Intl.DurationFormat</li>
-              <li>Intl.ListFormat</li>
-              <li>Intl.Locale</li>
-              <li>Intl.NumberFormat</li>
-              <li>Intl.PluralRules</li>
-              <li>Intl.RelativeTimeFormat</li>
-              <li>Intl.Segmenter</li>
-              <li>Instructions</li>
-            </ul>
-            <h3>Instructions et déclarations JavaScript</h3>
-            <p>Contrôle du flux d'exécution</p>
-            <ul>
-              <li>return</li>
-              <li>break</li>
-              <li>continue</li>
-              <li>throw</li>
-              <li>if...else</li>
-              <li>switch</li>
-              <li>try...catch</li>
-            </ul>
-            <p>Déclarations de variables</p>
-            <ul>
-              <li>var</li>
-              <li>let</li>
-              <li>const</li>
-              <li>using</li>
-              <li>await using</li>
-            </ul>
-            <h4>Fonctions et classes</h4>
-            <ul>
-              <li>function</li>
-              <li>function*</li>
-              <li>async function</li>
-              <li>async function*</li>
-              <li>class</li>
-            </ul>
-            <h4>Itérations</h4>
-            <ul>
-              <li>do...while</li>
-              <li>for</li>
-              <li>for...in</li>
-              <li>for...of</li>
-              <li>for await...of</li>
-              <li>while</li>
-              <li>Autres</li>
-              <li>Vide</li>
-              <li>Bloc</li>
-              <li>Instruction d'expression</li>
-              <li>debugger</li>
-              <li>export</li>
-              <li>import</li>
-              <li>label</li>
-              <li>with Obsolète</li>
-            </ul>
-            <h4>Expressions et opérateurs</h4>
-            <p>Expressions et opérateurs JavaScript.</p>
-            <h4>Expressions primaires</h4>
-            <ul>
-              <li>this</li>
-              <li>Litéraux</li>
-              <li>[]</li>
-              <li>{}</li>
-            </ul>
-            <h4>Function</h4>
-            <ul>
-              <li>function</li>
-              <li>class</li>
-              <li>function*</li>
-              <li>async function</li>
-              <li>async function*</li>
-              <li>/ab+c/i</li>
-              <li>`string`</li>
-              <li>( )</li>
-            </ul>
-            <h3>Expressions vers la gauche</h3>
-            <ul>
-              <li>Accesseurs de propriété</li>
-              <li>?.</li>
-              <li>new</li>
-              <li>new.target</li>
-              <li>import.meta</li>
-              <li>super</li>
-              <li>import()</li>
-            </ul>
-            <h3>Increment & decrement</h3>
-            <ul>
-              <li>A++</li>
-              <li>A--</li>
-              <li>++A</li>
-              <li>--A</li>
-            </ul>
-            <h3>Opérateurs unaires</h3>
-            <ul>
-              <li>+</li>
-              <li>-</li>
-              <li>~</li>
-              <li>!</li>
-              <li>await</li>
-            </ul>
-            <h3>Opérateurs arithmétiques</h3>
-            <ul>
-              <li>**</li>
-              <li>*</li>
-              <li>/</li>
-              <li>%</li>
-              <li>+ (Plus)</li>
-              <li>-</li>
-              <li>~</li>
-              <li>!</li>
-            </ul>
-            <p>await</p>
-            <h3>Opérateurs arithmétiques</h3>
-            <ul>
-              <li>**</li>
-              <li>*</li>
-              <li>/</li>
-              <li>%</li>
-              <li>+ (Plus)</li>
-              <li>-</li>
-              <li>~</li>
-              <li>!</li>
-            </ul>
-            <p>await</p>
-            <h3>Opérateurs arithmétiques</h3>
-            <ul>
-              <li>**</li>
-              <li>*</li>
-              <li>/</li>
-              <li>%</li>
-              <li>+ (Plus)</li>
-              <li>-</li>
-              <li>~</li>
-              <li>!</li>
-            </ul>
-            <p>await</p>
-            <h3>Opérateurs arithmétiques</h3>
-            <ul>
-              <li>**</li>
-              <li>*</li>
-              <li>/</li>
-              <li>%</li>
-              <li>+ (Plus)</li>
-              <li>-</li>
-              <li>~</li>
-              <li>!</li>
-              <li>await</li>
-            </ul>
-            <h3>Opérateurs d'égalité</h3>
-            <ul>
-              <li>==</li>
-              <li>!=</li>
-              <li>===</li>
-              <li>!==</li>
-            </ul>
-            <h3>Opérateurs de décalage binaire</h3>
-            <ul>
-              <li>&lt;&lt;</li>
-              <li>&gt;&gt;</li>
-              <li>&gt;&gt;&gt;</li>
-            </ul>
-            <h3>Opérateurs logiques binaires</h3>
-            <ul>
-              <li>&amp;</li>
-              <li>|</li>
-              <li>^</li>
-            </ul>
-            <h3>Opérateurs logiques</h3>
-            <ul>
-              <li>&amp;&amp;</li>
-              <li>||</li>
-              <li>??</li>
-            </ul>
-            <h3>Opérateur conditionnel (opérateur ternaire)</h3>
-            <p>(condition ? ifTrue : ifFalse)</p>
-            <h3>Opérateurs d'affectation</h3>
-            <ul>
-              <li>=</li>
-              <li>*=</li>
-              <li>/=</li>
-              <li>%=</li>
-              <li>+=</li>
-              <li>-=</li>
-              <li>&lt;&lt;=</li>
-              <li>&gt;&gt;=</li>
-              <li>&gt;&gt;&gt;=</li>
-              <li>&amp;=</li>
-              <li>^=</li>
-              <li>|=</li>
-              <li>**=</li>
-              <li>&amp;&amp;=</li>
-              <li>||=</li>
-              <li>??=</li>
-              <li>{a, b} = {a:1, b:2}</li>
-            </ul>
-            <h3>Opérateurs de génération</h3>
-            <ul>
-              <li>yield</li>
-              <li>yield*</li>
-            </ul>
-            <h3>Syntaxe de déploiement</h3>
-            <ul>
-              <li>...obj</li>
-            </ul>
-            <h3>Opérateur virgule</h3>
-            <p>,</p>
-            <h3>Fonctions</h3>
-            <p>Les fonctions JavaScript</p>
-            <h3>Fonctions fléchées</h3>
-            <p>Paramètres par défaut</p>
-            <ul>
-              <li>Paramètres rest</li>
-              <li>arguments</li>
-              <li>Définitions de méthodes</li>
-              <li>Accesseur</li>
-              <li>Mutateur</li>
-            </ul>
-            <h3>Classes</h3>
-            <p>Classes JavaScript</p>
-            <ul>
-              <li>constructor</li>
-              <li>extends</li>
-              <li>Éléments privés</li>
-              <li>Champs de classe publics</li>
-              <li>static</li>
-              <li>Blocs d'initialisation statique</li>
-              <li>Expressions régulières</li>
-              <li>Expressions régulières JavaScript</li>
-            </ul>
-          </div>
+User.prototype;</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3>Generator Function</h3>
+                <p>
+                  Une fonction génératrice produit des valeurs à la demande via
+                  `yield`.
+                </p>
+                <pre class="code-block"><code>function* generateNumbers() {
+  yield 1;
+  yield 2;
+}
+
+const generator = generateNumbers();
+generator.next();</code></pre>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="modules">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Modules</p>
+              <h2 id="167-modules-import-and-export">167 • Import and Export</h2>
+            </div>
+
+            <div class="card-grid">
+              <article class="content-card">
+                <h3>Export nommé</h3>
+                <pre class="code-block"><code>export let a = 10;
+export let arr = [1, 2, 3, 4];
+
+export function saySomething() {
+  return "Something";
+}</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3>Import</h3>
+                <pre class="code-block"><code>import { a, arr, saySomething as s } from "./main.js";
+
+console.log(a);
+console.log(arr);
+console.log(s());</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3>Default export</h3>
+                <pre class="code-block"><code>export default function sayHello() {
+  return "Hello";
+}</code></pre>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="async">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">JSON & Async</p>
+              <h2>169–177 • JSON, parse/stringify, call stack, AJAX</h2>
+            </div>
+
+            <div class="content-stack">
+              <article class="content-card">
+                <h3 id="169-what-is-json">169 • What Is JSON</h3>
+                <p>
+                  JSON est un format léger d’échange de données entre client et
+                  serveur.
+                </p>
+                <div class="table-wrap">
+                  <table class="compare-table">
+                    <thead>
+                      <tr>
+                        <th>JSON</th>
+                        <th>XML</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Léger</td><td>Plus lourd</td></tr>
+                      <tr><td>Pas de balises</td><td>Utilise des balises</td></tr>
+                      <tr><td>Accepte les tableaux</td><td>Moins naturel pour les tableaux</td></tr>
+                      <tr><td>Plus court</td><td>Plus verbeux</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="content-card">
+                <h3 id="172-parse-and-stringify">172 • Parse And Stringify</h3>
+                <pre class="code-block"><code>const fromServer = '{"Username":"Osama","Age":39}';
+const jsObject = JSON.parse(fromServer);
+
+jsObject["Username"] = "Elzero";
+
+const toServer = JSON.stringify(jsObject);</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3 id="173-asynchronous">173 • Asynchronous</h3>
+                <ul class="feature-list">
+                  <li>Le synchrone exécute dans l’ordre.</li>
+                  <li>L’asynchrone permet de continuer sans bloquer l’interface.</li>
+                  <li>Base nécessaire pour comprendre `fetch`, `Promise` et AJAX.</li>
+                </ul>
+              </article>
+
+              <article class="content-card">
+                <h3 id="174-call-stack-and-web-api">174 • Call Stack And Web API</h3>
+                <pre class="code-block"><code>setTimeout(() =&gt; {
+  console.log("Web API");
+}, 0);
+
+function one() {
+  console.log("One");
+}</code></pre>
+              </article>
+
+              <article class="content-card">
+                <h3 id="176-what-is-ajax-and-network-informatio">176 • What Is AJAX</h3>
+                <p>
+                  AJAX combine JavaScript, DOM et `XMLHttpRequest` pour échanger
+                  des données sans recharger toute la page.
+                </p>
+              </article>
+
+              <article class="content-card">
+                <h3 id="177-request-and-response-from-real-api">177 • Request And Response</h3>
+                <p>
+                  Les réponses HTTP, les états de requête et la gestion d’erreurs
+                  sont des bases essentielles pour les APIs réelles.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="reference">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Référence</p>
+              <h2>Objets natifs, instructions et opérateurs</h2>
+              <p>
+                Une vue d’ensemble compacte des familles d’objets et de syntaxe
+                JavaScript à connaître.
+              </p>
+            </div>
+
+            <div class="reference-grid">
+              <article class="reference-card">
+                <h3>Objets natifs</h3>
+                <ul class="feature-list">
+                  <li>globalThis, Infinity, NaN, undefined</li>
+                  <li>Object, Function, Boolean, Symbol</li>
+                  <li>Number, BigInt, Math, Date, Temporal</li>
+                  <li>String, RegExp</li>
+                  <li>Array, Map, Set, WeakMap, WeakSet</li>
+                  <li>JSON, Promise, Reflect, Proxy, Intl</li>
+                </ul>
+              </article>
+
+              <article class="reference-card">
+                <h3>Instructions</h3>
+                <ul class="feature-list">
+                  <li>if...else, switch, try...catch</li>
+                  <li>return, break, continue, throw</li>
+                  <li>var, let, const</li>
+                  <li>for, for...in, for...of, while, do...while</li>
+                  <li>function, async function, class, export, import</li>
+                </ul>
+              </article>
+
+              <article class="reference-card">
+                <h3>Opérateurs</h3>
+                <ul class="feature-list">
+                  <li>Arithmétiques: `+`, `-`, `*`, `/`, `%`, `**`</li>
+                  <li>Égalité: `==`, `!=`, `===`, `!==`</li>
+                  <li>Logiques: `&&`, `||`, `??`</li>
+                  <li>Affectation: `=`, `+=`, `&&=`, `??=`</li>
+                  <li>Déploiement: `...obj`</li>
+                  <li>Tertiaire: `(condition ? a : b)`</li>
+                </ul>
+              </article>
+            </div>
+          </section>
         </div>
       </main>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

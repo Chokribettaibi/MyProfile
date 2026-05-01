@@ -1,198 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
     <meta
-      name="author"
-      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+      name="description"
+      content="Cours JavaScript moderne avec syntaxe, DOM, tableaux, objets et bonnes pratiques frontend."
     />
-    <meta name="generator" content="Hugo 0.72.0" />
-    <title>Dashboard Template · Bootstrap</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
+    <title>JavaScript Moderne | Cours Frontend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="canonical"
-      href="https://v5.getbootstrap.com/docs/5.0/examples/dashboard/"
-    />
-
-    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
-      crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    
-    <nav
-      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
-    >
-      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#"
-        >Company name</a
-      >
-      <button
-        class="navbar-toggler position-absolute d-md-none collapsed"
-        type="button"
-        data-toggle="collapse"
-        data-target="#sidebarMenu"
-        aria-controls="sidebarMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <input
-        class="form-control form-control-dark w-100"
-        type="text"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="row">
-        <nav
-          id="sidebarMenu"
-          class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
-        >
-          <div class="position-sticky pt-3">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  <span data-feather="home"></span>
-                  JavaScript 
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Customers
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Integrations
-                </a>
-              </li>
-            </ul>
-
-            <h6
-              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
-            >
-              <span>Saved reports</span>
-              <a class="link-secondary" href="#" aria-label="Add a new report">
-                <span data-feather="plus-circle"></span>
-              </a>
-            </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Current month
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last quarter
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Year-end sale
-                </a>
-              </li>
-            </ul>
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="topbar" aria-label="Navigation principale">
+          <a class="brand" href="#top">
+            <span class="brand__mark">JS</span>
+            <span class="brand__text">JavaScript Moderne</span>
+          </a>
+          <div class="topbar__links">
+            <a href="#fundamentals">Fondamentaux</a>
+            <a href="#patterns">Patterns</a>
+            <a href="#practice">Pratique</a>
           </div>
         </nav>
 
-        <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-          <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-          >
-            <h1 class="h2">Dashboard</h1>
+        <section class="hero" id="top">
+          <div class="hero__content">
+            <p class="eyebrow">Cours frontend • syntaxe, logique, DOM</p>
+            <h1 class="hero__title">Apprendre JavaScript avec une structure claire et moderne.</h1>
+            <p class="hero__lead">
+              Une page pensée comme un vrai support de cours: concepts essentiels,
+              exemples lisibles, logique de progression, et base solide pour passer
+              du code simple aux interfaces interactives.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#fundamentals">Commencer le cours</a>
+              <a class="button button--secondary" href="#practice">Voir les exercices</a>
+            </div>
           </div>
-        </main>
-      </div>
-    </div>
-    
-    <script
-      src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-DBjhmceckmzwrnMMrjI7BvG2FmRuxQVaTfFYHgfnrdfqMhxKt445b7j3KBQLolRl"
-      crossorigin="anonymous"
-    ></script>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"
-      integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
-      integrity="sha384-i+dHPTzZw7YVZOx9lbH5l6lP74sLRtMtwN2XjVqjf3uAGAREAF4LMIUDTWEVs4LI"
-      crossorigin="anonymous"
-    ></script>
-    <script src="dashboard.js"></script>
-    <script>
-      let obj = { a: 1, b: 2, c: 3 };
-      // let j = 46318366
-      // let finelData = "";
-      // for (let key in obj) {
-      //   console.log(`key: ${key}, value: ${obj[key]}`);
-      //   console.log(`<div> ${key}, value: ${obj[key]} <\div>`);
-      //   finelData += `<div> ${key}, value: ${obj[key]} <\div>`;
-      // }
-      // console.log(Object.keys(obj));
-      // console.log(Object.values(obj));
-      // document.body.innerHTML += finelData;
-      let parg = '12345';
-      console.log('hhhhhhhh')
-      consolo.log(typeof parg.split(' ').map((Number)=>Number*2));
-    </script>
+          <aside class="hero__panel" aria-label="Résumé du cours">
+            <div class="metric-card">
+              <span class="metric-card__label">Niveau</span>
+              <strong class="metric-card__value">Débutant à intermédiaire</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-card__label">Format</span>
+              <strong class="metric-card__value">Concepts + exemples + pratique</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-card__label">Focus</span>
+              <strong class="metric-card__value">Code propre, DOM, logique, tableaux</strong>
+            </div>
+          </aside>
+        </section>
+      </header>
+
+      <main class="main-layout">
+        <aside class="sidebar" aria-label="Sommaire du cours">
+          <div class="sidebar__card">
+            <p class="sidebar__title">Sommaire</p>
+            <a class="sidebar__link" href="#fundamentals">1. Fondamentaux</a>
+            <a class="sidebar__link" href="#syntax">2. Syntaxe utile</a>
+            <a class="sidebar__link" href="#objects">3. Objets et tableaux</a>
+            <a class="sidebar__link" href="#patterns">4. Patterns modernes</a>
+            <a class="sidebar__link" href="#practice">5. Mise en pratique</a>
+          </div>
+        </aside>
+
+        <div class="content">
+          <section class="section" id="fundamentals">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Fondamentaux</p>
+              <h2>Les bases qui rendent le langage lisible et fiable.</h2>
+              <p>
+                Avant le DOM ou les frameworks, il faut comprendre variables,
+                types, fonctions, conditions, boucles et structures de données.
+              </p>
+            </div>
+
+            <div class="card-grid">
+              <article class="lesson-card">
+                <h3>Variables et types</h3>
+                <p>
+                  Utilisez `const` par défaut, `let` quand une valeur doit changer,
+                  et gardez les types en tête: `string`, `number`, `boolean`,
+                  `object`, `undefined`, `null`.
+                </p>
+              </article>
+
+              <article class="lesson-card">
+                <h3>Conditions et boucles</h3>
+                <p>
+                  `if`, `switch`, `for`, `while` et `for...of` servent à modéliser
+                  le comportement du programme sans répétition inutile.
+                </p>
+              </article>
+
+              <article class="lesson-card">
+                <h3>Fonctions</h3>
+                <p>
+                  Une fonction doit avoir un rôle clair. Préférez les petites
+                  fonctions composables aux gros blocs difficiles à maintenir.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="syntax">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Syntaxe utile</p>
+              <h2>Des exemples concrets, courts, et directement réutilisables.</h2>
+            </div>
+
+            <div class="example-stack">
+              <article class="example-card">
+                <div class="example-card__header">
+                  <h3>Déclarer proprement</h3>
+                  <span>Const / Let</span>
+                </div>
+                <pre class="code-block"><code>const course = "JavaScript";
+let progress = 0;
+
+progress += 1;
+console.log(course, progress);</code></pre>
+              </article>
+
+              <article class="example-card">
+                <div class="example-card__header">
+                  <h3>Transformer un tableau</h3>
+                  <span>Map</span>
+                </div>
+                <pre class="code-block"><code>const values = [1, 2, 3, 4];
+const doubled = values.map((value) =&gt; value * 2);
+
+console.log(doubled); // [2, 4, 6, 8]</code></pre>
+              </article>
+
+              <article class="example-card">
+                <div class="example-card__header">
+                  <h3>Lire un objet</h3>
+                  <span>Object.keys / values</span>
+                </div>
+                <pre class="code-block"><code>const user = { name: "Chokri", level: "intermediate" };
+
+console.log(Object.keys(user));
+console.log(Object.values(user));</code></pre>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="objects">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Objets et tableaux</p>
+              <h2>Les structures les plus utilisées dans les vraies interfaces.</h2>
+            </div>
+
+            <div class="feature-grid">
+              <article class="feature-panel">
+                <h3>Objets</h3>
+                <p>
+                  Les objets regroupent des données nommées. Ils sont utiles pour
+                  représenter un utilisateur, un produit, un état d’interface ou
+                  une configuration.
+                </p>
+                <ul class="check-list">
+                  <li>Accès via `object.key` ou `object["key"]`</li>
+                  <li>Très utile avec `Object.keys`, `Object.values`, `Object.entries`</li>
+                  <li>Base de nombreuses structures d’application</li>
+                </ul>
+              </article>
+
+              <article class="feature-panel">
+                <h3>Tableaux</h3>
+                <p>
+                  Les tableaux sont parfaits pour stocker des listes d’éléments et
+                  les transformer avec des méthodes modernes.
+                </p>
+                <ul class="check-list">
+                  <li>`map` pour transformer</li>
+                  <li>`filter` pour sélectionner</li>
+                  <li>`find` pour retrouver un élément</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="patterns">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Patterns modernes</p>
+              <h2>Des habitudes qui rendent le code plus maintenable.</h2>
+            </div>
+
+            <div class="card-grid">
+              <article class="lesson-card lesson-card--accent">
+                <h3>Éviter les scripts cassés</h3>
+                <p>
+                  Vérifiez toujours les noms de méthodes, les types manipulés et les
+                  erreurs de frappe. Un simple `console.log` mal écrit peut bloquer
+                  toute une page.
+                </p>
+              </article>
+
+              <article class="lesson-card lesson-card--accent">
+                <h3>Découper par intention</h3>
+                <p>
+                  Séparez logique, données et rendu. Une fonction qui fait une chose
+                  bien est plus facile à relire, tester et réutiliser.
+                </p>
+              </article>
+
+              <article class="lesson-card lesson-card--accent">
+                <h3>Manipuler le DOM proprement</h3>
+                <p>
+                  Ciblez les bons éléments, évitez les mutations globales excessives,
+                  et préparez les données avant de les injecter dans l’interface.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="practice">
+            <div class="section-heading">
+              <p class="section-heading__eyebrow">Mise en pratique</p>
+              <h2>Trois mini-exercices pour consolider les acquis.</h2>
+            </div>
+
+            <div class="practice-grid">
+              <article class="practice-card">
+                <span class="practice-card__index">01</span>
+                <h3>Doubler une liste de nombres</h3>
+                <p>
+                  À partir d’un tableau `[2, 4, 6]`, créez un nouveau tableau avec
+                  chaque valeur multipliée par `2`.
+                </p>
+              </article>
+
+              <article class="practice-card">
+                <span class="practice-card__index">02</span>
+                <h3>Afficher les clés d’un objet</h3>
+                <p>
+                  Prenez un objet `student` et affichez ses clés avec
+                  `Object.keys(student)`.
+                </p>
+              </article>
+
+              <article class="practice-card">
+                <span class="practice-card__index">03</span>
+                <h3>Nettoyer une chaîne</h3>
+                <p>
+                  Transformez une chaîne en tableau avec `split()`, puis modifiez ses
+                  valeurs avec `map()`.
+                </p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
