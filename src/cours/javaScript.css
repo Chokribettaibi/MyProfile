@@ -105,6 +105,7 @@ pre {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.72);
   box-shadow: var(--shadow-sm);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
 
@@ -145,6 +146,7 @@ pre {
   border-radius: var(--radius-xl);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.76));
   box-shadow: var(--shadow-lg);
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
 
