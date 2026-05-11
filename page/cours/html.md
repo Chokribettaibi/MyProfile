@@ -1,3 +1,0 @@
-# HtML
-
-tag `<head></head>` 
