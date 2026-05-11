@@ -143,15 +143,23 @@ button {
 }
 
 .nav__brand-mark {
+  position: relative;
   display: inline-grid;
   place-items: center;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 999px;
+  padding: 0;
+  border: 0.0625rem solid rgba(125, 211, 252, 0.16);
   background: linear-gradient(135deg, var(--color-accent), var(--color-accent-warm));
   color: #06111f;
   box-shadow: 0 0.75rem 1.5rem rgba(125, 211, 252, 0.24);
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  -ms-border-radius: 999px;
+  -o-border-radius: 999px;
+  border-radius: 999px;
 }
+
 
 .nav__toggle {
   display: inline-flex;
