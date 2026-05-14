@@ -150,7 +150,7 @@ button {
   height: 2.5rem;
   padding: 0;
   border: 0.0625rem solid rgba(125, 211, 252, 0.16);
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-warm));
+  /* background: linear-gradient(135deg, var(--color-accent), var(--color-accent-warm)); */
   color: #06111f;
   box-shadow: 0 0.75rem 1.5rem rgba(125, 211, 252, 0.24);
   -webkit-border-radius: 999px;
@@ -158,6 +158,7 @@ button {
   -ms-border-radius: 999px;
   -o-border-radius: 999px;
   border-radius: 999px;
+
 }
 
 
