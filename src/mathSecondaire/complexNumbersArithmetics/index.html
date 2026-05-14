@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="BOARDID" class="jxgbox" style="width: 300px; aspect-ratio: 1/1"></div>
+    <div id="BOARDID1" class="jxgbox" style="width: 300px; aspect-ratio: 1/1"></div>
+    <script>
+      // Define the ids of your boards in BOARDID0, BOARDID1,...
+
+      (function () {
+        const board = JXG.JSXGraph.initBoard(BOARDID, {
+          boundingbox: [-6, 6, 8, -4],
+          axis: true,
+          defaultAxes: {
+            x: {
+              name: "real part",
+              withLabel: true,
+              label: {
+                position: "rt",
+                offset: [-5, 15],
+                anchorX: "right",
+              },
+            },
+            y: {
+              withLabel: true,
+              name: "imaginary part",
+              label: {
+                position: "rt",
+                offset: [5, -5],
+                anchorY: "top",
+              },
+            },
+          },
+        });
+
+        var txt = board.create(
+          "text",
+          [-5, 4.5, "Addition of complex numbers x and y"],
+          {
+            fontSize: 20,
+            fixed: true,
+          },
+        );
+        var org = board.create("point", [0, 0], {
+          style: 10,
+          visible: true,
+          fixed: true,
+          name: " ",
+        });
+        var x = board.create("point", [2, 2], {
+          style: 5,
+          color: "blue",
+          name: "x",
+        });
+        var y = board.create("point", [-1, -3], {
+          style: 5,
+          color: "blue",
+          name: "y",
+        });
+        var xy = board.create("point", ["X(x) + X(y)", "Y(x) + Y(y)"], {
+          style: 7,
+          color: "green",
+          name: "x+y",
+        });
+        var ax = board.create("arrow", [org, x], {
+          strokeColor: "blue",
+        });
+        var ay = board.create("arrow", [org, y], {
+          strokeColor: "blue",
+        });
+        var axy = board.create("arrow", [org, xy], {
+          strokeColor: "red",
+        });
+        var ax2 = board.create("arrow", [x, xy], {
+          strokeColor: "blue",
+          strokeWidth: 1,
+          dash: 1,
+        });
+        var ay2 = board.create("arrow", [y, xy], {
+          strokeColor: "blue",
+          strokeWidth: 1,
+          dash: 1,
+        });
+      })();
+
+      (function () {
+        const board = JXG.JSXGraph.initBoard(BOARDID1, {
+          boundingbox: [-6, 6, 8, -4],
+          axis: true,
+          defaultAxes: {
+            x: {
+              name: "real part",
+              withLabel: true,
+              label: {
+                position: "rt",
+                offset: [-5, 15],
+                anchorX: "right",
+              },
+            },
+            y: {
+              withLabel: true,
+              name: "imaginary part",
+              label: {
+                position: "rt",
+                offset: [5, -5],
+                anchorY: "top",
+              },
+            },
+          },
+        });
+
+        var txt = board.create(
+          "text",
+          [-5, 4.5, "Multiplication of complex numbers x and y"],
+          {
+            fontSize: 20,
+            fixed: true,
+          },
+        );
+
+        var org2 = board.create("point", [0, 0], {
+          style: 10,
+          visible: true,
+          fixed: true,
+          name: " ",
+        });
+        var x = board.create("point", [1, 0], {
+          style: 4,
+          color: "blue",
+          name: "x",
+        });
+        var y = board.create("point", [0, 2], {
+          style: 4,
+          color: "red",
+          strokeColor: "red",
+          name: "y",
+        });
+        var xy = board.create(
+          "point",
+          ["X(x) * X(y) - Y(x) * Y(y)", "X(x) * Y(y) + X(y) * Y(x)"],
+          {
+            style: 7,
+            fillColor: "green",
+            strokeColor: "green",
+            name: "x*y",
+          },
+        );
+        var c = board.create("circle", [org2, 1], {
+          strokeWidth: 1,
+          dash: 1,
+        });
+      })();
+    </script>
+  </body>
+</html>
