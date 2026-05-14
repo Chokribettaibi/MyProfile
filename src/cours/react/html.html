@@ -31,6 +31,7 @@
         <h3 class="text-center">Quick Start</h3>
         <!-- How to create and nest components -->
         <!-- exemple -->
+        <!-- How to create and nest components -->
         <div class="card mb-3">
           <div class="card-body">
             <h5 class="card-title">How to create and nest components</h5>
@@ -62,7 +63,165 @@ function MyComponent() {
             </p>
           </div>
         </div>
+        <!-- End How to create and nest components -->
+
+        <!-- How to use props and state -->
+        <div class="card mb-3">
+          <div class="card-body">
+            
+            <h5 class="card-title">How to use props and state</h5>
+            <p class="card-text">
+              Props (short for "properties") are used to pass data from a parent
+              component to a child component. State, on the other hand, is used
+              to manage data that can change over time within a component. To use
+              props, you can define them as attributes when using a component. For
+              example:
+            </p>
+            <pre class="p-3"><code>function Greeting(props) {
+  return &lt;h1&gt;Hello, {props.name}!&LT;/h1&gt;;
+}
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Greeting name="Alice" /&gt;
+      &lt;Greeting name="Chokri" /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+            <p class="card-text">
+              In this example, the Greeting component receives a <span class="badge bg-secondary">prop</span> called <span class="badge bg-secondary">name</span>,
+              which it uses to display a personalized greeting. To use state, you
+              can use the <span class="badge bg-secondary">useState</span> <span class="badge bg-secondary">hook</span> in a functional component. For example:
+            </p>
+            <pre class="p-3"><code>import React, { useState } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+            <p class="card-text">
+              In this example, the MyComponent uses the useState hook to manage a
+              piece of state called count. The setCount function is used to update
+              the value of count.
+            </p>
+          </div>
+        </div>
+        <!-- End How to use props and state -->
+
+        <!-- Condition Rendering -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Condition Rendering</h5>
+            <p class="card-text">
+              In React, you can conditionally render components based on certain
+              conditions. This can be done using JavaScript's conditional
+              operators. For example:
+            </p>
+            <pre class="p-3"><code>function MyComponent(props) {
+  return (
+    &lt;div&gt;
+      {props.isLoggedIn ? (
+        &lt;h1&gt;Welcome back!&lt;/h1&gt;
+      ) : (
+        &lt;h1&gt;Please sign up.&lt;/h1&gt;
+      )}&lt;/div&gt;
+  );
+}</code></pre>
+            <p class="card-text">
+              In this example, the MyComponent component conditionally renders a
+              welcome message based on the value of the isLoggedIn prop. If
+              isLoggedIn is true, it displays "Welcome back!"; otherwise, it
+              displays "Please sign up."
+            </p>
       </div>
+      </div>
+      <!-- End Condition Rendering -->
+
+      <!-- Rendering Lists -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Rendering Lists</h5>
+          <p class="card-text">
+            In React, you can render lists of data using the map() function to
+            iterate over an array and return a component for each item. For
+            example:
+          </p>
+          <pre class="p-3"><code>function MyComponent() {
+  const items = ['Apple', 'Banana', 'Cherry'];
+
+  return (
+    &lt;ul&gt;
+      {items.map((item) => (
+        &lt;li&gt;{item}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}</code></pre>
+          <p class="card-text">
+            In this example, the MyComponent component renders a list of fruits
+            using the map() function.
+          </p>
+          <p class="card-text">
+            Note: When rendering lists in React, it's important to provide a unique
+            key for each item to help React identify which items have changed,
+            are added, or are removed. You can do this by adding a key prop to
+            the list items. For example:
+          </p>
+          <pre class="p-3"><code>function MyComponent() {
+  const items = ['Apple', 'Banana', 'Cherry'];
+
+  return (
+    &lt;ul&gt;
+      {items.map((item) => (
+        &lt;li key={item}&gt;{item}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}</code></pre>
+          <p class="card-text">
+            In this example, the MyComponent component renders a list of fruits
+            using the map() function and provides a unique key for each item.
+          </p>
+        </div>
+      </div>
+      <!-- End Rendering Lists -->
+
+      <!-- Introduction to State -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Introduction to State</h5>
+          <p class="card-text">
+            State is a built-in object in React that allows components to manage
+            and update data that can change over time. State is typically used
+            to store information that affects the rendering of a component or its
+            behavior. To use state in a functional component, you can use the
+            useState hook. For example:
+          </p>
+          <pre class="p-3"><code>import React, { useState } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;You clicked {count} times&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;
+        Click me
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+        </div>
+      </div>
+      <!-- End Introduction to State -->
+
+
     </main>
 
     <script

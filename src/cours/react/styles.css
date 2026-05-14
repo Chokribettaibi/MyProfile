@@ -22,6 +22,13 @@ body {
   background-color: #010120;
   color: var(--muted);
 }
+/* .card {
+  background-color: var(--card);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: var(--max-width);
+} */
 pre {
   background-color: #0a0a23;
 }
