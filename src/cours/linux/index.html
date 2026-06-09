@@ -153,6 +153,19 @@ drwxr-xr-x  6 user user 4096 .
                                 <code>ls</code>
                                 <span>Liste les fichiers et dossiers du repertoire courant.</span>
                             </div>
+                            <div>
+                                <div class="terminal-card" aria-label="Exemples de commandes Linux">
+                    <div class="terminal-head">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code><span class="prompt">$</span> ls -la
+drwxr-xr-x  6 user user 4096 .
+-rw-r--r--  1 user user  128 README.md
+</code></pre>
+                </div>
+                            </div>
                             <div class="command-item">
                                 <code>cd</code>
                                 <span>Change le repertoire courant.</span>
@@ -161,6 +174,16 @@ drwxr-xr-x  6 user user 4096 .
                                 <code>pwd</code>
                                 <span>Affiche le chemin complet du repertoire actuel.</span>
                             </div>
+                            <div class="terminal-card" aria-label="Exemples de commandes Linux">
+                    <div class="terminal-head">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre><code><span class="prompt">$</span> pwd
+/home/user/projects
+</code></pre>
+                </div>
                             <div class="command-item">
                                 <code>mkdir</code>
                                 <span>Cree un nouveau dossier.</span>
@@ -171,6 +194,8 @@ drwxr-xr-x  6 user user 4096 .
                             </div>
                         </div>
                     </article>
+
+                    
 
                     <article class="article-card">
                         <h2>Fichiers texte et permissions</h2>
@@ -279,6 +304,27 @@ Doe</code></pre>
                         <article class="article-card">
                             <h2>Files System Hierarchy Specification (FHS)</h2>
                             <p>La hiérarchie des systèmes de fichiers (FHS) définit la structure standard des répertoires et fichiers sur un système Linux.</p>
+                            <ul>
+                                <li><strong><span class="bullet"><span>/</span></span></strong>   Root</li>
+                                <li><strong><span class="bullet"><span>/bin</span></span></strong>  Essential user command binaries (for use by all users) </li>
+                                <li><strong><span class="bullet"><span>/boot</span></span></strong> Static files of the boot loader</li>
+                                <li><strong><span class="bullet"><span>/dev</span></span></strong> Device files</li>
+                                <li><strong><span class="bullet"><span>/etc</span></span></strong> Configuration files</li>
+                                <li><strong><span class="bullet"><span>/home</span></span></strong> User home directories</li>
+                                <li><strong><span class="bullet"><span>/lib</span></span></strong> Essential shared libraries and kernel modules</li>
+                                <li><strong><span class="bullet"><span>/media</span></span></strong> Mount points for removable media</li>
+                                <li><strong><span class="bullet"><span>/mnt</span></span></strong> Mount point for mounting a filesystem temporarily</li>
+                                <li><strong><span class="bullet"><span>/opt</span></span></strong> Add-on application software packages</li>
+                                <li><strong><span class="bullet"><span>/proc</span></span></strong> Virtual filesystem providing process and kernel information as files</li>
+                                <li><strong><span class="bullet"><span>/root</span></span></strong> Home directory for the root user</li>
+                                <li><strong><span class="bullet"><span>/run</span></span></strong> Runtime variable data</li>
+                                <li><strong><span class="bullet"><span>/sbin</span></span></strong> Essential system binaries (for use by the system administrator)</li>
+                                <li><strong><span class="bullet"><span>/srv</span></span></strong> Data for services provided by the system</li>
+                                <li><strong><span class="bullet"><span>/sys</span></span></strong> Virtual filesystem providing information about devices, drivers, and some kernel features</li>
+                                <li><strong><span class="bullet"><span>/tmp</span></span></strong> Temporary files</li>
+                                <li><strong><span class="bullet"><span>/usr</span></span></strong> Secondary hierarchy for read-only user data; contains the majority of (multi-)user utilities and applications</li>
+                                <li><strong><span class="bullet"><span>/var</span></span></strong> Variable files—files to which the system writes data during the course of its operation</li>     
+                            </ul>
                         </article>
                 </div>
                 
