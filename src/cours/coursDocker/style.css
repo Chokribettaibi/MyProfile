@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #221f1fd8;
+    color: #fff;
+}
+code{
+    background-color: #1c4dec41;
+    color: #ee1758;
+}
