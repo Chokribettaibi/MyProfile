@@ -334,6 +334,17 @@ textarea {
   background: rgba(29, 78, 216, 0.06);
 }
 
+.formula_line{
+  display: inline-block;
+  margin: var(--space-4) 0;
+  padding: var(--space-1) var(--space-2);
+  /* overflow-x: auto; */
+  border: 1px solid rgba(29, 78, 216, 0.1);
+  border-left: 4px solid rgba(29, 78, 216, 0.42);
+  border-radius: var(--radius-sm);
+  background: rgba(29, 78, 216, 0.06);
+}
+
 .list {
   padding-left: 1.2rem;
   margin: 0;
